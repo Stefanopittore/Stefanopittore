@@ -1,0 +1,506 @@
+<title>Dossier Claudia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: a project set of numbered "láminas" (architectural sheets), each with a title block, on plaster paper with poché-hatched frames for the shots */
+:root{
+  --paper:#F3F4F1; --sheet:#FBFBF9; --ink:#17292B; --muted:#56696A; --rule:#C8CFCA;
+  --camel:#A8723F; --olive:#5F6E3F; --hatch:#D9DED9; --warn:#8A4B1F; --ok:#3F6B3A;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F1718; --sheet:#152022; --ink:#E7ECE8; --muted:#9DB0AE; --rule:#2B3B3C;
+  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1718; --sheet:#152022; --ink:#E7ECE8; --muted:#9DB0AE; --rule:#2B3B3C;
+  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+a{color:var(--ink);text-decoration-color:var(--camel);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--camel);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+p{margin:0}
+.mono,.lab{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.lab{text-transform:uppercase;color:var(--muted)}
+ul,ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.prose{max-width:66ch;display:flex;flex-direction:column;gap:12px}
+
+/* Cover */
+.cover{background:var(--sheet);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.cover-main{padding:clamp(22px,4vw,48px);display:flex;flex-direction:column;gap:18px;min-width:0}
+.cover h1{font-size:clamp(56px,8.4vw,112px);overflow-wrap:anywhere;font-weight:850;font-variation-settings:"wdth" 125;line-height:.9;letter-spacing:-.02em}
+.cover .lede{font-size:clamp(19px,2.2vw,23px);max-width:34ch}
+.pasamos{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:700;font-size:clamp(28px,4vw,40px);color:var(--camel)}
+.cajetin{border-left:1px solid var(--rule);display:grid;grid-template-rows:repeat(6,auto);min-width:0}
+.cajetin div{border-bottom:1px solid var(--rule);padding:12px 16px;display:flex;flex-direction:column;gap:2px}
+.cajetin div:last-child{border-bottom:0}
+.cajetin b{font-family:var(--display);font-weight:600;font-size:16px}
+@media (max-width:760px){.cover{grid-template-columns:1fr}.cajetin{border-left:0;border-top:1px solid var(--rule)}}
+
+.notice{border:1px dashed var(--camel);padding:14px 18px;display:flex;flex-direction:column;gap:6px;background:var(--sheet)}
+.notice strong{font-family:var(--display);font-weight:650}
+
+/* Sheets */
+.sheet{background:var(--sheet);border:1px solid var(--rule);padding:clamp(20px,3.5vw,40px);display:flex;flex-direction:column;gap:22px}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sheet-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:780;font-variation-settings:"wdth" 110}
+.sheet-head .lab{white-space:nowrap}
+h3{font-size:19px;font-weight:700;font-variation-settings:"wdth" 100}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.cols > *{min-width:0}
+.block{display:flex;flex-direction:column;gap:10px}
+
+/* Frames */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.frame{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:10px;max-width:100%;
+  border:1px solid var(--rule);text-decoration:none;color:var(--ink);
+  background:repeating-linear-gradient(135deg,var(--hatch) 0 1px,transparent 1px 9px),var(--sheet)}
+.frame:hover{border-color:var(--camel)}
+.frame::before,.frame::after{content:"";position:absolute;width:12px;height:12px;border-color:var(--ink);border-style:solid}
+.frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.r34{aspect-ratio:3/4}.r916{aspect-ratio:9/16}.r169{aspect-ratio:16/9}.r11{aspect-ratio:1/1}
+.frame .t{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.15;background:var(--sheet);padding:4px 6px;align-self:flex-start;max-width:100%}
+.frame .o{font-family:var(--mono);font-size:11.5px;background:var(--sheet);padding:3px 6px;align-self:flex-end}
+.chosen{outline:3px solid var(--camel);outline-offset:3px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border:1px solid currentColor}
+.pill.ok{color:var(--ok)}.pill.warn{color:var(--warn)}.pill.camel{color:var(--camel)}
+figcaption{font-size:14.5px;line-height:1.4;color:var(--muted)}
+figcaption b{color:var(--ink);font-weight:600}
+
+/* Tables */
+.tw{overflow-x:auto;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.tc{font-family:var(--mono);font-size:13px;white-space:nowrap}
+tfoot td{font-weight:600;border-top:2px solid var(--ink)}
+
+/* Bible */
+.ficha{display:grid;grid-template-columns:max-content minmax(0,1fr);border:1px solid var(--rule)}
+.ficha dt,.ficha dd{margin:0;padding:9px 12px;border-bottom:1px solid var(--rule)}
+.ficha dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+.ficha dt:nth-last-of-type(1),.ficha dd:last-of-type{border-bottom:0}
+@media (max-width:520px){.ficha{grid-template-columns:1fr}.ficha dt{border-bottom:0;padding-bottom:2px}}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;flex-direction:column;gap:4px;width:92px}
+.sw i{display:block;height:54px;border:1px solid var(--rule)}
+.sw span{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.quote{font-family:var(--display);font-variation-settings:"wdth" 80;font-weight:650;font-size:22px;line-height:1.2}
+
+/* Flow diagram */
+.flow{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr) 36px minmax(0,1fr);align-items:stretch}
+.node{border:1px solid var(--ink);padding:14px;display:flex;flex-direction:column;gap:6px;background:var(--sheet)}
+.node.accent{border-color:var(--camel);border-width:2px}
+.arrow{display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--camel);font-size:22px}
+@media (max-width:760px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:30px}}
+
+.checks{list-style:none;padding:0}
+.checks li{padding-left:28px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.3em;width:15px;height:15px;border:1.5px solid var(--ink)}
+.dont li::before{border-color:var(--warn)}
+.dont li::after{content:"";position:absolute;left:3px;top:calc(.3em + 7px);width:10px;height:1.5px;background:var(--warn)}
+.copy{border-left:3px solid var(--camel);padding:12px 16px;background:var(--paper);white-space:pre-line;font-size:16px;max-width:66ch}
+.src{font-size:14px;columns:2 320px;column-gap:28px}
+.src li{break-inside:avoid;margin-bottom:6px}
+footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:no-preference){.frame{transition:border-color .15s}}
+</style>
+
+<div class="wrap">
+
+<header class="cover">
+  <div class="cover-main">
+    <span class="lab">Vitruvi Studio · Dossier de personaje · 23 de octubre de 2026</span>
+    <h1>Claudia</h1>
+    <p class="lede">La presentadora de obra nueva de Vitruvi. Una cara cercana para enseñar casas que todavía no existen.</p>
+    <p class="pasamos">«¿Pasamos?»</p>
+  </div>
+  <div class="cajetin" aria-label="Cajetín del proyecto">
+    <div><span class="lab">Proyecto en Magnific</span><b>Claudia · Avatar Vitruvi</b></div>
+    <div><span class="lab">Personaje guardado</span><b><a href="https://www.magnific.com/app/library/characters/2421544" target="_blank" rel="noopener">Claudia_Vitruvi ↗</a></b></div>
+    <div><span class="lab">Producido</span><b>13 imágenes · 7 clips · 1 teaser · 1 voz</b></div>
+    <div><span class="lab">Créditos Magnific</span><b>2.242 de 3.000 · quedan 758</b></div>
+    <div><span class="lab">Mejor hora (Metricool)</span><b>Miércoles 28, 10:00</b></div>
+    <div><span class="lab">Estado</span><b>Listo para tu revisión</b></div>
+  </div>
+</header>
+
+<aside class="notice">
+  <strong>Las fotos y los vídeos están en Magnific, no incrustados aquí.</strong>
+  <p>La red de mi entorno bloquea el servidor de imágenes de Magnific (pikaso.cdnpk.net), así que no he podido descargarlas ni verlas con mis propios ojos. Cada recuadro rayado es un enlace a la pieza real. Los vídeos los ha revisado el analizador de Magnific, que sí los ve, y sus notas están en la lámina 05. Si añades ese dominio a la red permitida del entorno, meto todas las imágenes en este dossier.</p>
+</aside>
+
+<section class="sheet" id="resumen">
+  <div class="sheet-head"><h2>Lo que tienes y lo que necesito de ti</h2><span class="lab">Lámina 01 · Resumen</span></div>
+  <div class="cols">
+    <div class="block">
+      <h3>Hecho esta noche</h3>
+      <ul>
+        <li>Casting de 6 caras en 3 estilos y elección de Claudia con pruebas de movimiento.</li>
+        <li>Sesión de fotos consistente: retrato de perfil, look completo, puerta, terraza y ficha en 4 vistas.</li>
+        <li>Claudia guardada como personaje en la biblioteca de Magnific, para que salga igual en cada pieza.</li>
+        <li>Clip hablando a cámara en castellano: «¡Hola! Soy Claudia. ¿Pasamos?».</li>
+        <li>Teaser de 15 s montado: hola, puerta y terraza.</li>
+        <li>Dos pruebas de Claudia dentro de un render real de Vitruvi.</li>
+        <li>Investigación de formatos virales, casos de avatares y requisitos legales en España.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Decisiones tuyas</h3>
+      <ul class="checks">
+        <li>Confirmar la cara (recomiendo la candidata A2) o pedir otra dirección del casting.</li>
+        <li>Elegir nombre de cuenta. Propuestas sin comprobar: @claudia.pasamos, @soyclaudia.casas, @claudiaobranueva.</li>
+        <li>Permitir pikaso.cdnpk.net en la red del entorno, para poder ver y montar el material.</li>
+        <li>Decidir qué promoción protagoniza el primer reel y si el render de los chalets de montaña se puede enseñar.</li>
+        <li>Aprobar en Pulso el copy de presentación para @vitruvistudio (lámina 08). No he programado nada.</li>
+        <li>Mandarme otra vez el screenshot de la chica de referencia: no me llegó.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="claudia">
+  <div class="sheet-head"><h2>Quién es Claudia</h2><span class="lab">Lámina 02 · Biblia del personaje</span></div>
+  <div class="cols">
+    <dl class="ficha">
+      <dt>Nombre</dt><dd>Claudia</dd>
+      <dt>Edad aparente</dt><dd>28 años</dd>
+      <dt>Origen</dt><dd>Valencia. Habla castellano neutro de España.</dd>
+      <dt>Rasgos fijos</dt><dd>Melena castaña ondulada a los hombros, piel oliva cálida, pecas suaves, un lunar en la mejilla izquierda y ojos marrón cálido.</dd>
+      <dt>Look firma</dt><dd>Blazer de lino camel, camiseta blanca y aros dorados pequeños. En invierno o montaña, abrigo camel de lana, jersey blanco, vaqueros y botines.</dd>
+      <dt>Carácter</dt><dd>Cercana, curiosa, con humor suave. Explica lo que se siente en una casa, no lo que mide.</dd>
+      <dt>Voz</dt><dd>Joven, cálida y sonriente. Locución hecha con la voz «Carmen Ruiz» de Magnific (<a href="https://www.magnific.com/app/creation/ovwOleJ829" target="_blank" rel="noopener">escuchar ↗</a>).</dd>
+      <dt>Etiqueta</dt><dd>Personaje creado con IA por Vitruvi Studio. Lo dice siempre.</dd>
+    </dl>
+    <div class="block">
+      <h3>Sus frases</h3>
+      <p class="quote">«¿Pasamos?»</p>
+      <p class="quote">«Mira qué luz.»</p>
+      <p class="quote">«Esta casa todavía no existe… pero ya puedes entrar.»</p>
+      <p class="quote">«Aquí ya te ves desayunando, ¿a que sí?»</p>
+      <h3>Su paleta</h3>
+      <div class="swatches">
+        <div class="sw"><i style="background:#B07D4F"></i><span>Camel blazer</span></div>
+        <div class="sw"><i style="background:#F7F5F0"></i><span>Blanco camiseta</span></div>
+        <div class="sw"><i style="background:#5A3A26"></i><span>Castaño pelo</span></div>
+        <div class="sw"><i style="background:#6E7B4F"></i><span>Olivo puerta</span></div>
+        <div class="sw"><i style="background:#C9A24A"></i><span>Oro aros</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Por qué es así</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Decisión de diseño</th><th>Lo que dice la investigación</th></tr></thead>
+      <tbody>
+        <tr><td>Sonrisa abierta y gesto de invitar antes que pose de modelo</td><td>La calidez se juzga antes que la competencia, y quien combina ambas genera respuesta positiva (<a href="https://collaborate.princeton.edu/en/publications/universal-dimensions-of-social-cognition-warmth-and-competence/" target="_blank" rel="noopener">Fiske et al., 2007</a>). La sonrisa genuina se percibe como más fiable.</td></tr>
+        <tr><td>Pecas, lunar y maquillaje natural</td><td>El hiperrealismo «demasiado perfecto» incomoda; las pequeñas imperfecciones generan menos rechazo (<a href="https://jyx.jyu.fi/handle/123456789/111068" target="_blank" rel="noopener">JYU, preestudio</a>). El lunar además la hace reconocible.</td></tr>
+        <tr><td>Ropa de profesional cercana, nunca sexualizada</td><td>La hipersexualización es la crítica que más se repite en los avatares conocidos, como Aitana López (<a href="https://www.newtral.es/influencers-creadas-inteligencia-artificial/20240225/" target="_blank" rel="noopener">Newtral</a>) o Noonoouri.</td></tr>
+        <tr><td>Habla de luz, vistas y distribución, no de tacto ni olor</td><td>Con influencers virtuales, la intención de compra baja cuando el mensaje depende del tacto o el olfato (<a href="https://research.polyu.edu.hk/en/publications/making-sense-the-sensory-specific-nature-of-virtual-influencer-ef/" target="_blank" rel="noopener">Zhou et al., Journal of Marketing 2024</a>).</td></tr>
+        <tr><td>Dice que es IA desde el primer día</td><td>Solo el 4 % de los mayores de 50 en EE. UU. confía mucho en información generada con IA (<a href="https://www.michiganmedicine.org/health-lab/older-adults-and-ai-poll-suggests-wary-welcome" target="_blank" rel="noopener">Michigan</a>), y cerca del 90 % de los adultos quiere saber si una imagen es IA (<a href="https://reports.gettyimages.com/VisualGPS-Building-Trust-In-AI.pdf" target="_blank" rel="noopener">Getty</a>).</td></tr>
+        <tr><td>Aparece a veces con comerciales o arquitectos reales</td><td>Ir acompañada de una persona real aumenta la autenticidad percibida (<a href="https://thearf.org/?p=370039" target="_blank" rel="noopener">ARF</a>). Es lo que más pesa con el público mayor.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="block">
+    <h3>Lo que Claudia nunca hace</h3>
+    <ul class="checks dont">
+      <li>Fingir que es una persona real o dejarlo en duda.</li>
+      <li>Contenido sexualizado o tramas dramáticas (enfermedades, sucesos).</li>
+      <li>Dar precios, plazos o calidades que la promotora no haya confirmado.</li>
+      <li>Copiar la cara, la voz o un vídeo de otra persona.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sheet" id="casting">
+  <div class="sheet-head"><h2>Casting</h2><span class="lab">Lámina 03 · 6 candidatas, 3 estilos</span></div>
+  <p class="prose">Probé tres estilos con el mismo encuadre, la misma luz y el mismo blazer, para comparar solo la cara. Me quedé con la dirección mediterránea y, dentro de ella, con la candidata A2 por el lunar en la mejilla: es una seña que la hace reconocible en cualquier plano.</p>
+  <div class="grid">
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/ovwOLpO829" target="_blank" rel="noopener"><span class="t">A1 · Valencia</span><span class="o">Abrir ↗</span></a><figcaption><b>Mediterránea.</b> Castaña, pecas, sonrisa abierta.</figcaption></figure>
+    <figure><a class="frame r34 chosen" href="https://www.magnific.com/app/creation/rgcVAbhxtc" target="_blank" rel="noopener"><span class="t">A2 · Valencia</span><span class="o">Abrir ↗</span></a><figcaption><span class="pill camel">Elegida</span> <b>Claudia.</b> Igual que A1, con lunar en la mejilla.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/tCO4gBdmZJ" target="_blank" rel="noopener"><span class="t">B1 · Cádiz</span><span class="o">Abrir ↗</span></a><figcaption><b>Luminosa.</b> Pelo largo miel, ojos verdes.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/fHN3JhuCDY" target="_blank" rel="noopener"><span class="t">B2 · Cádiz</span><span class="o">Abrir ↗</span></a><figcaption><b>Luminosa.</b> Segunda toma.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/cpkxFYB0eP" target="_blank" rel="noopener"><span class="t">C1 · Madrid</span><span class="o">Abrir ↗</span></a><figcaption><b>Urbana.</b> Bob oscuro con flequillo.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/O68mp7Tynm" target="_blank" rel="noopener"><span class="t">C2 · Madrid</span><span class="o">Abrir ↗</span></a><figcaption><b>Urbana.</b> Segunda toma.</figcaption></figure>
+  </div>
+  <div class="block">
+    <h3>Prueba de movimiento de las dos finalistas</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Candidata</th><th class="n">Fotorrealismo</th><th class="n">Movimiento</th><th class="n">Calidez</th><th class="n">Atractivo</th><th>Gusta a jóvenes y mayores</th><th>Vídeo</th></tr></thead>
+      <tbody>
+        <tr><td>A1</td><td class="n">8,5</td><td class="n">7,5</td><td class="n">9,5</td><td class="n">9</td><td>9 jóvenes · 8,5 mayores</td><td><a href="https://www.magnific.com/app/creation/rgcVnNmxtc" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+        <tr><td><b>A2 · Claudia</b></td><td class="n">8,5</td><td class="n">7</td><td class="n">9,5</td><td class="n">9</td><td>9 en ambos grupos</td><td><a href="https://www.magnific.com/app/creation/bxGYZyG5Y2" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <p class="mono" style="color:var(--muted)">Notas de 1 a 10 del analizador de vídeo de Magnific, no de un panel de personas. Las dos tienen la mano del saludo algo rígida; es un fallo del modelo de vídeo, no de la cara.</p>
+  </div>
+</section>
+
+<section class="sheet" id="sesion">
+  <div class="sheet-head"><h2>Sesión de fotos</h2><span class="lab">Lámina 04 · Misma cara en cada plano</span></div>
+  <div class="grid wide">
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/cpkxKy30eP" target="_blank" rel="noopener"><span class="t">Retrato en el salón</span><span class="o">Abrir ↗</span></a><figcaption><b>Foto de perfil y portada.</b> Salón de obra nueva con luz de mañana. Seedream 5 Pro, 2K.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/DoLgjiMpcl" target="_blank" rel="noopener"><span class="t">Look completo</span><span class="o">Abrir ↗</span></a><figcaption><b>Cuerpo entero.</b> Caminando por un pasillo: blazer, pantalón ancho crudo y zapatillas blancas.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/xS0McfljfW" target="_blank" rel="noopener"><span class="t">«¿Pasamos?»</span><span class="o">Abrir ↗</span></a><figcaption><b>La puerta.</b> Abre la casa e invita a entrar. Es el fotograma de arranque del gancho.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/dtgwlGfXSL" target="_blank" rel="noopener"><span class="t">Terraza al atardecer</span><span class="o">Abrir ↗</span></a><figcaption><b>Lo que sientes.</b> Riendo en la terraza con el mar detrás.</figcaption></figure>
+  </div>
+  <div class="block">
+    <h3>Ficha de personaje en 4 vistas</h3>
+    <p class="prose">Es la referencia que alimenta el personaje guardado. También sirve como hoja de casting si algún día contratamos a una modelo que la encarne.</p>
+    <div class="grid">
+      <figure><a class="frame r34" href="https://www.magnific.com/app/creation/UPdoXezwny" target="_blank" rel="noopener"><span class="t">Frente</span><span class="o">Abrir ↗</span></a></figure>
+      <figure><a class="frame r34" href="https://www.magnific.com/app/creation/cpkx1Kj0eP" target="_blank" rel="noopener"><span class="t">Tres cuartos</span><span class="o">Abrir ↗</span></a></figure>
+      <figure><a class="frame r34" href="https://www.magnific.com/app/creation/XmS7Ug2Bfo" target="_blank" rel="noopener"><span class="t">Perfil</span><span class="o">Abrir ↗</span></a></figure>
+      <figure><a class="frame r34" href="https://www.magnific.com/app/creation/rgcV0WQxtc" target="_blank" rel="noopener"><span class="t">Riendo</span><span class="o">Abrir ↗</span></a></figure>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Claudia dentro de un render de Vitruvi</h3>
+    <p class="prose">La metí en el render de los chalets de montaña («ERTS_01_sol_final» de tu cuenta) para ver cómo vendería el servicio a una promotora. Es solo una prueba interna; no la publiques sin el visto bueno del cliente.</p>
+    <div class="grid wide">
+      <figure><a class="frame r169" href="https://www.magnific.com/app/creation/gOpXDbuSXO" target="_blank" rel="noopener"><span class="t">Prueba 1 · plano medio</span><span class="o">Abrir ↗</span></a><figcaption><span class="pill warn">Integración 4/10</span> Parece pegada encima: sin sombra y con luz de estudio.</figcaption></figure>
+      <figure><a class="frame r169" href="https://www.magnific.com/app/creation/EbiZZOsuuO" target="_blank" rel="noopener"><span class="t">Prueba 2 · cuerpo entero en la calle</span><span class="o">Abrir ↗</span></a><figcaption><span class="pill warn">Integración 5/10</span> Ya tiene escala y sombra, pero la sombra va hacia el lado equivocado.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="video">
+  <div class="sheet-head"><h2>En movimiento</h2><span class="lab">Lámina 05 · Clips y control de calidad</span></div>
+  <div class="tw"><table>
+    <thead><tr><th>Clip</th><th>Qué pasa</th><th class="n">Realismo</th><th class="n">Movimiento</th><th>Uso y fallos</th><th>Ver</th></tr></thead>
+    <tbody>
+      <tr><td><b>Hola, soy Claudia</b><br><span class="mono">5 s · con voz · Seedance 2.0 Mini</span></td><td>Mira a cámara: «¡Hola! Soy Claudia. ¿Pasamos?», con acento de España.</td><td class="n">9</td><td class="n">9 labios</td><td><span class="pill ok">Apertura 9,5</span> Sin música ni fallos de audio. Solo 480p.</td><td><a href="https://www.magnific.com/app/creation/ksY0Wyd16B" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      <tr><td><b>La puerta</b><br><span class="mono">5 s · vertical · Kling 2.5</span></td><td>Abre la puerta e invita a pasar; la cámara entra con ella.</td><td class="n">9</td><td class="n">8,5</td><td><span class="pill ok">Gancho 9,5</span> La fachada no se deforma (9,5). La mano se suaviza en el primer segundo.</td><td><a href="https://www.magnific.com/app/creation/mEy9PfYhJQ" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      <tr><td><b>La terraza</b><br><span class="mono">5 s · vertical · Kling 2.5</span></td><td>Ríe, señala el mar y vuelve a mirar a cámara.</td><td class="n">9</td><td class="n">8,5</td><td><span class="pill ok">Emoción 9,5</span> El lunar se desplaza hacia la barbilla. Hay que vigilarlo.</td><td><a href="https://www.magnific.com/app/creation/P3tvmiv42C" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      <tr><td><b>En el render, prueba 1</b><br><span class="mono">5 s · horizontal · Kling 2.5</span></td><td>Presenta los chalets a cámara.</td><td class="n">8</td><td class="n">—</td><td><span class="pill warn">Integración 4</span> Se nota el recorte. La arquitectura no se mueve (10).</td><td><a href="https://www.magnific.com/app/creation/5jzWnj2Kxe" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      <tr><td><b>En el render, prueba 2</b><br><span class="mono">5 s · horizontal · Kling 2.5</span></td><td>Camina por la calle hacia cámara y presenta.</td><td class="n">8,5</td><td class="n">—</td><td><span class="pill warn">Integración 5</span> Los pies deslizan y la sombra no cuadra. Como demo para promotoras, 8.</td><td><a href="https://www.magnific.com/app/creation/8a7yydJIrU" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+      <tr><td><b>Teaser montado</b><br><span class="mono">15 s · 560 × 752</span></td><td>Hola, puerta y terraza seguidos.</td><td class="n">—</td><td class="n">—</td><td>Borrador para verlo de un tirón. Baja resolución por el clip hablado.</td><td><a href="https://www.magnific.com/app/creation/79BIIVlJAL" target="_blank" rel="noopener">Ver ↗</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose">Para piezas finales dentro de renders de clientes, lo sólido es integrarla en la propia escena 3D de Vitruvi, con su luz y sus sombras, o grabar a una modelo real con croma. Pegarla con IA sobre el render final sirve para vender la idea, todavía no para publicar.</p>
+  <p class="prose">La voz del clip hablado la pone el propio modelo de vídeo y no es la misma que la locución de «Carmen Ruiz». Para que suene igual en todas las piezas hay que fijar una sola voz y sincronizar labios, que cuesta unos 165 créditos por segundo con OmniHuman.</p>
+</section>
+
+<section class="sheet" id="estrategia">
+  <div class="sheet-head"><h2>Cómo encaja con Vitruvi</h2><span class="lab">Lámina 06 · Dos cuentas, un embudo</span></div>
+  <div class="flow" role="img" aria-label="Claudia atrae compradores, la promotora gana alcance y Vitruvi vende el servicio">
+    <div class="node accent"><span class="lab">Cuenta de Claudia</span><b>Alcance masivo</b><p>Habla al comprador. Formatos virales y reels de promociones publicados en Collab con la promotora.</p></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node"><span class="lab">Promotora</span><b>Su promoción, con presentadora</b><p>Gana visitas, guardados y mensajes. Sus vídeos dejan de ser un render con música.</p></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node"><span class="lab">@vitruvistudio</span><b>Venta B2B</b><p>Habla a la promotora: «Así presentaríamos tu promoción con Claudia». Nuevo servicio: presentadora incluida.</p></div>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>Por qué ahora</h3>
+      <ul>
+        <li>No he encontrado ninguna promotora española con presentadora virtual. Lo más cercano son chats, como «Lara» de Aedas Homes: más de 8.000 conversaciones y dos ventas por 800.000 € (<a href="https://www.eleconomista.es/vivienda-inmobiliario/noticias/13795072/02/26/agentes-virtuales-y-planos-disenados-en-minutos-la-ia-llega-al-sector-inmobiliario.html" target="_blank" rel="noopener">elEconomista</a>).</li>
+        <li>En Dubái, The Clueless (la agencia de Aitana López) y Pixel han lanzado «Noura» para el sector inmobiliario, sin resultados públicos todavía (<a href="https://campaignme.com/ai-influencer-talent-management-agency-pixel-launches-in-the-gcc/" target="_blank" rel="noopener">Campaign ME</a>).</li>
+        <li>Instagram premia lo original. Desde el 30 de abril de 2026 recorta el alcance de las cuentas que republican contenido ajeno, también en fotos y carruseles (<a href="https://techcrunch.com/2026/04/30/instagram-restricts-reach-of-content-aggregators-in-new-crackdown/" target="_blank" rel="noopener">TechCrunch</a>).</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Referencias de avatares</h3>
+      <div class="tw"><table style="min-width:420px">
+        <thead><tr><th>Avatar</th><th>Datos</th><th>Lección</th></tr></thead>
+        <tbody>
+          <tr><td>Aitana López</td><td>~404.000 seguidores; ~3.000 €/mes de media según su creador (<a href="https://euronews.com/next/2024/03/22/meet-the-first-spanish-ai-model-earning-up-to-10000-per-month" target="_blank" rel="noopener">Euronews</a>)</td><td>Funciona, pero la sexualización le pasa factura.</td></tr>
+          <tr><td>Lu do Magalu</td><td>~7,1 M en Instagram; ~2,5 M$/año estimados (<a href="https://www.digitalmusicnews.com/2025/10/20/virtual-influencers-out-earn-humans/" target="_blank" rel="noopener">DMN</a>)</td><td>Útil antes que guapa, y propiedad de la marca.</td></tr>
+          <tr><td>Imma</td><td>«Vivió» tres días en un piso escaparate de IKEA Harajuku (<a href="https://www.domusweb.it/en/design/gallery/2020/10/01/ikea-picked-a-virtual-influencer-to-promote-its-new-tokyo-store.amp.html" target="_blank" rel="noopener">Domus</a>)</td><td>La casa le sienta bien a un avatar.</td></tr>
+          <tr><td>Lil Miquela</td><td>~2,26 M y en ligero descenso (<a href="https://creatordb.app/creatorstats/lilmiquela/" target="_blank" rel="noopener">CreatorDB</a>)</td><td>Las tramas dramáticas falsas le han costado polémicas.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="formatos">
+  <div class="sheet-head"><h2>Copiar movimientos, bien hecho</h2><span class="lab">Lámina 07 · Formatos y primer reel</span></div>
+  <div class="prose">
+    <p>Tu idea de coger el vídeo con más engagement y replicar sus movimientos funciona si copiamos el <b>formato</b>: la estructura, el ritmo y el gancho. Copiar el vídeo plano a plano tiene dos problemas. Instagram lo trata como contenido no original y le quita alcance, y una coreografía completa o una grabación ajena tienen derechos (<a href="https://www.boe.es/eli/es/rdlg/1996/04/12/1/con" target="_blank" rel="noopener">Ley de Propiedad Intelectual</a>).</p>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Formato</th><th>El movimiento</th><th>Versión Claudia</th><th>Evidencia</th></tr></thead>
+    <tbody>
+      <tr><td><b>Speed tour</b></td><td>Sale corriendo desde la puerta; 1 a 2 s por estancia con cortes secos.</td><td>«Tres dormitorios en 20 segundos. Vamos.»</td><td>Trent Miller, vídeos de hasta 34 M de vistas (<a href="https://businessinsider.nl/a-19-year-old-real-estate-agent-has-found-an-ingenious-new-way-to-sell-homes-and-make-money/" target="_blank" rel="noopener">BI</a>)</td></tr>
+      <tr><td><b>Precio primero</b></td><td>Precio en el segundo 0 y reacciones rápidas a cada acabado.</td><td>«Esto es lo que te dan por [precio] en [ciudad].»</td><td>Brad Scott, 140.000 seguidores solo con obra nueva (<a href="https://www.cbsaustin.com/news/offbeat/san-antonio-realtor-gains-140k-followers-with-aggressive-tours-on-instagram-people-local-homes-houses-real-estate-mortgage-bexar-county" target="_blank" rel="noopener">CBS</a>)</td></tr>
+      <tr><td><b>Walk and talk</b></td><td>Ella camina hacia cámara mientras la cámara retrocede; detalles con voz en off.</td><td>Recorrido del salón hablando de la luz.</td><td>Un reel de 285.000 vistas (<a href="https://nowbam.com/3-tricks-to-make-your-real-estate-reels-go-viral/" target="_blank" rel="noopener">Nowbam</a>)</td></tr>
+      <tr><td><b>Casa, barrio, casa</b></td><td>Fachada, barridos rápidos al barrio y vuelta a lo mejor de la casa.</td><td>Para vender ubicación; se comparte mucho.</td><td>Recreación con 10.000 vistas y 20 compartidos (<a href="https://www.inman.com/2026/10/10/listing-video-idea-sells-house-and-neighborhood/" target="_blank" rel="noopener">Inman</a>)</td></tr>
+      <tr><td><b>Montaje exprés</b></td><td>2 a 3 s por plano al ritmo de la música, la mejor vista primero.</td><td>Para carruseles convertidos en reel.</td><td>Purplebricks: el comprador decide en unos 25 s (<a href="https://www.taylorherring.com/?p=17265" target="_blank" rel="noopener">Taylor Herring</a>)</td></tr>
+      <tr><td><b>Adivina el precio</b></td><td>Pregunta en el segundo 1 y precio al final.</td><td>«¿Cuánto crees que cuesta?»</td><td>Caleb Simpson, más de 7 M de seguidores (<a href="https://www.cbsnews.com/amp/news/tiktok-caleb-simpson-apartment-rents" target="_blank" rel="noopener">CBS News</a>)</td></tr>
+      <tr><td><b>Del plano al render</b></td><td>Solar o plano y, con un gesto, la casa terminada.</td><td>El formato natural de Vitruvi.</td><td>Sin cifras públicas verificables</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="block">
+    <h3>Primer reel de Claudia · 25 s</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Tiempo</th><th>Plano</th><th>Claudia dice o hace</th><th>Material</th></tr></thead>
+      <tbody>
+        <tr><td class="tc">0,0–1,5</td><td>Fachada, Claudia en la puerta. Texto: OBRA NUEVA · ciudad · desde X €</td><td>«Esta casa todavía no existe…»</td><td><span class="pill ok">Hecho</span> puerta</td></tr>
+        <tr><td class="tc">1,5–3</td><td>Abre hacia cámara y cruzamos el umbral</td><td>«…pero ya puedes entrar. ¿Pasamos?»</td><td><span class="pill ok">Hecho</span> puerta</td></tr>
+        <tr><td class="tc">3–6</td><td>Salón, la cámara retrocede delante de ella</td><td>Señala el ventanal. Texto con m² y orientación reales.</td><td>Por hacer</td></tr>
+        <tr><td class="tc">6–11</td><td>Barrido a cocina y dormitorio; descorre la cortina</td><td>«Mira qué luz.»</td><td>Por hacer</td></tr>
+        <tr><td class="tc">11–17</td><td>Sale a la terraza; la cámara se eleva y enseña la promoción</td><td>Ríe y señala las vistas.</td><td><span class="pill ok">Hecho</span> terraza</td></tr>
+        <tr><td class="tc">17–20</td><td>Barrido del plano o solar al render</td><td>«Así será en [año de entrega].»</td><td>Render de la promoción</td></tr>
+        <tr><td class="tc">20–23</td><td>Claudia a cámara</td><td>«¿Cuánto crees que cuesta? Envíaselo a quien busque casa.»</td><td>Por hacer</td></tr>
+        <tr><td class="tc">23–25</td><td>Logos y aviso: «Infografías no contractuales · presentadora creada con IA». Vuelve a la fachada para que haga bucle.</td><td>—</td><td>Montaje</td></tr>
+      </tbody>
+    </table></div>
+    <p class="mono" style="color:var(--muted)">Lo subo como Trial Reel con dos ganchos: A «Esta casa todavía no existe» y B «Adivina el precio». A las 24 h comparo cuánta gente lo salta en los 3 primeros segundos, la retención y los envíos, y el ganador va a seguidores.</p>
+  </div>
+
+  <div class="block">
+    <h3>La cadena automática</h3>
+    <ol>
+      <li><b>Detectar.</b> Cada lunes, los reels que más funcionan en inmobiliaria, con los competidores de Metricool y búsqueda manual. Elegimos un formato, no un vídeo.</li>
+      <li><b>Desglosar.</b> Apunto el ritmo del formato plano a plano: tiempos, gesto, movimiento de cámara y texto en pantalla.</li>
+      <li><b>Recrear.</b> El personaje Claudia_Vitruvi más los renders de la promoción en Magnific: fotogramas, movimiento con Kling o Seedance y voz.</li>
+      <li><b>Publicar.</b> Trial Reel con dos ganchos, en Collab con la promotora y con la etiqueta de IA puesta.</li>
+      <li><b>Medir.</b> A las 24–72 h, el ganador pasa a seguidores. Anuncios solo con tu OK y con un tope de 40 € por pieza, como dice el manual.</li>
+    </ol>
+    <p class="prose">Coste aproximado por reel de 25 s: unos 1.050 créditos (5 clips, 4 fotogramas y voz), o 1.400 con apertura hablada.</p>
+  </div>
+</section>
+
+<section class="sheet" id="copy">
+  <div class="sheet-head"><h2>Presentación en @vitruvistudio</h2><span class="lab">Lámina 08 · Copys listos para Pulso</span></div>
+  <div class="cols">
+    <div class="block">
+      <h3>Instagram · reel del teaser</h3>
+      <p class="copy">Promotor de obra nueva: tu próxima promoción ya puede tener presentadora.
+Te presentamos a Claudia. Abre la puerta, te dice dónde da el sol por la mañana y qué se ve desde la terraza a la hora de cenar.
+Tu comprador deja de mirar un render y empieza a visitar su casa.
+Claudia es un personaje creado con IA por Vitruvi Studio.
+¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos por mensaje o al WhatsApp y te enseñamos cómo lo presentaríamos.</p>
+      <p class="mono" style="color:var(--muted)">Reel de 15–20 s con el teaser · audio original o de Meta Sound Collection · marcar «contenido generado con IA» · miércoles 28 a las 10:00 (Metricool: 6.506, el mejor hueco de lunes a jueves).</p>
+    </div>
+    <div class="block">
+      <h3>LinkedIn · perfil de Stefano</h3>
+      <p class="copy">Promotor: ¿y si tu próxima promoción tuviera presentadora propia?
+
+Una promoción sobre plano se presenta con renders muy cuidados, pero el comprador sigue sin verse dentro. Mira la imagen, pasa a la siguiente y se olvida.
+
+En Vitruvi Studio hemos creado a Claudia. Es un personaje generado con IA que presenta obra nueva como lo haría una amiga que ya ha estado dentro: abre la puerta, te dice dónde da el sol por la mañana y qué se ve desde la terraza a la hora de cenar.
+
+No viene a sustituir a nadie del equipo comercial. Viene a que el render deje de ser una imagen y pase a ser una visita.
+
+Tres cosas que hemos aprendido al diseñarla:
+
+1. La calidez se juzga antes que la competencia. Por eso Claudia sonríe de verdad, tiene pecas y un lunar, y viste como alguien de tu equipo.
+2. La transparencia no se negocia. Claudia dice que es IA en su perfil y en cada pieza, como ya exige la normativa europea.
+3. Claudia no vende tacto ni olor. Vende luz, vistas y distribución, que es lo que mejor enseña un render.
+
+Si promueves, comercializas o tienes que presentar un proyecto, escríbeme por mensaje y te enseño cómo lo presentaríamos.</p>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Primer post en la cuenta de Claudia</h3>
+    <p class="copy">Hola, soy Claudia. Me paso el día entrando en casas que todavía no existen.
+Te enseño obra nueva antes de que pongan la primera piedra: dónde da el sol, cómo se mueve la luz por el salón y qué se ve desde la terraza.
+Soy un personaje creado con IA por @vitruvistudio.
+¿Pasamos?</p>
+    <p class="mono" style="color:var(--muted)">Biografía: «Te enseño casas antes de que existan. Personaje creado con IA por @vitruvistudio». La cuenta de Claudia habla al comprador para ganar alcance y la de Vitruvi sigue hablando a quien vende, así el embudo no se rompe.</p>
+  </div>
+  <p class="mono">Revisado con el manual: embudo ✓ · primera línea a quien vende ✓ · sin hashtags ✓ · sin pedir comentarios ✓</p>
+</section>
+
+<section class="sheet" id="legal">
+  <div class="sheet-head"><h2>Transparencia y ley</h2><span class="lab">Lámina 09 · Antes de publicar</span></div>
+  <div class="cols">
+    <div class="block">
+      <h3>Obligatorio desde el día 1</h3>
+      <ul class="checks">
+        <li>«Personaje creado con IA» en la biografía y aviso de IA en cada pieza. El artículo 50 del Reglamento europeo de IA se aplica desde el 2 de agosto de 2026 (<a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener">texto</a>).</li>
+        <li>Activar la etiqueta de perfil generado con IA. Según Instagram, desde el 31 de agosto de 2026 los perfiles de personas IA que no la activen pierden recomendaciones (<a href="https://creators.instagram.com/blog/ai-generated-profile-label" target="_blank" rel="noopener">Instagram</a>).</li>
+        <li>«Colaboración pagada» en cada Collab con promotora y seguir el código de influencers de Autocontrol, vigente desde el 1 de octubre de 2025 (<a href="https://www.autocontrol.es/autocontrol/sala-de-prensa/autocontrol-noticias/entra-vigor-nuevo-codigo-conducta-publicidad-influencers/" target="_blank" rel="noopener">Autocontrol</a>).</li>
+        <li>En publicidad de vivienda, datos reales, indicar si está en construcción y etiqueta energética (<a href="https://www.boe.es/eli/es/rd/1989/04/21/515/con" target="_blank" rel="noopener">RD 515/1989</a>, <a href="https://www.boe.es/eli/es/rd/2021/06/01/390/con" target="_blank" rel="noopener">RD 390/2021</a>).</li>
+        <li>Si Claudia responde mensajes con un bot, avisar de que se habla con una IA.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Si contratamos a una modelo real</h3>
+      <ul>
+        <li>Contrato específico de cesión de imagen y voz: usos, réplica digital con IA, duración, territorio, exclusividad y salida.</li>
+        <li>El consentimiento se puede revocar, indemnizando los daños (<a href="https://www.boe.es/eli/es/lo/1982/05/05/1/con" target="_blank" rel="noopener">LO 1/1982</a>). Por eso Claudia debe seguir siendo un personaje de Vitruvi y la modelo, quien le da vida en eventos y directos.</li>
+        <li>Nunca presentar a la modelo como «la verdadera Claudia» si el contenido sigue siendo IA.</li>
+        <li>La reforma enviada al Congreso en julio de 2026 trata la imagen o la voz simulada con IA sin consentimiento como intromisión ilegítima (<a href="https://www.moncloa.com/2026/07/08/gobierno-aprueba-ley-derecho-al-honor-3396249/" target="_blank" rel="noopener">Moncloa.com</a>). Por eso Claudia no se parece a nadie real.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="mono" style="color:var(--muted)">Las fuentes legales vienen de buscadores, no de los textos completos del BOE. Conviene que un abogado lo revise antes del lanzamiento.</p>
+</section>
+
+<section class="sheet" id="creditos">
+  <div class="sheet-head"><h2>Créditos</h2><span class="lab">Lámina 10 · 3.000 asignados</span></div>
+  <div class="tw"><table>
+    <thead><tr><th>Partida</th><th>Detalle</th><th class="n">Créditos</th></tr></thead>
+    <tbody>
+      <tr><td>Casting</td><td>6 retratos, Seedream 5 Pro</td><td class="n">450</td></tr>
+      <tr><td>Voz</td><td>Locución de 13 s, ElevenLabs v4</td><td class="n">52</td></tr>
+      <tr><td>Pruebas de movimiento</td><td>2 clips de 5 s, Kling 2.5</td><td class="n">280</td></tr>
+      <tr><td>Sesión de fotos</td><td>Retrato 2K, look, puerta, terraza, ficha y render 1</td><td class="n">475</td></tr>
+      <tr><td>Vídeos de escena</td><td>Puerta, terraza y render 1, Kling 2.5</td><td class="n">420</td></tr>
+      <tr><td>Vídeo hablando</td><td>5 s con voz, Seedance 2.0 Mini</td><td class="n">350</td></tr>
+      <tr><td>Render, segunda prueba</td><td>Imagen y vídeo</td><td class="n">215</td></tr>
+      <tr><td>Sin coste</td><td>Recorte de la ficha, personaje en biblioteca, teaser y análisis de calidad</td><td class="n">0</td></tr>
+    </tbody>
+    <tfoot><tr><td>Total</td><td>Comprobado con el saldo de la cuenta: 44.359 → 42.117</td><td class="n">2.242</td></tr></tfoot>
+  </table></div>
+  <p class="prose">Quedan <b>758 créditos</b>. Mi propuesta: dos planos nuevos de interior (unos 430) y un cierre a cámara (140), y monto el primer reel de 25 s reutilizando la puerta, la terraza y la locución. En total, unos 570.</p>
+</section>
+
+<section class="sheet" id="fuentes">
+  <div class="sheet-head"><h2>Fuentes</h2><span class="lab">Lámina 11 · Consultadas el 23-10-2026</span></div>
+  <p class="prose">Los agentes de investigación solo pudieron leer los resultados del buscador, no las páginas enteras. Las cifras de seguidores e ingresos son estimaciones de terceros o de los propios creadores.</p>
+  <ul class="src">
+    <li><a href="https://techcrunch.com/2026/04/30/instagram-restricts-reach-of-content-aggregators-in-new-crackdown/" target="_blank" rel="noopener">TechCrunch · Instagram restringe a los agregadores (abr-2026)</a></li>
+    <li><a href="https://techcrunch.com/2024/04/30/instagram-is-updating-its-ranking-systems-to-surface-more-content-from-smaller-original-creators" target="_blank" rel="noopener">TechCrunch · Originalidad en Reels (abr-2024)</a></li>
+    <li><a href="https://creators.instagram.com/blog/ai-generated-profile-label" target="_blank" rel="noopener">Instagram · Etiqueta de perfil generado con IA</a></li>
+    <li><a href="https://www.socialmediatoday.com/news/instagram-shares-algorithm-2025/738034/" target="_blank" rel="noopener">Social Media Today · Señales de ranking</a></li>
+    <li><a href="https://socialinsider.io/blog/instagram-reels-length/" target="_blank" rel="noopener">Socialinsider · Duración de reels</a></li>
+    <li><a href="https://storrito.com/resources/how-instagram-trial-reels-work-72-hours/" target="_blank" rel="noopener">Storrito · Trial Reels</a></li>
+    <li><a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener">Reglamento de IA · Artículo 50</a></li>
+    <li><a href="https://www.autocontrol.es/autocontrol/sala-de-prensa/autocontrol-noticias/entra-vigor-nuevo-codigo-conducta-publicidad-influencers/" target="_blank" rel="noopener">Autocontrol · Código de influencers</a></li>
+    <li><a href="https://www.boe.es/eli/es/lo/1982/05/05/1/con" target="_blank" rel="noopener">BOE · LO 1/1982, derecho a la propia imagen</a></li>
+    <li><a href="https://www.boe.es/eli/es/rdlg/1996/04/12/1/con" target="_blank" rel="noopener">BOE · Ley de Propiedad Intelectual</a></li>
+    <li><a href="https://www.boe.es/eli/es/rd/1989/04/21/515/con" target="_blank" rel="noopener">BOE · RD 515/1989, publicidad de vivienda</a></li>
+    <li><a href="https://www.boe.es/eli/es/rd/2021/06/01/390/con" target="_blank" rel="noopener">BOE · RD 390/2021, certificado energético</a></li>
+    <li><a href="https://www.moncloa.com/2026/07/08/gobierno-aprueba-ley-derecho-al-honor-3396249/" target="_blank" rel="noopener">Moncloa.com · Reforma del derecho a la imagen</a></li>
+    <li><a href="https://collaborate.princeton.edu/en/publications/universal-dimensions-of-social-cognition-warmth-and-competence/" target="_blank" rel="noopener">Fiske et al. · Calidez y competencia</a></li>
+    <li><a href="https://research.polyu.edu.hk/en/publications/making-sense-the-sensory-specific-nature-of-virtual-influencer-ef/" target="_blank" rel="noopener">Zhou et al. · Influencers virtuales y sentidos</a></li>
+    <li><a href="https://jyx.jyu.fi/handle/123456789/111068" target="_blank" rel="noopener">JYU · Hiperrealismo y rechazo</a></li>
+    <li><a href="https://www.michiganmedicine.org/health-lab/older-adults-and-ai-poll-suggests-wary-welcome" target="_blank" rel="noopener">Michigan Medicine · Mayores e IA</a></li>
+    <li><a href="https://reports.gettyimages.com/VisualGPS-Building-Trust-In-AI.pdf" target="_blank" rel="noopener">Getty Images · Confianza en imágenes IA</a></li>
+    <li><a href="https://thearf.org/?p=370039" target="_blank" rel="noopener">ARF · Autenticidad con personas reales</a></li>
+    <li><a href="https://www.newtral.es/influencers-creadas-inteligencia-artificial/20240225/" target="_blank" rel="noopener">Newtral · Influencers creadas con IA</a></li>
+    <li><a href="https://euronews.com/next/2024/03/22/meet-the-first-spanish-ai-model-earning-up-to-10000-per-month" target="_blank" rel="noopener">Euronews · Aitana López</a></li>
+    <li><a href="https://www.digitalmusicnews.com/2025/10/20/virtual-influencers-out-earn-humans/" target="_blank" rel="noopener">Digital Music News · Lu do Magalu</a></li>
+    <li><a href="https://www.domusweb.it/en/design/gallery/2020/10/01/ikea-picked-a-virtual-influencer-to-promote-its-new-tokyo-store.amp.html" target="_blank" rel="noopener">Domus · Imma e IKEA</a></li>
+    <li><a href="https://creatordb.app/creatorstats/lilmiquela/" target="_blank" rel="noopener">CreatorDB · Lil Miquela</a></li>
+    <li><a href="https://campaignme.com/ai-influencer-talent-management-agency-pixel-launches-in-the-gcc/" target="_blank" rel="noopener">Campaign ME · Noura</a></li>
+    <li><a href="https://www.eleconomista.es/vivienda-inmobiliario/noticias/13795072/02/26/agentes-virtuales-y-planos-disenados-en-minutos-la-ia-llega-al-sector-inmobiliario.html" target="_blank" rel="noopener">elEconomista · Agentes virtuales en promotoras</a></li>
+    <li><a href="https://businessinsider.nl/a-19-year-old-real-estate-agent-has-found-an-ingenious-new-way-to-sell-homes-and-make-money/" target="_blank" rel="noopener">Business Insider · Trent Miller</a></li>
+    <li><a href="https://www.cbsaustin.com/news/offbeat/san-antonio-realtor-gains-140k-followers-with-aggressive-tours-on-instagram-people-local-homes-houses-real-estate-mortgage-bexar-county" target="_blank" rel="noopener">CBS Austin · Brad Scott</a></li>
+    <li><a href="https://nowbam.com/3-tricks-to-make-your-real-estate-reels-go-viral/" target="_blank" rel="noopener">Nowbam · Walk and talk</a></li>
+    <li><a href="https://www.inman.com/2026/10/10/listing-video-idea-sells-house-and-neighborhood/" target="_blank" rel="noopener">Inman · Casa y barrio</a></li>
+    <li><a href="https://www.taylorherring.com/?p=17265" target="_blank" rel="noopener">Taylor Herring · Purplebricks, 25 s</a></li>
+    <li><a href="https://www.cbsnews.com/amp/news/tiktok-caleb-simpson-apartment-rents" target="_blank" rel="noopener">CBS News · Caleb Simpson</a></li>
+  </ul>
+</section>
+
+<footer>Vitruvi Studio · Claudia · Dossier preparado por Claude el 23 de octubre de 2026</footer>
+</div>
