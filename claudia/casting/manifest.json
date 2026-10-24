@@ -1,1 +1,221 @@
-[]
+[
+ {
+  "n": 1,
+  "group": "Rubias",
+  "groupLine": "El código del realtor de éxito en EE. UU.",
+  "label": "Rubia miel Miami",
+  "age": 25,
+  "chips": [
+   "Rubio miel liso",
+   "Ojos azules",
+   "Piel dorada"
+  ],
+  "inspired": "Dina Goldentayer, Carrie Wells, Glennda Baker, Adela Parrilla",
+  "traits": "long glossy honey-blonde hair in a sleek straight salon blowout with soft bent ends, golden sun-kissed tan, light blue eyes, soft oval face with high cheekbones, fine straight nose, full groomed brows, bright wide smile with white teeth, glossy nude lips, polished fresh glam makeup, slim figure",
+  "sheet": "gOpC4IfSXO",
+  "swim_elegant": "SyeENqWUb8",
+  "swim_bold": "6AarYSIiJO",
+  "door": "tCOzFMbmZJ",
+  "presenter": "Cq6TkobEEy"
+ },
+ {
+  "n": 2,
+  "group": "Rubias",
+  "label": "Platino glam",
+  "age": 25,
+  "chips": [
+   "Platino ondas",
+   "Ojos azules",
+   "Bronceado"
+  ],
+  "inspired": "Emma Hernan, Katrina Barrett",
+  "traits": "very long platinum ice-blonde hair in big glossy mermaid waves, deep golden tan, bright blue eyes, heart-shaped face, full lips, long lashes, glamorous polished makeup, curvy athletic figure",
+  "sheet": "O68qRCpynm",
+  "swim_elegant": "ksY8wEd16B",
+  "swim_bold": "VXx4h7oMMU",
+  "door": "EbiVrtSuuO",
+  "presenter": "1lWI7H9r4r"
+ },
+ {
+  "n": 3,
+  "group": "Rubias",
+  "label": "Bob platino",
+  "age": 26,
+  "chips": [
+   "Bob platino",
+   "Ojos gris azul",
+   "Labio baya"
+  ],
+  "inspired": "Mary Bonnet, Dita Martínková",
+  "traits": "chin-length sleek platinum-blonde bob with a deep side part tucked behind one ear, golden tan, grey-blue eyes, sculpted cheekbones, defined brows, soft smoky eyes and a berry lip, slim figure",
+  "sheet": "UPduNhgwny",
+  "swim_elegant": "79BFRswJAL",
+  "swim_bold": "dtg3fVAXSL",
+  "door": "DoLNh0ypcl",
+  "presenter": "6AarW4CiJO"
+ },
+ {
+  "n": 4,
+  "group": "Rubias",
+  "label": "Rizos dorados",
+  "age": 25,
+  "chips": [
+   "Rizo dorado XL",
+   "Ojos verdes",
+   "Piel oliva"
+  ],
+  "inspired": "Tatiana Londono, Katrina Barrett",
+  "traits": "big voluminous golden-blonde spiral curls framing the face, warm light-olive skin, hazel-green eyes, oval face, defined brows, warm nude lips, radiant confident smile, slim figure",
+  "sheet": "LwVvO8TswO",
+  "swim_elegant": "jUTh96ZLD0",
+  "swim_bold": "u53MxCWQLD",
+  "door": "9Zhkn4INYZ",
+  "presenter": "fHN0kfNCDY"
+ },
+ {
+  "n": 5,
+  "group": "Rubias",
+  "label": "Rubia Marbella",
+  "age": 24,
+  "chips": [
+   "Rubio playa",
+   "Ojos verde azul",
+   "Pecas"
+  ],
+  "inspired": "Summer Newman",
+  "traits": "long golden-blonde beachy waves with slightly darker roots, sun-kissed tan, blue-green eyes, youthful soft oval face, a few light freckles across the nose, natural glowy makeup, slim toned athletic figure",
+  "sheet": "1lWIUd5r4r",
+  "swim_elegant": "eIlif5hdqL",
+  "swim_bold": "nVbwXfWYQD",
+  "door": "4RmKneu9Aa",
+  "presenter": "8a7AFLUIrU"
+ },
+ {
+  "n": 6,
+  "group": "Rubias",
+  "label": "Coleta pulida",
+  "age": 26,
+  "chips": [
+   "Coleta alta",
+   "Ojos marrones",
+   "Pómulo alto"
+  ],
+  "inspired": "Heather Rae El Moussa",
+  "traits": "honey-blonde hair pulled into a sleek high ponytail with a thin braided detail at the crown, golden tan, warm brown eyes, sharp high cheekbones, defined jawline, sleek brows, glossy nude lips, slim figure",
+  "sheet": "79BFiCbJAL",
+  "swim_elegant": "vQ4WkGMa47",
+  "swim_bold": "5jzBUR7Kxe",
+  "door": "SyeEiTLUb8",
+  "presenter": "tCOzqUWmZJ"
+ },
+ {
+  "n": 7,
+  "group": "Entre rubia y morena",
+  "groupLine": "El puente Miami–Barcelona",
+  "label": "Bronde caramelo",
+  "age": 25,
+  "chips": [
+   "Bronde balayage",
+   "Ojos avellana",
+   "Piel dorada"
+  ],
+  "inspired": "Chrishell Stause, Shelby y Monica Church",
+  "traits": "long bronde hair with dark-brown roots melting into caramel and honey balayage, voluminous soft waves, golden tan, warm brown-hazel eyes, heart-shaped face, full brushed-up brows, full lips with glossy nude-pink color, slim figure",
+  "sheet": "P3t52HF42C",
+  "swim_elegant": "jUTh4IaLD0",
+  "swim_bold": "ksY87zi16B",
+  "door": "XmSREgQBfo",
+  "presenter": "0e1yIkWTfW"
+ },
+ {
+  "n": 8,
+  "group": "Entre rubia y morena",
+  "label": "Castaña natural",
+  "age": 24,
+  "chips": [
+   "Castaño claro",
+   "Ojos verde azul",
+   "Pecas"
+  ],
+  "inspired": "Kirsten Dirksen, Shelby Church",
+  "traits": "long light-brown hair with natural loose waves and sun-lightened strands, fair skin with light freckles, clear blue-green eyes, soft natural features, barely-there fresh makeup, slim figure",
+  "sheet": "dtg3v6JXSL",
+  "swim_elegant": "MBj9v4wDCm",
+  "swim_bold": "jUThPfvLD0",
+  "door": "VXx4miEMMU",
+  "presenter": "4RmKnjN9Aa"
+ },
+ {
+  "n": 9,
+  "group": "Entre rubia y morena",
+  "label": "Cobriza",
+  "age": 25,
+  "chips": [
+   "Cobre fresa",
+   "Ojos verdes",
+   "Piel clara"
+  ],
+  "inspired": "Nadine Vonmetz, Bianka Maier",
+  "traits": "long copper-strawberry hair in soft polished waves, fair porcelain skin with light freckles, green eyes, refined oval face, soft auburn brows, natural rosy makeup, slim figure",
+  "sheet": "YM57ewaWeC",
+  "swim_elegant": "jUThPEbLD0",
+  "swim_bold": "LwVv9vVswO",
+  "door": "cpkO8iF0eP",
+  "presenter": "mEynbDthJQ"
+ },
+ {
+  "n": 10,
+  "group": "Morenas",
+  "groupLine": "España y Miami",
+  "label": "Morena mediterránea",
+  "age": 25,
+  "chips": [
+   "Castaño oscuro",
+   "Ojos marrones",
+   "Piel oliva"
+  ],
+  "inspired": "Maribel Martínez, Rosa Montoya, Lisiane Martins, Karin Schönbächler",
+  "traits": "long voluminous dark-brown hair with soft glossy waves and a middle part, warm olive Mediterranean skin, dark brown eyes, oval face, full natural brows, warm open smile, light bronze makeup, slim figure",
+  "sheet": "5jzBlBTKxe",
+  "swim_elegant": "KLnowCEkqp",
+  "swim_bold": "YM57B3qWeC",
+  "door": "mEynbdvhJQ",
+  "presenter": "ovw2QMV829"
+ },
+ {
+  "n": 11,
+  "group": "Morenas",
+  "label": "Latina Miami",
+  "age": 24,
+  "chips": [
+   "Negro liso",
+   "Ojos almendra",
+   "Piel caramelo"
+  ],
+  "inspired": "Mercado Miami; glam de Rosa Montoya",
+  "traits": "long sleek jet-black hair with a center part, warm caramel skin, deep brown almond-shaped eyes, high cheekbones, bold arched brows, full lips in glossy nude-brown, polished glam makeup, slim curvy figure",
+  "sheet": "79BFiHrJAL",
+  "swim_elegant": "BhUZQhyoQR",
+  "swim_bold": "lJDf6Ougv9",
+  "door": "eIliCmTdqL",
+  "presenter": "DoLNatApcl"
+ },
+ {
+  "n": 12,
+  "group": "Morenas",
+  "label": "Castaña Mayfair",
+  "age": 26,
+  "chips": [
+   "Chocolate ondas",
+   "Ojos verde avellana",
+   "Rasgo de modelo"
+  ],
+  "inspired": "Ari Reid, Deborah Kern",
+  "traits": "long dark-chocolate brunette hair in tousled voluminous waves, fair-olive skin, green-hazel eyes, model-like high cheekbones, strong natural brows, softly defined lips, tall slim figure",
+  "sheet": "mEynFWohJQ",
+  "swim_elegant": "6Aar0Y1iJO",
+  "swim_bold": "mEyn5qjhJQ",
+  "door": "P3t5nzR42C",
+  "presenter": "rgctyysxtc"
+ }
+]

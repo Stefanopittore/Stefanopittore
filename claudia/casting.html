@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: an agency board. One card per girl with her 8 digitals in a row, a star to pick finalists, the picks pinned on top */
+/* Layout: an agency board. A one-glance wall of smiles, then one card per girl with her 8 digitals in a row, a star to pick finalists pinned on top */
 :root{
   --paper:#F3F2EE; --card:#FFFFFF; --ink:#18292B; --muted:#5E6E6E; --rule:#D6DAD5;
   --camel:#A8723F; --camel-soft:#EFE3D3; --ok:#3F6B3A;
@@ -26,13 +26,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 h1,h2,h3,p{margin:0}
 h1{font-size:clamp(48px,8vw,96px);font-weight:900;font-variation-settings:"wdth" 125;line-height:.9;letter-spacing:-.02em}
 h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;font-variation-settings:"wdth" 110;text-wrap:balance}
-h3{font-size:20px;font-weight:800}
+h3{font-size:18px;font-weight:800;line-height:1.2}
 .lab{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit}
 a{color:var(--ink);text-decoration-color:var(--camel);text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--camel);outline-offset:3px}
-section{display:flex;flex-direction:column;gap:18px}
+section{display:flex;flex-direction:column;gap:16px}
+.head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.head::after{content:"";flex:1;height:1px;background:var(--rule);min-width:24px}
 
 /* Picks bar */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);
@@ -49,12 +51,21 @@ section{display:flex;flex-direction:column;gap:18px}
 .how span{background:var(--card);border:1px solid var(--rule);padding:8px 12px;font-weight:600;font-size:15px}
 .how span b{color:var(--camel)}
 
-/* Groups and cards */
+/* Wall of smiles */
+.wall{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.wall{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.wall{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.face{position:relative;margin:0;border:0;padding:0;background:var(--card);cursor:pointer;text-align:left;display:flex;flex-direction:column;min-width:0;border:1px solid var(--rule)}
+.face img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+.face span.t{padding:6px 8px;font-weight:700;font-size:13px;line-height:1.2}
+.face .n{position:absolute;top:6px;left:6px;width:34px;height:34px;border-radius:50%;background:var(--card);color:var(--ink);display:grid;place-items:center;font-weight:900;font-size:17px;font-variant-numeric:tabular-nums;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.face.fin{border-color:var(--camel);box-shadow:0 0 0 2px var(--camel)}
+.face.fin .n{background:var(--camel);color:var(--card)}
+
+/* Cards */
 .group{display:flex;flex-direction:column;gap:12px}
-.ghead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.ghead::after{content:"";flex:1;height:1px;background:var(--rule);min-width:24px}
 .cards{display:flex;flex-direction:column;gap:14px}
-.cc{background:var(--card);border:1px solid var(--rule);padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cc{background:var(--card);border:1px solid var(--rule);padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0;scroll-margin-top:72px}
 .cc.fin{border-color:var(--camel);box-shadow:0 0 0 2px var(--camel)}
 .cc-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .num{width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;
@@ -77,6 +88,16 @@ section{display:flex;flex-direction:column;gap:18px}
 .note input{flex:1;min-width:0;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:9px 10px;font:inherit;font-size:15px}
 .insp{font-size:13px;color:var(--muted)}
 
+/* Previous round */
+.old{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.old{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.old{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.oc{background:var(--card);border:1px solid var(--rule);display:flex;flex-direction:column;min-width:0;scroll-margin-top:72px}
+.oc.fin{border-color:var(--camel);box-shadow:0 0 0 2px var(--camel)}
+.oc img{width:100%;aspect-ratio:3/4;object-fit:cover;cursor:zoom-in}
+.oc .row{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 8px;font-weight:700;font-size:13px}
+.oc .star{padding:4px 8px;font-size:13px}
+
 /* Viewer */
 dialog{border:0;padding:0;background:transparent;max-width:min(96vw,980px);width:100%}
 dialog::backdrop{background:rgba(10,14,15,.86)}
@@ -87,22 +108,38 @@ dialog::backdrop{background:rgba(10,14,15,.86)}
 .lb-cap{font-weight:700;min-width:12ch;text-align:center}
 
 /* Persona */
-.persona{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
-.pcard{background:var(--card);border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.pcard p{max-width:65ch}
-.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.persona{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px}
+.pcard{background:var(--card);border:1px solid var(--rule);padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pcard p,.pcard li{font-size:15px}
+.pcard ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.lead{font-size:clamp(20px,2.4vw,26px);font-weight:700;max-width:40ch;text-wrap:balance}
+.story{display:flex;flex-direction:column;gap:8px;max-width:70ch}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+@media (max-width:860px){.cal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cal div{background:var(--card);border:1px solid var(--rule);padding:10px;font-size:14px;min-width:0}
+.cal b{display:block;font-size:13px;color:var(--camel)}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
 .post{background:var(--card);border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .post .hook{font-size:19px;font-weight:800;line-height:1.2;text-wrap:balance}
-.post .copy{font-size:14px;white-space:pre-line}
+.post .copy{font-size:14px;white-space:pre-line;border-left:3px solid var(--camel-soft);padding-left:10px}
+.post .meta{display:flex;gap:6px;flex-wrap:wrap}
 .pnum{font-family:var(--mono);font-size:12px;color:var(--camel);font-weight:500}
+.tags{font-family:var(--mono);font-size:12px;color:var(--muted)}
 
 @media print{
-  .bar,.note,.star,dialog{display:none!important}
-  body{padding-block:0}
-  .cc{break-inside:avoid}
-  .group{break-before:auto}
+  @page{size:A4 landscape;margin:9mm}
+  body{padding:0;font-size:12px}
+  body::before,.bar,.note,.star,dialog{display:none!important}
+  .wrap{max-width:none;gap:16px}
+  h1{font-size:44px}
+  .top{padding-top:0}
+  .wall{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .shots{grid-template-columns:repeat(8,minmax(0,1fr))}
+  .cc,.oc,.post,.pcard,.face{break-inside:avoid}
+  .group,.section-break{break-before:page}
+  .old{grid-template-columns:repeat(6,minmax(0,1fr))}
 }
-@media (prefers-reduced-motion:no-preference){.star,.cc{transition:background-color .15s,box-shadow .15s}}
+@media (prefers-reduced-motion:no-preference){.star,.cc,.face{transition:background-color .15s,box-shadow .15s}}
 </style>
 
 <div class="wrap">
@@ -113,19 +150,29 @@ dialog::backdrop{background:rgba(10,14,15,.86)}
   </div>
 
   <header class="top">
-    <span class="lab">Vitruvi · Casting interno · Ronda 1</span>
+    <span class="lab">Vitruvi · Casting interno · Ronda 2 · 24 oct 2026</span>
     <h1>Casting Claudia</h1>
     <div class="how">
-      <span><b id="count">12</b> chicas · 24 a 26 años</span>
+      <span><b id="count">12</b> chicas · 24 a 26 años · 8 fotos cada una</span>
       <span>Toca <b>★ Finalista</b> en tus 3</span>
       <span>Toca una foto para verla grande</span>
-      <span>Al lado: otro ángulo o “mezclar con la 4”</span>
+      <span>Escribe al lado: otro ángulo o “mezclar con la 4”</span>
     </div>
   </header>
 
+  <section aria-labelledby="wall-h">
+    <div class="head"><h2 id="wall-h">De un vistazo</h2><span class="lab">Toca una cara para ir a su ficha</span></div>
+    <div class="wall" id="wall"></div>
+  </section>
+
   <div id="board" class="wrap" style="gap:40px"></div>
 
-  <!-- PERSONA -->
+  <section aria-labelledby="old-h" class="section-break">
+    <div class="head"><h2 id="old-h">Ronda anterior</h2><span class="lab">Por si quieres recuperar o mezclar alguna</span></div>
+    <div class="old" id="old"></div>
+  </section>
+
+  <div id="persona" class="wrap" style="gap:40px" hidden></div>
 </div>
 
 <dialog id="lb" aria-label="Foto ampliada">
@@ -140,13 +187,19 @@ dialog::backdrop{background:rgba(10,14,15,.86)}
   </div>
 </dialog>
 
-<script id="cast-data" type="application/json">[]</script>
+<script id="cast-data" type="application/json">[{"n": 1, "group": "Rubias", "groupLine": "El código del realtor de éxito en EE. UU.", "label": "Rubia miel Miami", "age": 25, "chips": ["Rubio miel liso", "Ojos azules", "Piel dorada"], "inspired": "Dina Goldentayer, Carrie Wells, Glennda Baker, Adela Parrilla"}, {"n": 2, "group": "Rubias", "label": "Platino glam", "age": 25, "chips": ["Platino ondas", "Ojos azules", "Bronceado"], "inspired": "Emma Hernan, Katrina Barrett"}, {"n": 3, "group": "Rubias", "label": "Bob platino", "age": 26, "chips": ["Bob platino", "Ojos gris azul", "Labio baya"], "inspired": "Mary Bonnet, Dita Martínková"}, {"n": 4, "group": "Rubias", "label": "Rizos dorados", "age": 25, "chips": ["Rizo dorado XL", "Ojos verdes", "Piel oliva"], "inspired": "Tatiana Londono, Katrina Barrett"}, {"n": 5, "group": "Rubias", "label": "Rubia Marbella", "age": 24, "chips": ["Rubio playa", "Ojos verde azul", "Pecas"], "inspired": "Summer Newman"}, {"n": 6, "group": "Rubias", "label": "Coleta pulida", "age": 26, "chips": ["Coleta alta", "Ojos marrones", "Pómulo alto"], "inspired": "Heather Rae El Moussa"}, {"n": 7, "group": "Entre rubia y morena", "groupLine": "El puente Miami–Barcelona", "label": "Bronde caramelo", "age": 25, "chips": ["Bronde balayage", "Ojos avellana", "Piel dorada"], "inspired": "Chrishell Stause, Shelby y Monica Church"}, {"n": 8, "group": "Entre rubia y morena", "label": "Castaña natural", "age": 24, "chips": ["Castaño claro", "Ojos verde azul", "Pecas"], "inspired": "Kirsten Dirksen, Shelby Church"}, {"n": 9, "group": "Entre rubia y morena", "label": "Cobriza", "age": 25, "chips": ["Cobre fresa", "Ojos verdes", "Piel clara"], "inspired": "Nadine Vonmetz, Bianka Maier"}, {"n": 10, "group": "Morenas", "groupLine": "España y Miami", "label": "Morena mediterránea", "age": 25, "chips": ["Castaño oscuro", "Ojos marrones", "Piel oliva"], "inspired": "Maribel Martínez, Rosa Montoya, Lisiane Martins, Karin Schönbächler"}, {"n": 11, "group": "Morenas", "label": "Latina Miami", "age": 24, "chips": ["Negro liso", "Ojos almendra", "Piel caramelo"], "inspired": "Mercado Miami; glam de Rosa Montoya"}, {"n": 12, "group": "Morenas", "label": "Castaña Mayfair", "age": 26, "chips": ["Chocolate ondas", "Ojos verde avellana", "Rasgo de modelo"], "inspired": "Ari Reid, Deborah Kern"}]</script>
+<script id="persona-data" type="application/json">{}</script>
 <script>
 const SHOTS = [
   ["seria", "Seria"], ["sonrisa", "Sonrisa"], ["perfil", "Perfil"], ["cuerpo", "Cuerpo"],
   ["swim_elegant", "Bikini elegante"], ["swim_bold", "Bikini atrevido"], ["door", "Puerta"], ["presenter", "Look presentadora"],
 ];
+const OLD = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(i => ({
+  id: "a" + String(i).padStart(2, "0"), label: "A" + i, src: `media/c${String(i).padStart(2, "0")}.jpg`,
+  age: i <= 6 ? "≈28 años" : "26 años", now: i === 7,
+}));
 const cands = JSON.parse(document.getElementById("cast-data").textContent);
+const persona = JSON.parse(document.getElementById("persona-data").textContent);
 const pad = n => String(n).padStart(2, "0");
 const picks = {};
 let db = null;
@@ -161,9 +214,25 @@ function el(tag, attrs = {}, ...kids) {
   return e;
 }
 
+function starButton(id, label, small) {
+  const b = el("button", { type: "button", class: "star", "aria-pressed": "false", "data-star": id, "aria-label": `Marcar ${label} como finalista` }, small ? "★" : "★ Finalista");
+  b.addEventListener("click", () => save(id, { finalist: !(picks[id]?.finalist) }));
+  return b;
+}
+
 function render() {
-  const board = document.getElementById("board");
   document.getElementById("count").textContent = cands.length || 12;
+  const wall = document.getElementById("wall");
+  for (const c of cands) {
+    const id = "c" + pad(c.n);
+    const f = el("button", { type: "button", class: "face", "data-face": id, "aria-label": `Ir a la candidata ${c.n}, ${c.label}` },
+      el("img", { src: `media/casting/${pad(c.n)}_sonrisa.jpg`, alt: "" }),
+      el("span", { class: "n", text: c.n }),
+      el("span", { class: "t", text: c.label }));
+    f.addEventListener("click", () => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    wall.append(f);
+  }
+  const board = document.getElementById("board");
   const groups = [];
   for (const c of cands) {
     let g = groups.find(g => g.name === c.group);
@@ -174,37 +243,106 @@ function render() {
     const cards = el("div", { class: "cards" });
     for (const c of g.items) cards.append(card(c));
     board.append(el("section", { class: "group" },
-      el("div", { class: "ghead" }, el("h2", { text: g.name }), g.line ? el("span", { class: "lab", text: g.line }) : null),
+      el("div", { class: "head" }, el("h2", { text: g.name }), g.line ? el("span", { class: "lab", text: g.line }) : null),
       cards));
   }
   if (!cands.length) board.append(el("p", { class: "none", text: "Las fotos aparecen aquí en cuanto estén generadas." }));
+  const old = document.getElementById("old");
+  for (const o of OLD) {
+    const img = el("img", { src: o.src, alt: `Ronda anterior ${o.label}`, loading: "lazy" });
+    img.addEventListener("click", () => openLb({ title: o.label, list: [[o.src, o.label + (o.now ? " · la actual" : "")]] }, 0));
+    old.append(el("article", { class: "oc", id: o.id }, img,
+      el("div", { class: "row" }, el("span", { text: `${o.label} · ${o.now ? "la actual" : o.age}` }), starButton(o.id, o.label, true))));
+  }
+  renderPersona();
 }
 
 function card(c) {
   const id = "c" + pad(c.n);
   const chips = el("div", { class: "chips" });
   for (const t of c.chips || []) chips.append(el("span", { class: "chip", text: t }));
-  const star = el("button", { type: "button", class: "star", "aria-pressed": "false", id: "star-" + id }, "★ Finalista");
-  star.addEventListener("click", () => save(c.n, { finalist: !(picks[id]?.finalist) }));
   const shots = el("div", { class: "shots" });
+  const list = SHOTS.map(([k, label]) => [`media/casting/${pad(c.n)}_${k}.jpg`, `${c.n} · ${label}`]);
   SHOTS.forEach(([k, label], i) => {
-    const img = el("img", { src: `media/casting/${pad(c.n)}_${k}.jpg`, alt: `Candidata ${c.n}, ${label.toLowerCase()}`, loading: "lazy" });
+    const img = el("img", { src: list[i][0], alt: `Candidata ${c.n}, ${label.toLowerCase()}`, loading: "lazy" });
     const fig = el("figure", { class: "shot" }, el("button", { type: "button", "aria-label": `Ver grande: ${label}` }, img), el("figcaption", { text: label }));
     img.addEventListener("error", () => { fig.classList.add("missing"); img.remove(); });
-    fig.querySelector("button").addEventListener("click", () => { if (fig.classList.contains("missing")) return; openLb(c, i); });
+    fig.querySelector("button").addEventListener("click", () => { if (!fig.classList.contains("missing")) openLb({ list }, i); });
     shots.append(fig);
   });
   const note = el("input", { type: "text", id: "note-" + id, placeholder: "Nota: otro ángulo, mezclar con…", "aria-label": `Nota sobre la candidata ${c.n}` });
   let t;
-  note.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => save(c.n, { note: note.value.trim() }), 900); });
-  note.addEventListener("change", () => { clearTimeout(t); save(c.n, { note: note.value.trim() }); });
+  note.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => save(id, { note: note.value.trim() }), 900); });
+  note.addEventListener("change", () => { clearTimeout(t); save(id, { note: note.value.trim() }); });
   return el("article", { class: "cc", id },
     el("div", { class: "cc-head" },
       el("span", { class: "num", text: c.n }),
-      el("div", { class: "who" }, el("b", { text: c.label }), c.inspired ? el("span", { class: "insp", text: "Rasgos de: " + c.inspired }) : null),
-      chips, star),
+      el("div", { class: "who" }, el("b", { text: `${c.label} · ${c.age}` }), c.inspired ? el("span", { class: "insp", text: "Rasgos de: " + c.inspired }) : null),
+      chips, starButton(id, `la ${c.n}`)),
     shots,
     el("div", { class: "note" }, note));
+}
+
+function renderPersona() {
+  const p = persona;
+  if (!p || !p.resumen) return;
+  const box = document.getElementById("persona");
+  const sec = (title, line, ...kids) => el("section", { class: "section-break" },
+    el("div", { class: "head" }, el("h2", { text: title }), line ? el("span", { class: "lab", text: line }) : null), ...kids);
+  const list = arr => { const u = el("ul"); for (const x of arr || []) u.append(el("li", { text: x })); return u; };
+
+  const chips = el("div", { class: "chips" });
+  for (const x of p.resumen.chips || []) chips.append(el("span", { class: "chip", text: x }));
+  const story = el("div", { class: "story" });
+  for (const x of p.historia || []) story.append(el("p", { text: x }));
+  box.append(sec("Quién es Claudia", "Personaje", el("p", { class: "lead", text: p.resumen.frase }), chips, story));
+
+  const life = el("div", { class: "persona" });
+  for (const v of p.vida || []) life.append(el("div", { class: "pcard" }, el("h3", { text: v.titulo }), el("p", { text: v.texto })));
+  box.append(sec("Su vida", "Como una modelo real", life));
+
+  if (p.voz) {
+    const v = p.voz;
+    box.append(sec("Cómo habla y se mueve", v.tono || "", el("div", { class: "persona" },
+      el("div", { class: "pcard" }, el("h3", { text: "Frases en español" }), list(v.frases_es)),
+      el("div", { class: "pcard" }, el("h3", { text: "Frases en inglés" }), list(v.frases_en)),
+      el("div", { class: "pcard" }, el("h3", { text: "Gestos" }), list(v.gestos)),
+      el("div", { class: "pcard" }, el("h3", { text: "Nunca" }), list(v.nunca)))));
+  }
+  if (p.copies) {
+    box.append(sec("Cómo escribe", "Copies", el("div", { class: "persona" },
+      el("div", { class: "pcard" }, el("h3", { text: "Reglas" }), list(p.copies.reglas)),
+      el("div", { class: "pcard" }, el("h3", { text: "Ejemplo ES" }), el("p", { class: "copy", text: p.copies.ejemplo_es })),
+      el("div", { class: "pcard" }, el("h3", { text: "Example EN" }), el("p", { class: "copy", text: p.copies.ejemplo_en })))));
+  }
+  if (p.calendario?.length) {
+    const cal = el("div", { class: "cal" });
+    for (const d of p.calendario) cal.append(el("div", {}, el("b", { text: d.dia }), document.createTextNode(d.que)));
+    const st = p.stories?.length ? el("div", { class: "pcard" }, el("h3", { text: "Stories" }), list(p.stories)) : null;
+    box.append(sec("Su semana en redes", "Feed, reels y stories", cal, st));
+  }
+  if (p.inspiraciones?.length) {
+    const g = el("div", { class: "persona" });
+    for (const x of p.inspiraciones) g.append(el("div", { class: "pcard" }, el("h3", { text: x.nombre }), el("p", { text: x.por_que }), el("p", { class: "insp", text: "Tomamos: " + x.tecnica })));
+    box.append(sec("Las que mejor comunican", "Inspiración de estilo, nunca de cara ni de voz", g));
+  }
+  if (p.posts?.length) {
+    const g = el("div", { class: "posts" });
+    for (const x of p.posts) {
+      const meta = el("div", { class: "meta" }, el("span", { class: "chip", text: x.formato }));
+      for (const im of x.imagenes || []) meta.append(el("span", { class: "chip", text: im }));
+      g.append(el("article", { class: "post" },
+        el("span", { class: "pnum", text: `Publicación ${x.n}` }),
+        el("p", { class: "hook", text: x.gancho }),
+        el("p", { text: x.idea }), meta,
+        el("p", { class: "copy", text: x.copy_es }),
+        el("p", { class: "copy", text: x.copy_en }),
+        el("p", { class: "insp", text: "Por qué puede viralizar: " + x.por_que_viral }),
+        el("p", { class: "tags", text: (x.hashtags || []).join(" ") })));
+    }
+    box.append(sec("Las 10 primeras publicaciones", "Borrador · no se publica nada", g));
+  }
+  box.hidden = false;
 }
 
 function apply() {
@@ -213,25 +351,25 @@ function apply() {
   box.replaceChildren();
   if (!ids.length) box.append(el("span", { class: "none", text: "Ninguna todavía" }));
   for (const k of ids) {
-    const b = el("button", { type: "button", class: "pick", text: String(+k.slice(1)) });
+    const b = el("button", { type: "button", class: "pick", text: k[0] === "a" ? "A" + (+k.slice(1)) : String(+k.slice(1)) });
     b.addEventListener("click", () => document.getElementById(k)?.scrollIntoView({ behavior: "smooth", block: "start" }));
     box.append(b);
   }
-  for (const c of cands) {
-    const id = "c" + pad(c.n), p = picks[id] || {};
-    document.getElementById(id)?.classList.toggle("fin", !!p.finalist);
-    document.getElementById("star-" + id)?.setAttribute("aria-pressed", p.finalist ? "true" : "false");
-    const note = document.getElementById("note-" + id);
+  document.querySelectorAll("[data-star]").forEach(b => b.setAttribute("aria-pressed", picks[b.dataset.star]?.finalist ? "true" : "false"));
+  document.querySelectorAll("[data-face]").forEach(f => f.classList.toggle("fin", !!picks[f.dataset.face]?.finalist));
+  for (const k of [...cands.map(c => "c" + pad(c.n)), ...OLD.map(o => o.id)]) {
+    const p = picks[k] || {};
+    document.getElementById(k)?.classList.toggle("fin", !!p.finalist);
+    const note = document.getElementById("note-" + k);
     if (note && document.activeElement !== note && typeof p.note === "string") note.value = p.note;
   }
 }
 
 function setState(text) { document.getElementById("state").textContent = text; }
 
-function save(n, patch) {
-  const id = "c" + pad(n);
+function save(id, patch) {
   const prev = picks[id] || {};
-  const body = { n, finalist: !!prev.finalist, note: prev.note || "", ...patch };
+  const body = { id, finalist: !!prev.finalist, note: prev.note || "", ...patch };
   if (body.finalist === !!prev.finalist && body.note === (prev.note || "")) return;
   body.at = Date.now();
   picks[id] = body;
@@ -247,15 +385,17 @@ function save(n, patch) {
 // Viewer
 const lb = document.getElementById("lb");
 let cur = null, idx = 0;
-function openLb(c, i) { cur = c; idx = i; showLb(); if (!lb.open) lb.showModal(); }
+function openLb(set, i) { cur = set; idx = i; showLb(); if (!lb.open) lb.showModal(); }
 function showLb() {
-  const [k, label] = SHOTS[idx];
+  const [src, cap] = cur.list[idx];
   const img = document.getElementById("lb-img");
-  img.src = `media/casting/${pad(cur.n)}_${k}.jpg`;
-  img.alt = `Candidata ${cur.n}, ${label.toLowerCase()}`;
-  document.getElementById("lb-cap").textContent = `${cur.n} · ${label}`;
+  img.src = src; img.alt = cap;
+  document.getElementById("lb-cap").textContent = cap;
+  const many = cur.list.length > 1;
+  document.getElementById("lb-prev").hidden = !many;
+  document.getElementById("lb-next").hidden = !many;
 }
-function step(d) { idx = (idx + d + SHOTS.length) % SHOTS.length; showLb(); }
+function step(d) { idx = (idx + d + cur.list.length) % cur.list.length; showLb(); }
 document.getElementById("lb-prev").addEventListener("click", () => step(-1));
 document.getElementById("lb-next").addEventListener("click", () => step(1));
 document.getElementById("lb-close").addEventListener("click", () => lb.close());
