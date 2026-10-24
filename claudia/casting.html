@@ -1,0 +1,276 @@
+<title>Casting Claudia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an agency board. One card per girl with her 8 digitals in a row, a star to pick finalists, the picks pinned on top */
+:root{
+  --paper:#F3F2EE; --card:#FFFFFF; --ink:#18292B; --muted:#5E6E6E; --rule:#D6DAD5;
+  --camel:#A8723F; --camel-soft:#EFE3D3; --ok:#3F6B3A;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101718; --card:#172123; --ink:#ECEFEB; --muted:#9FB0AE; --rule:#2C3A3B;
+  --camel:#D9A06C; --camel-soft:#3A2D21; --ok:#93C48A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101718; --card:#172123; --ink:#ECEFEB; --muted:#9FB0AE; --rule:#2C3A3B;
+  --camel:#D9A06C; --camel-soft:#3A2D21; --ok:#93C48A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(48px,8vw,96px);font-weight:900;font-variation-settings:"wdth" 125;line-height:.9;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;font-variation-settings:"wdth" 110;text-wrap:balance}
+h3{font-size:20px;font-weight:800}
+.lab{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+a{color:var(--ink);text-decoration-color:var(--camel);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--camel);outline-offset:3px}
+section{display:flex;flex-direction:column;gap:18px}
+
+/* Picks bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);
+  padding-block:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar b{font-size:18px}
+.picks{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
+.pick{background:var(--camel);color:var(--card);font-weight:800;padding:4px 10px;font-variant-numeric:tabular-nums;border:0;cursor:pointer}
+.none{color:var(--muted)}
+.state{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Head */
+.top{display:flex;flex-direction:column;gap:14px;padding-top:28px}
+.how{display:flex;gap:10px;flex-wrap:wrap}
+.how span{background:var(--card);border:1px solid var(--rule);padding:8px 12px;font-weight:600;font-size:15px}
+.how span b{color:var(--camel)}
+
+/* Groups and cards */
+.group{display:flex;flex-direction:column;gap:12px}
+.ghead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ghead::after{content:"";flex:1;height:1px;background:var(--rule);min-width:24px}
+.cards{display:flex;flex-direction:column;gap:14px}
+.cc{background:var(--card);border:1px solid var(--rule);padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cc.fin{border-color:var(--camel);box-shadow:0 0 0 2px var(--camel)}
+.cc-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.num{width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;
+  font-weight:900;font-size:22px;font-variant-numeric:tabular-nums;flex:none}
+.cc.fin .num{background:var(--camel);color:var(--card)}
+.who{display:flex;flex-direction:column;min-width:0;flex:1 1 220px}
+.who b{font-size:20px;line-height:1.15}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:var(--camel-soft);padding:2px 8px;font-size:13px;font-weight:600}
+.star{border:1px solid var(--ink);background:var(--card);padding:10px 16px;font-weight:800;cursor:pointer;display:flex;gap:8px;align-items:center}
+.star[aria-pressed="true"]{background:var(--camel);border-color:var(--camel);color:var(--card)}
+.shots{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+@media (max-width:860px){.shots{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.shot{margin:0;display:flex;flex-direction:column;gap:4px;min-width:0}
+.shot button{padding:0;border:0;background:var(--rule);cursor:zoom-in;display:block;width:100%}
+.shot img{width:100%;aspect-ratio:3/5;object-fit:cover;object-position:50% 30%}
+.shot.missing button{aspect-ratio:3/5;cursor:default}
+.shot figcaption{font-size:12px;color:var(--muted);line-height:1.2}
+.note{display:flex;gap:8px;align-items:center}
+.note input{flex:1;min-width:0;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:9px 10px;font:inherit;font-size:15px}
+.insp{font-size:13px;color:var(--muted)}
+
+/* Viewer */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,980px);width:100%}
+dialog::backdrop{background:rgba(10,14,15,.86)}
+.lb{display:flex;flex-direction:column;gap:10px;align-items:center}
+.lb img{max-height:80vh;width:auto;max-width:100%;object-fit:contain;background:#000}
+.lb-bar{display:flex;gap:8px;align-items:center;color:#F3F2EE;width:100%;justify-content:center;flex-wrap:wrap}
+.lb-bar button{background:#F3F2EE;color:#18292B;border:0;padding:10px 16px;font-weight:800;cursor:pointer}
+.lb-cap{font-weight:700;min-width:12ch;text-align:center}
+
+/* Persona */
+.persona{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.pcard{background:var(--card);border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pcard p{max-width:65ch}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.post{background:var(--card);border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.post .hook{font-size:19px;font-weight:800;line-height:1.2;text-wrap:balance}
+.post .copy{font-size:14px;white-space:pre-line}
+.pnum{font-family:var(--mono);font-size:12px;color:var(--camel);font-weight:500}
+
+@media print{
+  .bar,.note,.star,dialog{display:none!important}
+  body{padding-block:0}
+  .cc{break-inside:avoid}
+  .group{break-before:auto}
+}
+@media (prefers-reduced-motion:no-preference){.star,.cc{transition:background-color .15s,box-shadow .15s}}
+</style>
+
+<div class="wrap">
+  <div class="bar" role="region" aria-label="Tus finalistas">
+    <b>Tus finalistas</b>
+    <div class="picks" id="picks"><span class="none">Ninguna todavía</span></div>
+    <span class="state" id="state">Conectando…</span>
+  </div>
+
+  <header class="top">
+    <span class="lab">Vitruvi · Casting interno · Ronda 1</span>
+    <h1>Casting Claudia</h1>
+    <div class="how">
+      <span><b id="count">12</b> chicas · 24 a 26 años</span>
+      <span>Toca <b>★ Finalista</b> en tus 3</span>
+      <span>Toca una foto para verla grande</span>
+      <span>Al lado: otro ángulo o “mezclar con la 4”</span>
+    </div>
+  </header>
+
+  <div id="board" class="wrap" style="gap:40px"></div>
+
+  <!-- PERSONA -->
+</div>
+
+<dialog id="lb" aria-label="Foto ampliada">
+  <div class="lb">
+    <img id="lb-img" alt="">
+    <div class="lb-bar">
+      <button type="button" id="lb-prev" aria-label="Foto anterior">←</button>
+      <span class="lb-cap" id="lb-cap"></span>
+      <button type="button" id="lb-next" aria-label="Foto siguiente">→</button>
+      <button type="button" id="lb-close">Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<script id="cast-data" type="application/json">[]</script>
+<script>
+const SHOTS = [
+  ["seria", "Seria"], ["sonrisa", "Sonrisa"], ["perfil", "Perfil"], ["cuerpo", "Cuerpo"],
+  ["swim_elegant", "Bikini elegante"], ["swim_bold", "Bikini atrevido"], ["door", "Puerta"], ["presenter", "Look presentadora"],
+];
+const cands = JSON.parse(document.getElementById("cast-data").textContent);
+const pad = n => String(n).padStart(2, "0");
+const picks = {};
+let db = null;
+const queue = {};
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v; else if (k === "text") e.textContent = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids) if (k) e.append(k);
+  return e;
+}
+
+function render() {
+  const board = document.getElementById("board");
+  document.getElementById("count").textContent = cands.length || 12;
+  const groups = [];
+  for (const c of cands) {
+    let g = groups.find(g => g.name === c.group);
+    if (!g) groups.push(g = { name: c.group, line: c.groupLine, items: [] });
+    g.items.push(c);
+  }
+  for (const g of groups) {
+    const cards = el("div", { class: "cards" });
+    for (const c of g.items) cards.append(card(c));
+    board.append(el("section", { class: "group" },
+      el("div", { class: "ghead" }, el("h2", { text: g.name }), g.line ? el("span", { class: "lab", text: g.line }) : null),
+      cards));
+  }
+  if (!cands.length) board.append(el("p", { class: "none", text: "Las fotos aparecen aquí en cuanto estén generadas." }));
+}
+
+function card(c) {
+  const id = "c" + pad(c.n);
+  const chips = el("div", { class: "chips" });
+  for (const t of c.chips || []) chips.append(el("span", { class: "chip", text: t }));
+  const star = el("button", { type: "button", class: "star", "aria-pressed": "false", id: "star-" + id }, "★ Finalista");
+  star.addEventListener("click", () => save(c.n, { finalist: !(picks[id]?.finalist) }));
+  const shots = el("div", { class: "shots" });
+  SHOTS.forEach(([k, label], i) => {
+    const img = el("img", { src: `media/casting/${pad(c.n)}_${k}.jpg`, alt: `Candidata ${c.n}, ${label.toLowerCase()}`, loading: "lazy" });
+    const fig = el("figure", { class: "shot" }, el("button", { type: "button", "aria-label": `Ver grande: ${label}` }, img), el("figcaption", { text: label }));
+    img.addEventListener("error", () => { fig.classList.add("missing"); img.remove(); });
+    fig.querySelector("button").addEventListener("click", () => { if (fig.classList.contains("missing")) return; openLb(c, i); });
+    shots.append(fig);
+  });
+  const note = el("input", { type: "text", id: "note-" + id, placeholder: "Nota: otro ángulo, mezclar con…", "aria-label": `Nota sobre la candidata ${c.n}` });
+  let t;
+  note.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => save(c.n, { note: note.value.trim() }), 900); });
+  note.addEventListener("change", () => { clearTimeout(t); save(c.n, { note: note.value.trim() }); });
+  return el("article", { class: "cc", id },
+    el("div", { class: "cc-head" },
+      el("span", { class: "num", text: c.n }),
+      el("div", { class: "who" }, el("b", { text: c.label }), c.inspired ? el("span", { class: "insp", text: "Rasgos de: " + c.inspired }) : null),
+      chips, star),
+    shots,
+    el("div", { class: "note" }, note));
+}
+
+function apply() {
+  const ids = Object.keys(picks).filter(k => picks[k]?.finalist).sort();
+  const box = document.getElementById("picks");
+  box.replaceChildren();
+  if (!ids.length) box.append(el("span", { class: "none", text: "Ninguna todavía" }));
+  for (const k of ids) {
+    const b = el("button", { type: "button", class: "pick", text: String(+k.slice(1)) });
+    b.addEventListener("click", () => document.getElementById(k)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    box.append(b);
+  }
+  for (const c of cands) {
+    const id = "c" + pad(c.n), p = picks[id] || {};
+    document.getElementById(id)?.classList.toggle("fin", !!p.finalist);
+    document.getElementById("star-" + id)?.setAttribute("aria-pressed", p.finalist ? "true" : "false");
+    const note = document.getElementById("note-" + id);
+    if (note && document.activeElement !== note && typeof p.note === "string") note.value = p.note;
+  }
+}
+
+function setState(text) { document.getElementById("state").textContent = text; }
+
+function save(n, patch) {
+  const id = "c" + pad(n);
+  const prev = picks[id] || {};
+  const body = { n, finalist: !!prev.finalist, note: prev.note || "", ...patch };
+  if (body.finalist === !!prev.finalist && body.note === (prev.note || "")) return;
+  body.at = Date.now();
+  picks[id] = body;
+  apply();
+  if (!db) { setState("Sin guardar: abre el enlace con tu cuenta"); return; }
+  setState("Guardando…");
+  queue[id] = (queue[id] || Promise.resolve())
+    .then(() => db.doc("picks/" + id).set(body))
+    .then(() => setState("Guardado · Claude lo ve"))
+    .catch(e => setState(e?.code === "invalid_argument" ? "Solo lectura" : "No se pudo guardar"));
+}
+
+// Viewer
+const lb = document.getElementById("lb");
+let cur = null, idx = 0;
+function openLb(c, i) { cur = c; idx = i; showLb(); if (!lb.open) lb.showModal(); }
+function showLb() {
+  const [k, label] = SHOTS[idx];
+  const img = document.getElementById("lb-img");
+  img.src = `media/casting/${pad(cur.n)}_${k}.jpg`;
+  img.alt = `Candidata ${cur.n}, ${label.toLowerCase()}`;
+  document.getElementById("lb-cap").textContent = `${cur.n} · ${label}`;
+}
+function step(d) { idx = (idx + d + SHOTS.length) % SHOTS.length; showLb(); }
+document.getElementById("lb-prev").addEventListener("click", () => step(-1));
+document.getElementById("lb-next").addEventListener("click", () => step(1));
+document.getElementById("lb-close").addEventListener("click", () => lb.close());
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+lb.addEventListener("keydown", e => { if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1); });
+
+render();
+
+(async () => {
+  try { db = window.claude?.use ? await window.claude.use("db") : null; } catch { db = null; }
+  if (!db) { setState("Sin guardar: abre el enlace con tu cuenta"); return; }
+  setState("Listo para elegir");
+  db.collection("picks").onSnapshot(snap => {
+    for (const d of snap.docs) if (d.exists) picks[d.id] = d.data();
+    apply();
+  }, () => setState("Conexión perdida: recarga la página"));
+})();
+</script>

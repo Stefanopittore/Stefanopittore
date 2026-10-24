@@ -1,18 +1,27 @@
 {
+  "_note": "Casting estético: 8 vistas por candidata (4 de la ficha + 4 escenas). {age} 24-26, {traits} = línea del arquetipo en inglés. Nunca nombres de personas reales.",
   "sheet": {
     "mode": "seedream-5-pro",
     "resolution": "2k",
     "aspectRatio": "21:9",
     "credits": 100,
-    "template": "Photorealistic model-agency casting digitals sheet of one single woman, {age} years old, {traits}. Four tall panels side by side in one row, the same woman in every panel, against a plain light-grey studio wall: panel 1 front headshot with a relaxed neutral expression; panel 2 front headshot with a warm genuine smile; panel 3 side profile headshot; panel 4 full-body front view standing naturally. Identical outfit in every panel: fitted plain white t-shirt, straight light-blue jeans, white minimal sneakers, small gold hoop earrings. Hair loose and natural, minimal makeup, soft even daylight, real skin texture, unretouched, consistent identity across panels, professional and tasteful."
+    "template": "Photorealistic model-agency casting digitals sheet of one single woman, {age} years old, {traits}. Very beautiful, fresh and approachable. Four tall panels side by side in one row, the same woman in every panel, against a plain light-grey studio wall: panel 1 front headshot with a relaxed neutral expression; panel 2 front headshot with a warm genuine smile; panel 3 side profile headshot; panel 4 full-body front view standing naturally. Identical outfit in every panel: fitted plain white t-shirt, straight light-blue jeans, white minimal sneakers, small gold hoop earrings. Hair and makeup as described, kept fresh and light, soft even daylight, real skin texture, unretouched, consistent identity across panels, professional and tasteful."
   },
-  "villa": {
+  "swim_elegant": {
     "mode": "imagen-nano-banana-2",
     "resolution": "2k",
     "aspectRatio": "3:4",
     "credits": 75,
     "reference": "sheet",
-    "template": "Full-body photo of the same woman as in the reference sheet: identical face, hair, skin tone and body. She stands at the edge of the infinity pool of a newly built luxury Mediterranean villa at golden hour: white lime walls, travertine deck, olive trees, the sea in the distance. She wears an elegant minimal bikini in plain sand beige with an open sheer white linen shirt over it, small gold hoop earrings, barefoot. She presents the pool to the camera with one open palm, relaxed natural posture, warm genuine smile, looking into the lens. Tasteful, elegant real-estate lifestyle editorial, not sexualized, photorealistic, real skin texture."
+    "template": "Full-body photo of the same woman as in the reference sheet: identical face, hair, skin tone and body. She stands at the edge of the infinity pool of a newly built luxury Mediterranean villa at golden hour: white lime walls, travertine deck, olive trees, the sea in the distance. Elegant look: a refined high-waisted bikini in plain sand beige with an open sheer white linen shirt over it, small gold hoop earrings, barefoot. She presents the pool to the camera with one open palm, relaxed natural posture, warm genuine smile, looking into the lens. Tasteful, elegant real-estate lifestyle editorial, photorealistic, real skin texture."
+  },
+  "swim_bold": {
+    "mode": "imagen-nano-banana-2",
+    "resolution": "2k",
+    "aspectRatio": "3:4",
+    "credits": 75,
+    "reference": "sheet",
+    "template": "Full-body photo of the same woman as in the reference sheet: identical face, hair, skin tone and body. She sits on the edge of the infinity pool of a newly built luxury villa in Miami style at golden hour, feet in the water, palm trees and a modern white facade behind her. Bolder look: a classic black triangle bikini, small gold hoops, wet-look hair tucked behind one ear, sunglasses pushed up on her head. Confident glamorous smile toward the camera, natural relaxed pose. Upscale swimwear fashion editorial, glamorous but tasteful, photorealistic, real skin texture."
   },
   "door": {
     "mode": "imagen-nano-banana-2",
@@ -20,6 +29,14 @@
     "aspectRatio": "3:4",
     "credits": 75,
     "reference": "sheet",
-    "template": "Full-body photo of the same woman as in the reference sheet: identical face, hair, skin tone and body, same outfit (fitted white t-shirt, straight light-blue jeans, white sneakers, small gold hoops). She stands in the open doorway of a newly built Mediterranean villa with a tall light-oak pivot door, white lime facade and a potted olive tree. Her hand farthest from the camera holds the door; her other hand opens toward the bright interior, inviting the viewer in, with a warm genuine smile and eye contact. Natural daylight, photorealistic, real skin texture, premium real-estate film still."
+    "template": "Full-body photo of the same woman as in the reference sheet: identical face, hair, skin tone and body, same casting outfit (fitted white t-shirt, straight light-blue jeans, white sneakers, small gold hoops). She stands in the open doorway of a newly built Mediterranean villa with a tall light-oak pivot door, white lime facade and a potted olive tree. Her hand farthest from the camera holds the door; her other hand opens toward the bright interior, inviting the viewer in, warm genuine smile and eye contact. Natural daylight, photorealistic, real skin texture, premium real-estate film still."
+  },
+  "presenter": {
+    "mode": "imagen-nano-banana-2",
+    "resolution": "2k",
+    "aspectRatio": "3:4",
+    "credits": 75,
+    "reference": "sheet",
+    "template": "Three-quarter-length photo of the same woman as in the reference sheet: identical face, hair, skin tone and body. Presenter look, identical for every candidate: tailored ivory blazer, white silk camisole, high-waisted wide-leg sand trousers, delicate gold necklace and small gold hoops. She stands in the bright living room of a newly built luxury penthouse with floor-to-ceiling windows and a city-and-sea view, presenting the window with an open palm at chest height while looking into the lens with a confident, warm smile. Soft daylight, photorealistic, real skin texture, premium real-estate presenter portrait."
   }
 }
