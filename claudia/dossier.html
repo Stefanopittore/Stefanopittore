@@ -8,16 +8,19 @@
 :root{
   --paper:#F3F4F1; --sheet:#FBFBF9; --ink:#17292B; --muted:#56696A; --rule:#C8CFCA;
   --camel:#A8723F; --olive:#5F6E3F; --hatch:#D9DED9; --warn:#8A4B1F; --ok:#3F6B3A;
+  --s1:#EADCC9; --s2:#E0E7DD; --s3:#F1DEC4; --s4:#DCE4E3;
   --display:"Archivo","Arial Narrow",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0F1718; --sheet:#152022; --ink:#E7ECE8; --muted:#9DB0AE; --rule:#2B3B3C;
-  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A; color-scheme:dark}}
+  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A;
+  --s1:#3A2D20; --s2:#22302A; --s3:#3E3020; --s4:#20302F; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0F1718; --sheet:#152022; --ink:#E7ECE8; --muted:#9DB0AE; --rule:#2B3B3C;
-  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A; color-scheme:dark}
+  --camel:#D69A62; --olive:#A6B57E; --hatch:#223132; --warn:#E3A06B; --ok:#93C48A;
+  --s1:#3A2D20; --s2:#22302A; --s3:#3E3020; --s4:#20302F; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
@@ -51,7 +54,7 @@ ul,ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
 .sheet{background:var(--sheet);border:1px solid var(--rule);padding:clamp(20px,3.5vw,40px);display:flex;flex-direction:column;gap:22px}
 .sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px}
 .sheet-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:780;font-variation-settings:"wdth" 110}
-.sheet-head .lab{white-space:nowrap}
+.sheet-head .lab{overflow-wrap:anywhere}
 h3{font-size:19px;font-weight:700;font-variation-settings:"wdth" 100}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
 .cols > *{min-width:0}
@@ -115,6 +118,27 @@ tfoot td{font-weight:600;border-top:2px solid var(--ink)}
 .src{font-size:14px;columns:2 320px;column-gap:28px}
 .src li{break-inside:avoid;margin-bottom:6px}
 footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:2px solid var(--ink);font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;color:var(--ink);background:var(--sheet)}
+.btn.primary{background:var(--ink);color:var(--sheet)}
+.btn:hover{border-color:var(--camel)}
+.tl{display:flex;border:2px solid var(--ink);min-height:96px}
+.tl > div{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-right:1px solid var(--ink);min-width:0}
+.tl > div:last-child{border-right:0}
+.tl b{font-family:var(--display);font-size:16px}
+.tl span{font-size:14px;line-height:1.3}
+.tl .s1{flex:7.8;background:var(--s1)}.tl .s2{flex:5.5;background:var(--s2)}.tl .s3{flex:6.4;background:var(--s3)}.tl .s4{flex:7.4;background:var(--s4)}
+.axis{position:relative;height:18px;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.axis span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.axis span:first-child{transform:none}.axis span:last-child{transform:translateX(-100%)}
+@media (max-width:640px){.tl{flex-direction:column}.tl > div{border-right:0;border-bottom:1px solid var(--ink)}.tl > div:last-child{border-bottom:0}.axis{display:none}}
+.gestos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gesto{border:1px solid var(--rule);padding:14px;display:flex;flex-direction:column;gap:6px;background:var(--sheet);min-width:0}
+.gesto .n{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--camel)}
+.gesto h4{font-family:var(--display);font-size:18px;font-weight:700;margin:0}
+.gesto p{font-size:15px;line-height:1.45}
+.gesto .when{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.gesto.used{border-color:var(--camel);border-width:2px}
 @media (prefers-reduced-motion:no-preference){.frame{transition:border-color .15s}}
 </style>
 
@@ -122,66 +146,219 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 
 <header class="cover">
   <div class="cover-main">
-    <span class="lab">Vitruvi Studio · Dossier de personaje · 23 de octubre de 2026</span>
+    <span class="lab">Vitruvi Studio · Dossier de personaje · versión 2 · 24 de octubre de 2026</span>
     <h1>Claudia</h1>
-    <p class="lede">La presentadora de obra nueva de Vitruvi. Una cara cercana para enseñar casas que todavía no existen.</p>
+    <p class="lede">26 años. La presentadora de obra nueva de Vitruvi, con los gestos de las mejores presentadoras inmobiliarias de Europa.</p>
     <p class="pasamos">«¿Pasamos?»</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.magnific.com/app/creation/huPRqoyvqL" target="_blank" rel="noopener">▶ Ver el reel final · 27 s</a>
+      <a class="btn" href="https://www.magnific.com/app/spaces/a30dc29d-ad50-4e1b-8c2b-87aecf05b1ba" target="_blank" rel="noopener">Abrir el tablero visual ↗</a>
+    </div>
   </div>
   <div class="cajetin" aria-label="Cajetín del proyecto">
-    <div><span class="lab">Proyecto en Magnific</span><b>Claudia · Avatar Vitruvi</b></div>
-    <div><span class="lab">Personaje guardado</span><b><a href="https://www.magnific.com/app/library/characters/2421544" target="_blank" rel="noopener">Claudia_Vitruvi ↗</a></b></div>
-    <div><span class="lab">Producido</span><b>13 imágenes · 7 clips · 1 teaser · 1 voz</b></div>
-    <div><span class="lab">Créditos Magnific</span><b>2.242 de 3.000 · quedan 758</b></div>
+    <div><span class="lab">Personaje guardado</span><b><a href="https://www.magnific.com/app/library/characters/2421586" target="_blank" rel="noopener">Claudia_26 ↗</a></b></div>
+    <div><span class="lab">Reel final</span><b>27 s · 1080 × 1920 · Google Veo 3.1</b></div>
+    <div><span class="lab">Voz</span><b>Una sola voz en todo el reel</b></div>
+    <div><span class="lab">Créditos fase 2</span><b>9.570 de 10.000</b></div>
     <div><span class="lab">Mejor hora (Metricool)</span><b>Miércoles 28, 10:00</b></div>
     <div><span class="lab">Estado</span><b>Listo para tu revisión</b></div>
   </div>
 </header>
 
 <aside class="notice">
-  <strong>Las fotos y los vídeos están en Magnific, no incrustados aquí.</strong>
-  <p>La red de mi entorno bloquea el servidor de imágenes de Magnific (pikaso.cdnpk.net), así que no he podido descargarlas ni verlas con mis propios ojos. Cada recuadro rayado es un enlace a la pieza real. Los vídeos los ha revisado el analizador de Magnific, que sí los ve, y sus notas están en la lámina 05. Si añades ese dominio a la red permitida del entorno, meto todas las imágenes en este dossier.</p>
+  <strong>Para verlo todo de golpe, abre el tablero visual.</strong>
+  <p>El tablero de Magnific tiene dos páginas: «Claudia 26 · Reel final y fotos nuevas» y «Archivo», con el casting y la primera Claudia. Aquí cada recuadro rayado es un enlace a la pieza real. No puedo incrustar las imágenes porque la red de mi entorno bloquea el servidor de imágenes de Magnific (pikaso.cdnpk.net). Si lo añades a los dominios permitidos del entorno, las meto en este dossier. Los vídeos los ha revisado el analizador de Magnific, que sí los ve.</p>
 </aside>
 
 <section class="sheet" id="resumen">
   <div class="sheet-head"><h2>Lo que tienes y lo que necesito de ti</h2><span class="lab">Lámina 01 · Resumen</span></div>
   <div class="cols">
     <div class="block">
-      <h3>Hecho esta noche</h3>
+      <h3>Nuevo en la versión 2</h3>
       <ul>
-        <li>Casting de 6 caras en 3 estilos y elección de Claudia con pruebas de movimiento.</li>
-        <li>Sesión de fotos consistente: retrato de perfil, look completo, puerta, terraza y ficha en 4 vistas.</li>
-        <li>Claudia guardada como personaje en la biblioteca de Magnific, para que salga igual en cada pieza.</li>
-        <li>Clip hablando a cámara en castellano: «¡Hola! Soy Claudia. ¿Pasamos?».</li>
-        <li>Teaser de 15 s montado: hola, puerta y terraza.</li>
-        <li>Dos pruebas de Claudia dentro de un render real de Vitruvi.</li>
-        <li>Investigación de formatos virales, casos de avatares y requisitos legales en España.</li>
+        <li>Claudia rejuvenecida a 26 años. El analizador la ve con 26 años y le pone un 9,5/10 de belleza.</li>
+        <li>Biblia de 12 gestos basada en presentadoras de referencia de Reino Unido, Suiza, Países Bajos, Francia e Italia, y en estudios de persuasión (lámina 03).</li>
+        <li>Reel de 27 s en la misma villa (puerta, salón, terraza y cocina), con los mejores modelos de vídeo disponibles en Magnific.</li>
+        <li>Una sola voz en todo el reel, audio limpio y música original propia.</li>
+        <li>Foto de perfil con Magnific One y 4 fotogramas nuevos en calidad alta.</li>
+        <li>Tablero visual en Magnific con todo el material ordenado.</li>
       </ul>
     </div>
     <div class="block">
       <h3>Decisiones tuyas</h3>
       <ul class="checks">
-        <li>Confirmar la cara (recomiendo la candidata A2) o pedir otra dirección del casting.</li>
+        <li>Ver el reel y decir si la cara de 26 años es la definitiva. Hay una alternativa en la lámina 04.</li>
+        <li>En la terraza y la cocina el analizador la ve algo mayor (27 a 32 años). Rehacer esos dos planos con Veo 3.1 cuesta unos 4.800 créditos.</li>
         <li>Elegir nombre de cuenta. Propuestas sin comprobar: @claudia.pasamos, @soyclaudia.casas, @claudiaobranueva.</li>
-        <li>Permitir pikaso.cdnpk.net en la red del entorno, para poder ver y montar el material.</li>
-        <li>Decidir qué promoción protagoniza el primer reel y si el render de los chalets de montaña se puede enseñar.</li>
-        <li>Aprobar en Pulso el copy de presentación para @vitruvistudio (lámina 08). No he programado nada.</li>
-        <li>Mandarme otra vez el screenshot de la chica de referencia: no me llegó.</li>
+        <li>Permitir pikaso.cdnpk.net en la red del entorno, para poder ver e incrustar el material.</li>
+        <li>Aprobar en Pulso el copy de presentación para @vitruvistudio (lámina 11). No he programado nada.</li>
       </ul>
     </div>
   </div>
 </section>
 
+<section class="sheet" id="reel">
+  <div class="sheet-head"><h2>El reel final</h2><span class="lab">Lámina 02 · 27 s · vertical 1080 × 1920</span></div>
+  <div class="cta"><a class="btn primary" href="https://www.magnific.com/app/creation/huPRqoyvqL" target="_blank" rel="noopener">▶ Ver el reel final</a></div>
+  <div class="block">
+    <div class="tl" role="img" aria-label="Línea de tiempo del reel: puerta, salón, terraza y cocina">
+      <div class="s1"><b>Puerta</b><span>«Esta casa todavía no existe… pero tú ya puedes entrar. ¿Pasamos?»</span></div>
+      <div class="s2"><b>Salón</b><span>«Mira qué luz, un salón amplio… y el sol entra toda la mañana.»</span></div>
+      <div class="s3"><b>Terraza</b><span>Enmarca el mar. «Es lo que vas a ver cada noche al cenar.»</span></div>
+      <div class="s4"><b>Cocina</b><span>«Travertino natural. ¿Te la imaginas? Guárdala y enséñasela a quien busque casa.»</span></div>
+    </div>
+    <div class="axis" aria-hidden="true"><span style="left:0">0 s</span><span style="left:28.8%">7,8</span><span style="left:49.1%">13,3</span><span style="left:72.7%">19,7</span><span style="left:100%">27,1 s</span></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Tiempo</th><th>Lo que dice</th><th>Gesto de la biblia</th></tr></thead>
+    <tbody>
+      <tr><td class="tc">0,0–2,1</td><td>«Esta casa todavía no existe…»</td><td>01 Entrada sonriente: ya sonríe y mira a la lente desde el primer fotograma</td></tr>
+      <tr><td class="tc">2,4–4,2</td><td>(silencio)</td><td>02 Puerta invitada: barre la palma abierta hacia el interior</td></tr>
+      <tr><td class="tc">4,5–7,1</td><td>«…pero tú ya puedes entrar. ¿Pasamos?»</td><td>10 Pausa con sonrisa: asiente con una sonrisa que llega a los ojos</td></tr>
+      <tr><td class="tc">7,9–10,4</td><td>«Mira qué luz, un salón amplio…»</td><td>03 Paseo anfitriona y 05 Medida en el aire: camina hacia la cámara y abre las dos manos</td></tr>
+      <tr><td class="tc">10,8–13,2</td><td>«…y el sol entra toda la mañana.»</td><td>04 Palma presentadora: señala el ventanal con la palma, lo mira y vuelve a la lente</td></tr>
+      <tr><td class="tc">13,3–15,5</td><td>(silencio)</td><td>07 Mirada a la vista y 08 Marco de vista: se gira al mar y lo enmarca con las manos</td></tr>
+      <tr><td class="tc">15,5–18,7</td><td>«Es lo que vas a ver cada noche al cenar.»</td><td>10 Pausa con sonrisa</td></tr>
+      <tr><td class="tc">20,0–21,5</td><td>«Travertino natural.»</td><td>06 Toque de material: desliza las yemas sobre la piedra</td></tr>
+      <tr><td class="tc">22,0–26,5</td><td>«¿Te la imaginas? Guárdala y enséñasela a quien busque casa.»</td><td>11 Invitación final: palma del pecho hacia la cámara y sonrisa sostenida</td></tr>
+    </tbody>
+  </table></div>
+  <div class="cols">
+    <div class="block">
+      <h3>Control de calidad</h3>
+      <div class="tw"><table style="min-width:360px">
+        <thead><tr><th>Tramo</th><th class="n">Global</th><th class="n">Voz</th><th class="n">Labios</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td>0–14 s</td><td class="n">8,5</td><td class="n">9</td><td class="n">8,5</td><td>Gancho 9/10</td></tr>
+          <tr><td>13–27 s</td><td class="n">8</td><td class="n">igual</td><td class="n">bien</td><td>Llamada a la acción eficaz</td></tr>
+        </tbody>
+      </table></div>
+      <p class="mono" style="color:var(--muted)">Notas del analizador de vídeo de Magnific. La versión final no tiene palabras inventadas ni saltos de imagen. Quedan dedos algo blandos en los gestos rápidos.</p>
+    </div>
+    <div class="block">
+      <h3>Cómo lo hice</h3>
+      <ol>
+        <li>4 fotogramas de arranque con Claudia_26 en la misma villa, con Nano Banana Pro.</li>
+        <li>Puerta y cocina con Veo 3.1 (2.400 créditos cada una); salón y terraza con Veo 3.1 Fast (960 cada una). Gestos y frases marcados al segundo.</li>
+        <li>Los cortes salvan tres trozos con palabras inventadas que mete Veo. La terraza tuve que repetirla.</li>
+        <li>Audio aislado y pasado entero a una sola voz con el cambiador de voz, sin perder la sincronía de labios.</li>
+        <li>Música original de Lyria al 18 % por debajo de la voz. Al ser propia, se puede promocionar.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Modelos comparados</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Modelo</th><th>Para qué</th><th class="n">Créditos por 8 s a 1080p</th><th>Decisión</th></tr></thead>
+      <tbody>
+        <tr><td><b>Google Veo 3.1</b></td><td>Vídeo hablado con voz y labios sincronizados</td><td class="n">2.400</td><td><span class="pill ok">Gancho y cierre</span></td></tr>
+        <tr><td><b>Google Veo 3.1 Fast</b></td><td>Lo mismo, algo menos fino</td><td class="n">960</td><td><span class="pill ok">Salón y terraza</span></td></tr>
+        <tr><td>Kling 3.0 con sonido</td><td>Movimiento, con varios planos</td><td class="n">1.120</td><td>Reserva</td></tr>
+        <tr><td>Kling 4.0</td><td>Movimiento sin audio</td><td class="n">2.240</td><td>Sin voz</td></tr>
+        <tr><td>Wan 3.0 Prime</td><td>Clips largos con audio</td><td class="n">2.720</td><td>Más caro</td></tr>
+        <tr><td>Seedance 2.5</td><td>El mejor según Magnific, con sincronía de labios</td><td class="n">6.320</td><td><span class="pill warn">Fuera de presupuesto</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="sheet" id="gestos">
+  <div class="sheet-head"><h2>Biblia de gestos</h2><span class="lab">Lámina 03 · 12 gestos de presentadora</span></div>
+  <p class="prose">Patrones sacados de presentadoras de referencia en Europa y de estudios de persuasión. No copian a ninguna persona concreta. Los recuadros marcados son los que ya usa el reel. Cada gesto tiene su instrucción en inglés lista para el modelo de vídeo, guardada en las peticiones de cada plano en Magnific.</p>
+  <div class="gestos">
+    <div class="gesto used"><span class="n">01 · GANCHO</span><h4>Entrada sonriente</h4><p>Sonríe con los ojos y mira a la lente desde el primer fotograma. Abre la palma derecha con la primera palabra.</p><span class="when">1,5–2 s · juzgamos la confianza en 100 ms</span></div>
+    <div class="gesto used"><span class="n">02 · RECORRIDO</span><h4>Puerta invitada</h4><p>Abre con la mano más alejada, se aparta hacia las bisagras y barre la otra palma hacia la estancia.</p><span class="when">2–3 s · no tapa la vista</span></div>
+    <div class="gesto used"><span class="n">03 · RECORRIDO</span><h4>Paseo anfitriona</h4><p>Camina despacio con el torso a 45° de la cámara y mira atrás cada 2–3 s, con los brazos sueltos.</p><span class="when">Ritmo lento, oficio de TV</span></div>
+    <div class="gesto used"><span class="n">04 · DETALLE</span><h4>Palma presentadora</h4><p>Brazo a la altura del pecho, dedos juntos y palma arriba. Mira el elemento medio segundo y vuelve a la lente.</p><span class="when">1,5 s · su mirada guía la tuya</span></div>
+    <div class="gesto used"><span class="n">05 · RECORRIDO</span><h4>Medida en el aire</h4><p>Al decir «amplio» o los metros, abre las dos manos en horizontal en un solo movimiento.</p><span class="when">1 s · gesto que ilustra</span></div>
+    <div class="gesto used"><span class="n">06 · DETALLE</span><h4>Toque de material</h4><p>Desliza las yemas sobre la superficie mirándose la mano y luego sube la mirada.</p><span class="when">2 s · ver tocar aumenta el deseo</span></div>
+    <div class="gesto used"><span class="n">07 · VISTA</span><h4>Mirada a la vista</h4><p>Gira cabeza y hombros hacia la ventana y calla un segundo mientras la cámara sigue su mirada.</p><span class="when">1 s de pausa</span></div>
+    <div class="gesto used"><span class="n">08 · VISTA</span><h4>Marco de vista</h4><p>Sube las manos a los hombros, palmas enfrentadas, enmarca la vista y las abre hacia fuera.</p><span class="when">1 s</span></div>
+    <div class="gesto"><span class="n">09 · CIERRE</span><h4>Sofá en confianza</h4><p>Se sienta en el borde del sofá, espalda recta y un poco inclinada, con una palma sobre el cojín. Tono más bajo.</p><span class="when">Para piezas largas</span></div>
+    <div class="gesto used"><span class="n">10 · TRAS UN DATO</span><h4>Pausa con sonrisa</h4><p>Calla casi un segundo, sostiene la mirada y asiente con una sonrisa que llega a los ojos.</p><span class="when">0,8–1 s · sonrisa auténtica</span></div>
+    <div class="gesto used"><span class="n">11 · CIERRE</span><h4>Invitación final</h4><p>Se pone de frente y lleva la palma del pecho hacia la cámara, como ofreciendo. Sostiene la sonrisa un segundo.</p><span class="when">Mirada directa, más credibilidad</span></div>
+    <div class="gesto used"><span class="n">12 · SIEMPRE</span><h4>Reposo TV</h4><p>Entre gestos, codos pegados al cuerpo y manos sueltas a la altura del ombligo.</p><span class="when">Calma de presentadora</span></div>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>Referentes estudiados</h3>
+      <div class="tw"><table style="min-width:380px">
+        <thead><tr><th>Quién</th><th>Dónde</th><th>Qué tomamos</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://www.speakersassociates.com/?p=7963" target="_blank" rel="noopener">Kirstie Allsopp</a></td><td>Reino Unido · Channel 4</td><td>Cercanía directa, sin guion aparente</td></tr>
+          <tr><td><a href="https://www.robbuckley.co.uk/galleries/off-the-telly/review-property-ladder.php" target="_blank" rel="noopener">Sarah Beeny</a></td><td>Reino Unido · Channel 4</td><td>Consejo práctico con criterio</td></tr>
+          <tr><td><a href="https://www.aplaceinthesun.com/articles/2022/02/who-are-the-presenters-of-a-place-in-the-sun-tv-show" target="_blank" rel="noopener">A Place in the Sun</a></td><td>Reino Unido · rodado en España</td><td>Acompañar al comprador como anfitriona</td></tr>
+          <tr><td><a href="https://www.countryandtownhouse.com/cth-life/properties/rise-of-property-influencers/" target="_blank" rel="noopener">Ari Reid</a></td><td>Reino Unido · Instagram</td><td>Recorrido de lujo en primera persona</td></tr>
+          <tr><td><a href="https://www.blick.ch/wirtschaft/haufen-geld-mit-luxusvillen-posts-auf-social-media-anisa-imhof-erreicht-mit-ihren-videos-millionen-menschen-id21918972.html" target="_blank" rel="noopener">Anisa Imhof</a></td><td>Suiza · TikTok e Instagram</td><td>Hablar directo a cámara con estética cuidada</td></tr>
+          <tr><td><a href="https://www.ozap.com/actu/-ca-va-me-faire-tout-drole-emmanuelle-rivassoux-l-acolyte-de-stephane-plaza-quitte-maison-a-vendre-sur-m6/629798" target="_blank" rel="noopener">Emmanuelle Rivassoux</a></td><td>Francia · M6</td><td>Vender cuidando la puesta en escena</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="block">
+      <h3>Lo que dice la evidencia</h3>
+      <ul>
+        <li>Los gestos que dibujan lo que se dice hacen más persuasivo al que habla; los gestos al azar no suman (<a href="https://news.ubc.ca/2025/11/talk-with-your-hands-to-be-more-persuasive/" target="_blank" rel="noopener">UBC, 2025</a>).</li>
+        <li>Ver una mano que toca de verdad un material aumenta lo que pagarías (<a href="https://ama.org/2022/07/20/the-vicarious-haptic-effect-your-hand-is-mine-and-i-like-what-its-holding" target="_blank" rel="noopener">Luangrath et al., 2022</a>).</li>
+        <li>Si la presentadora mira el objeto, el espectador también lo mira (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.00881/full" target="_blank" rel="noopener">Frontiers, 2017</a>).</li>
+        <li>La sonrisa que llega a los ojos se percibe más fiable (<a href="https://api.philpapers.org/rec/GUNPOD" target="_blank" rel="noopener">metaanálisis</a>), pero una sonrisa máxima todo el rato resta competencia (<a href="https://business.ucf.edu/wp-content/uploads/2017/09/Wang-et-al.-2017-Smile-Big-or-Not-Effects-of-Smile-Intensity-on-Perceptions-of-Warmth-and-Competence.pdf" target="_blank" rel="noopener">Wang et al., 2017</a>).</li>
+        <li>Juzgamos si alguien es de fiar en unos 100 ms (<a href="https://pubmed.ncbi.nlm.nih.gov/16866745/" target="_blank" rel="noopener">Willis y Todorov, 2006</a>).</li>
+      </ul>
+      <h3>Lo que Claudia evita</h3>
+      <ul class="checks dont">
+        <li>Señalar con el dedo, cruzar los brazos o esconder las manos.</li>
+        <li>Tocarse el pelo o la cara, que transmite nervios.</li>
+        <li>Mirar al suelo o dar la espalda más de un segundo.</li>
+        <li>Gestos rápidos sin sentido y hablar sin pausas.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="mono" style="color:var(--muted)">Las duraciones son recomendaciones de diseño. No encontré fuente fiable para el famoso «60–70 % de contacto visual», así que no lo uso.</p>
+</section>
+
+<section class="sheet" id="claudia26">
+  <div class="sheet-head"><h2>Claudia a los 26</h2><span class="lab">Lámina 04 · Fotos y planos nuevos</span></div>
+  <div class="grid">
+    <figure><a class="frame r34 chosen" href="https://www.magnific.com/app/creation/N2vCKG76D9" target="_blank" rel="noopener"><span class="t">Cara 26 · elegida</span><span class="o">Abrir ↗</span></a><figcaption><span class="pill camel">Elegida</span> 26 años aparentes, belleza 9,5/10. Lunar a media mejilla, como la original.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/cpkx7XV0eP" target="_blank" rel="noopener"><span class="t">Cara 26 · alternativa</span><span class="o">Abrir ↗</span></a><figcaption>También 26 años y 9,5/10. El lunar está más alto, en el pómulo.</figcaption></figure>
+    <figure><a class="frame r34" href="https://www.magnific.com/app/creation/4RmaK6u9Aa" target="_blank" rel="noopener"><span class="t">Foto de perfil</span><span class="o">Abrir ↗</span></a><figcaption>Magnific One, el modelo insignia.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/79BIuv7JAL" target="_blank" rel="noopener"><span class="t">Prueba de movimiento</span><span class="o">Abrir ↗</span></a><figcaption>El clip con el que se midió la edad.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/cpkxO670eP" target="_blank" rel="noopener"><span class="t">Puerta · Veo 3.1</span><span class="o">Abrir ↗</span></a><figcaption>Fotograma de arranque: <a href="https://www.magnific.com/app/creation/huPNnodvqL" target="_blank" rel="noopener">ver</a>.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/jUTDhQ9LD0" target="_blank" rel="noopener"><span class="t">Salón · Veo 3.1 Fast</span><span class="o">Abrir ↗</span></a><figcaption>Fotograma de arranque: <a href="https://www.magnific.com/app/creation/bxGYdFC5Y2" target="_blank" rel="noopener">ver</a>.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/u53nqanQLD" target="_blank" rel="noopener"><span class="t">Terraza · Veo 3.1 Fast</span><span class="o">Abrir ↗</span></a><figcaption>Fotograma de arranque: <a href="https://www.magnific.com/app/creation/aF9iWv6fSh" target="_blank" rel="noopener">ver</a>.</figcaption></figure>
+    <figure><a class="frame r916" href="https://www.magnific.com/app/creation/WDKrJixcXe" target="_blank" rel="noopener"><span class="t">Cocina · Veo 3.1</span><span class="o">Abrir ↗</span></a><figcaption>Fotograma de arranque: <a href="https://www.magnific.com/app/creation/IfJPGmHtvE" target="_blank" rel="noopener">ver</a>.</figcaption></figure>
+  </div>
+  <div class="block">
+    <h3>Créditos de la fase 2</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Partida</th><th>Detalle</th><th class="n">Créditos</th></tr></thead>
+      <tbody>
+        <tr><td>Planos de Veo</td><td>Puerta y cocina con Veo 3.1; salón y terraza con Veo 3.1 Fast</td><td class="n">6.720</td></tr>
+        <tr><td>Repetición de la terraza</td><td>Veo 3.1 Fast</td><td class="n">960</td></tr>
+        <tr><td>Cara de 26 años</td><td>2 retratos y 2 pruebas de movimiento</td><td class="n">430</td></tr>
+        <tr><td>Fotogramas de 26 años y perfil</td><td>4 con Nano Banana Pro y 1 con Magnific One</td><td class="n">480</td></tr>
+        <tr><td>Hechos antes del cambio a 26</td><td>4 fotogramas y 2 imágenes Magnific One, ya descartados</td><td class="n">660</td></tr>
+        <tr><td>Audio</td><td>Música original de 30 s, limpieza y voz única</td><td class="n">320</td></tr>
+        <tr><td>Sin coste</td><td>Cortes, mezclas, montaje, análisis de calidad, personaje y tablero</td><td class="n">0</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>Tope asignado: 10.000</td><td class="n">9.570</td></tr></tfoot>
+    </table></div>
+    <p class="prose">El saldo compartido de Magnific bajó 10.370 en esta fase: 800 más de lo que gasté yo. Ese consumo ocurrió durante la noche, mientras yo no estaba trabajando, así que lo hizo otro uso de la cuenta compartida. Conviene revisarlo.</p>
+  </div>
+</section>
+
 <section class="sheet" id="claudia">
-  <div class="sheet-head"><h2>Quién es Claudia</h2><span class="lab">Lámina 02 · Biblia del personaje</span></div>
+  <div class="sheet-head"><h2>Quién es Claudia</h2><span class="lab">Lámina 05 · Biblia del personaje</span></div>
   <div class="cols">
     <dl class="ficha">
       <dt>Nombre</dt><dd>Claudia</dd>
-      <dt>Edad aparente</dt><dd>28 años</dd>
+      <dt>Edad aparente</dt><dd>26 años</dd>
       <dt>Origen</dt><dd>Valencia. Habla castellano neutro de España.</dd>
-      <dt>Rasgos fijos</dt><dd>Melena castaña ondulada a los hombros, piel oliva cálida, pecas suaves, un lunar en la mejilla izquierda y ojos marrón cálido.</dd>
+      <dt>Rasgos fijos</dt><dd>Melena castaña ondulada a los hombros con reflejos caramelo, piel oliva luminosa, pecas suaves, un lunar a media mejilla izquierda, ojos marrón cálido y sonrisa con hoyuelos.</dd>
       <dt>Look firma</dt><dd>Blazer de lino camel, camiseta blanca y aros dorados pequeños. En invierno o montaña, abrigo camel de lana, jersey blanco, vaqueros y botines.</dd>
       <dt>Carácter</dt><dd>Cercana, curiosa, con humor suave. Explica lo que se siente en una casa, no lo que mide.</dd>
-      <dt>Voz</dt><dd>Joven, cálida y sonriente. Locución hecha con la voz «Carmen Ruiz» de Magnific (<a href="https://www.magnific.com/app/creation/ovwOleJ829" target="_blank" rel="noopener">escuchar ↗</a>).</dd>
+      <dt>Voz</dt><dd>Joven, cálida y sonriente: la voz «Carmen Ruiz» de Magnific (<a href="https://www.magnific.com/app/creation/ovwOleJ829" target="_blank" rel="noopener">escuchar ↗</a>). En el reel, todo lo que dice pasa por esa voz.</dd>
       <dt>Etiqueta</dt><dd>Personaje creado con IA por Vitruvi Studio. Lo dice siempre.</dd>
     </dl>
     <div class="block">
@@ -226,7 +403,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="casting">
-  <div class="sheet-head"><h2>Casting</h2><span class="lab">Lámina 03 · 6 candidatas, 3 estilos</span></div>
+  <div class="sheet-head"><h2>Casting</h2><span class="lab">Lámina 06 · Archivo · 6 candidatas, 3 estilos</span></div>
   <p class="prose">Probé tres estilos con el mismo encuadre, la misma luz y el mismo blazer, para comparar solo la cara. Me quedé con la dirección mediterránea y, dentro de ella, con la candidata A2 por el lunar en la mejilla: es una seña que la hace reconocible en cualquier plano.</p>
   <div class="grid">
     <figure><a class="frame r34" href="https://www.magnific.com/app/creation/ovwOLpO829" target="_blank" rel="noopener"><span class="t">A1 · Valencia</span><span class="o">Abrir ↗</span></a><figcaption><b>Mediterránea.</b> Castaña, pecas, sonrisa abierta.</figcaption></figure>
@@ -250,7 +427,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="sesion">
-  <div class="sheet-head"><h2>Sesión de fotos</h2><span class="lab">Lámina 04 · Misma cara en cada plano</span></div>
+  <div class="sheet-head"><h2>Primera sesión de fotos</h2><span class="lab">Lámina 07 · Archivo · Claudia a los 28</span></div>
   <div class="grid wide">
     <figure><a class="frame r34" href="https://www.magnific.com/app/creation/cpkxKy30eP" target="_blank" rel="noopener"><span class="t">Retrato en el salón</span><span class="o">Abrir ↗</span></a><figcaption><b>Foto de perfil y portada.</b> Salón de obra nueva con luz de mañana. Seedream 5 Pro, 2K.</figcaption></figure>
     <figure><a class="frame r34" href="https://www.magnific.com/app/creation/DoLgjiMpcl" target="_blank" rel="noopener"><span class="t">Look completo</span><span class="o">Abrir ↗</span></a><figcaption><b>Cuerpo entero.</b> Caminando por un pasillo: blazer, pantalón ancho crudo y zapatillas blancas.</figcaption></figure>
@@ -278,7 +455,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="video">
-  <div class="sheet-head"><h2>En movimiento</h2><span class="lab">Lámina 05 · Clips y control de calidad</span></div>
+  <div class="sheet-head"><h2>Primeros clips</h2><span class="lab">Lámina 08 · Archivo · Kling y Seedance</span></div>
   <div class="tw"><table>
     <thead><tr><th>Clip</th><th>Qué pasa</th><th class="n">Realismo</th><th class="n">Movimiento</th><th>Uso y fallos</th><th>Ver</th></tr></thead>
     <tbody>
@@ -295,7 +472,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="estrategia">
-  <div class="sheet-head"><h2>Cómo encaja con Vitruvi</h2><span class="lab">Lámina 06 · Dos cuentas, un embudo</span></div>
+  <div class="sheet-head"><h2>Cómo encaja con Vitruvi</h2><span class="lab">Lámina 09 · Dos cuentas, un embudo</span></div>
   <div class="flow" role="img" aria-label="Claudia atrae compradores, la promotora gana alcance y Vitruvi vende el servicio">
     <div class="node accent"><span class="lab">Cuenta de Claudia</span><b>Alcance masivo</b><p>Habla al comprador. Formatos virales y reels de promociones publicados en Collab con la promotora.</p></div>
     <div class="arrow" aria-hidden="true">→</div>
@@ -328,7 +505,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="formatos">
-  <div class="sheet-head"><h2>Copiar movimientos, bien hecho</h2><span class="lab">Lámina 07 · Formatos y primer reel</span></div>
+  <div class="sheet-head"><h2>Copiar movimientos, bien hecho</h2><span class="lab">Lámina 10 · Formatos y cadena automática</span></div>
   <div class="prose">
     <p>Tu idea de coger el vídeo con más engagement y replicar sus movimientos funciona si copiamos el <b>formato</b>: la estructura, el ritmo y el gancho. Copiar el vídeo plano a plano tiene dos problemas. Instagram lo trata como contenido no original y le quita alcance, y una coreografía completa o una grabación ajena tienen derechos (<a href="https://www.boe.es/eli/es/rdlg/1996/04/12/1/con" target="_blank" rel="noopener">Ley de Propiedad Intelectual</a>).</p>
   </div>
@@ -346,7 +523,7 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
   </table></div>
 
   <div class="block">
-    <h3>Primer reel de Claudia · 25 s</h3>
+    <h3>Guion de partida de la fase 1 · 25 s</h3>
     <div class="tw"><table>
       <thead><tr><th>Tiempo</th><th>Plano</th><th>Claudia dice o hace</th><th>Material</th></tr></thead>
       <tbody>
@@ -377,16 +554,16 @@ footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:cent
 </section>
 
 <section class="sheet" id="copy">
-  <div class="sheet-head"><h2>Presentación en @vitruvistudio</h2><span class="lab">Lámina 08 · Copys listos para Pulso</span></div>
+  <div class="sheet-head"><h2>Presentación en @vitruvistudio</h2><span class="lab">Lámina 11 · Copys listos para Pulso</span></div>
   <div class="cols">
     <div class="block">
-      <h3>Instagram · reel del teaser</h3>
+      <h3>Instagram · con el reel final</h3>
       <p class="copy">Promotor de obra nueva: tu próxima promoción ya puede tener presentadora.
 Te presentamos a Claudia. Abre la puerta, te dice dónde da el sol por la mañana y qué se ve desde la terraza a la hora de cenar.
 Tu comprador deja de mirar un render y empieza a visitar su casa.
 Claudia es un personaje creado con IA por Vitruvi Studio.
 ¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos por mensaje o al WhatsApp y te enseñamos cómo lo presentaríamos.</p>
-      <p class="mono" style="color:var(--muted)">Reel de 15–20 s con el teaser · audio original o de Meta Sound Collection · marcar «contenido generado con IA» · miércoles 28 a las 10:00 (Metricool: 6.506, el mejor hueco de lunes a jueves).</p>
+      <p class="mono" style="color:var(--muted)">Reel final de 27 s · música original propia, se puede promocionar · marcar «contenido generado con IA» · miércoles 28 a las 10:00 (Metricool: 6.506, el mejor hueco de lunes a jueves).</p>
     </div>
     <div class="block">
       <h3>LinkedIn · perfil de Stefano</h3>
@@ -419,7 +596,7 @@ Soy un personaje creado con IA por @vitruvistudio.
 </section>
 
 <section class="sheet" id="legal">
-  <div class="sheet-head"><h2>Transparencia y ley</h2><span class="lab">Lámina 09 · Antes de publicar</span></div>
+  <div class="sheet-head"><h2>Transparencia y ley</h2><span class="lab">Lámina 12 · Antes de publicar</span></div>
   <div class="cols">
     <div class="block">
       <h3>Obligatorio desde el día 1</h3>
@@ -445,7 +622,7 @@ Soy un personaje creado con IA por @vitruvistudio.
 </section>
 
 <section class="sheet" id="creditos">
-  <div class="sheet-head"><h2>Créditos</h2><span class="lab">Lámina 10 · 3.000 asignados</span></div>
+  <div class="sheet-head"><h2>Créditos de la fase 1</h2><span class="lab">Lámina 13 · 3.000 asignados</span></div>
   <div class="tw"><table>
     <thead><tr><th>Partida</th><th>Detalle</th><th class="n">Créditos</th></tr></thead>
     <tbody>
@@ -460,11 +637,11 @@ Soy un personaje creado con IA por @vitruvistudio.
     </tbody>
     <tfoot><tr><td>Total</td><td>Comprobado con el saldo de la cuenta: 44.359 → 42.117</td><td class="n">2.242</td></tr></tfoot>
   </table></div>
-  <p class="prose">Quedan <b>758 créditos</b>. Mi propuesta: dos planos nuevos de interior (unos 430) y un cierre a cámara (140), y monto el primer reel de 25 s reutilizando la puerta, la terraza y la locución. En total, unos 570.</p>
+  <p class="prose">Sobraron 758 créditos de la fase 1. La fase 2, con su propio tope de 10.000, está en la lámina 04.</p>
 </section>
 
 <section class="sheet" id="fuentes">
-  <div class="sheet-head"><h2>Fuentes</h2><span class="lab">Lámina 11 · Consultadas el 23-10-2026</span></div>
+  <div class="sheet-head"><h2>Fuentes</h2><span class="lab">Lámina 14 · Consultadas el 23 y 24-10-2026</span></div>
   <p class="prose">Los agentes de investigación solo pudieron leer los resultados del buscador, no las páginas enteras. Las cifras de seguidores e ingresos son estimaciones de terceros o de los propios creadores.</p>
   <ul class="src">
     <li><a href="https://techcrunch.com/2026/04/30/instagram-restricts-reach-of-content-aggregators-in-new-crackdown/" target="_blank" rel="noopener">TechCrunch · Instagram restringe a los agregadores (abr-2026)</a></li>
@@ -502,5 +679,5 @@ Soy un personaje creado con IA por @vitruvistudio.
   </ul>
 </section>
 
-<footer>Vitruvi Studio · Claudia · Dossier preparado por Claude el 23 de octubre de 2026</footer>
+<footer>Vitruvi Studio · Claudia · Dossier preparado por Claude el 23 y 24 de octubre de 2026</footer>
 </div>
