@@ -3,7 +3,7 @@
 Usage:
   python3 -I pipeline.py fetch  <creations_get dump> <manifest.json> <download dir>
   python3 -I pipeline.py media  <manifest.json> <download dir> <media dir>
-  python3 -I pipeline.py page   <manifest.json> <casting.html>
+  python3 -I pipeline.py page   <manifest.json> <casting.html> [persona.json]
 """
 import json, os, re, subprocess, sys
 import numpy as np
@@ -96,13 +96,18 @@ def media(manifest, dl, out):
                 save_jpeg(Image.open(src), os.path.join(out, f"{n}_{kind}.jpg"), 600)
 
 
-def page(manifest, html):
-    keep = ("n", "group", "groupLine", "label", "age", "chips", "inspired")
-    data = [{k: c[k] for k in keep if k in c} for c in load(manifest)]
+def embed(text, script_id, data):
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    text = open(html, encoding="utf-8").read()
-    text = re.sub(r'(<script id="cast-data" type="application/json">).*?(</script>)',
+    return re.sub(r'(<script id="%s" type="application/json">).*?(</script>)' % script_id,
                   lambda m: m.group(1) + blob + m.group(2), text, count=1, flags=re.S)
+
+
+def page(manifest, html, persona=None):
+    keep = ("n", "group", "groupLine", "label", "age", "chips", "inspired")
+    text = open(html, encoding="utf-8").read()
+    text = embed(text, "cast-data", [{k: c[k] for k in keep if k in c} for c in load(manifest)])
+    if persona:
+        text = embed(text, "persona-data", load(persona))
     with open(html, "w", encoding="utf-8") as f:
         f.write(text)
 
