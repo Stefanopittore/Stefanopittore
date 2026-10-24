@@ -93,6 +93,17 @@ section{display:flex;flex-direction:column;gap:18px}
 .stat span{color:var(--muted);font-size:14px}
 .stat.ok b{color:var(--ok)}
 footer{display:flex;flex-wrap:wrap;gap:18px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+/* Internal casting: one card per candidate, six shots in a row */
+.cc{background:var(--card);border:1px solid var(--rule);padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cc-head{display:flex;align-items:center;gap:12px;font-size:18px}
+.cc-head .num{position:static;flex:none}
+.cc-head span:last-child{color:var(--muted);margin-left:auto;font-size:14px}
+.cc-shots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.cc-shots{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cc-shots figure{margin:0;display:flex;flex-direction:column;gap:4px;min-width:0}
+.cc-shots img{width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid var(--rule)}
+.cc-shots figcaption{font-size:12px;color:var(--muted)}
 </style>
 
 <div class="wrap">
