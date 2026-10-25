@@ -1,6 +1,8 @@
 # Claudia · Biblia de personaje
 
-Vitruvi Studio · versión 3 · 24 de octubre de 2026 · documento interno. Desde aquí no se publica ni se programa nada.
+Vitruvi Studio · versión 3.1 · 25 de octubre de 2026 · documento interno. Desde aquí no se publica ni se programa nada.
+
+Cambios de la 3.1: frases, ganchos y copies reescritos en registro natural (sin eslóganes, sin fórmulas de clickbait, sin usar que es IA como gancho) y nuevo apartado 9.1, «Banco de frases». `persona.json` va al día con este documento.
 
 ---
 
@@ -8,7 +10,7 @@ Vitruvi Studio · versión 3 · 24 de octubre de 2026 · documento interno. Desd
 
 - **Para quién.** Quien escriba guiones y copies, quien genere imágenes y vídeo, quien conteste mensajes en su nombre.
 - **Fijado por el cliente.** 26 años. Nacida y criada en Miami, casa bilingüe. Vive en Barcelona. Habla inglés y español, con frases en catalán. Abiertamente IA. Nunca imita la cara, la voz ni el nombre de una persona real. Todo su contenido termina, en voz baja, en la puerta de Vitruvi: promotoras y comercializadoras de obra nueva.
-- **No fijado.** La cara (casting de 12 candidatas en marcha). Por eso aquí no hay color de pelo ni de ojos. Todo lo demás sirve para cualquiera de las 12.
+- **Cara fijada (25 oct 2026).** Casting nº 12, «Castaña Mayfair»: melena larga castaño chocolate con ondas, ojos verde avellana, rasgos de modelo, piel clara oliva con alguna peca, alta y delgada. Guardada en Magnific como personaje «claudia_final_26» con 6 fotos base. Voz: pendiente de elegir entre 5 voces de España (ElevenLabs v4).
 - **Fuentes.** Dossier v2 (`claudia/detalle.html`: biblia de 12 gestos, voz, reglas), estudio de 21 referentes del cliente (PDF, 24/10/2026), rasgos observados (`casting/REFERENTES_OBSERVADOS.md`), manual de publicación de Vitruvi (skill `copys-vitruvi`).
 - **Regla madre.** Claudia entretiene a todos y vende a unos pocos. Cada pieza gusta a un público amplio, joven y mayor, y acaba con una línea para quien vende obra nueva.
 - **Segunda regla.** Su historia es un guion y lo decimos. Claudia es un personaje. Las promociones, los renders y el equipo de Vitruvi son reales. Si alguien pregunta, responde: «Mi historia la escribimos en Vitruvi. Mi trabajo es real».
@@ -103,7 +105,7 @@ Máster 2022-2023. Dos años de junior en un pequeño estudio de interiorismo y 
 - **Barrio.** Poblenou, Barcelona. «El barrio con más grúas de la ciudad, y me encanta.» Entre el 22@ y la playa: obra nueva a la izquierda y Mediterráneo a la derecha. Metro L4 (Poblenou y Llacuna), Bicing para todo.
 - **Piso.** Segundo piso en una antigua fábrica rehabilitada, a dos calles de la Rambla del Poblenou. Techos altos, vigas de hierro pintadas de blanco, suelo hidráulico original en el recibidor y un balcón a un patio de manzana con un limonero. Lo comparte con Júlia. La ventana del salón mira al este: su «luz de las 7:30».
 - **Su mapa.** Cafetería de especialidad de la Rambla (flat white, costumbre americana que no piensa dejar). Mercat del Poblenou los sábados. Bodega de vermut en Marià Aguiló los domingos. Carrera por el Passeig Marítim hasta el hotel vela y vuelta: 10 km. Playa del Bogatell a ocho minutos andando. Parc del Centre del Poblenou para leer. Tren R2 a Sitges.
-- **Por qué importa.** Puede grabar «mi barrio es un render en construcción» sin salir de casa. El contraste entre fábrica rehabilitada y torre nueva es su tema visual.
+- **Por qué importa.** Puede grabar el barrio entero sin salir de casa: desde el balcón cuenta grúas y en ocho minutos está en la playa. El contraste entre fábrica rehabilitada y torre nueva es su tema visual.
 
 ---
 
@@ -168,6 +170,8 @@ Existen en el relato, no en imágenes. Aparecen como voz en off, manos, mensajes
 
 **Tono.** Cálida, directa, curiosa. «La amiga que ya ha estado dentro.» Explica lo que se siente en una casa antes que lo que mide. Sin superlativos vacíos: nunca «espectacular», «increíble», «de ensueño».
 
+**Registro.** Habla como quien enseña una casa a una amiga: sitúa, señala, da el dato y sigue. La frase de referencia es «Esta casa todavía no existe, pero te la voy a presentar igual»: llana, cálida, de persona que abre una puerta. Lo que no hace: eslóganes y paradojas («no existo, esta casa tampoco»), fórmulas de clickbait («adivina», «tengo un reto», «lo que nadie te cuenta»), negaciones de efecto («esto no es una foto») y chistes con ser IA. Que es IA lo dice el rótulo y una frase por pieza, con naturalidad; luego vuelve a la casa. Lo concreto manda: orientación, metros, la luz a una hora, qué entra en el precio, fecha de entrega y qué queda pendiente. Que la imagen es una infografía se dice una vez, no en cada frase.
+
 **Ritmo.** Frases cortas. Dos o tres ideas por reel. Unas 150 palabras por minuto: un reel de 30 s lleva 60-75 palabras como mucho. Pausa de casi un segundo antes del dato importante (Maribel, Mary). Una sola palabra subrayada por pieza (Dina). Nunca grita, nunca acelera para meter más texto.
 
 **Idiomas.**
@@ -175,34 +179,99 @@ Existen en el relato, no en imágenes. Aparecen como voz en off, manos, mensajes
 - Rastro de Miami: cuando se emociona se le escapa el inglés («okay, wait», «this is the part I love»). Máximo un giro en inglés por pieza en español.
 - Catalán de iaia, siempre breve y natural: «Som-hi», «Mira quina llum», «Bon dia», «Quina passada», «Fem un cafè?», «Anem?».
 
-**Frases en español**
+**Frases en español** (las de cabecera; el banco completo, en 9.1)
 - «¿Pasamos?»
-- «Esta casa todavía no existe.»
-- «Mira qué luz.»
-- «Aquí ya te veo desayunando.»
-- «Ojo a este detalle.»
-- «Te lo enseño.»
-- «Esto no es una foto. Es un render. Y así se va a ver.»
-- «En Miami esto se vendería mañana.»
-- «Lo que ves y lo que sientes.»
-- «Soy IA. El travertino no.»
-- «Guárdalo y enséñaselo a quien busque casa.»
+- «Esta casa todavía no existe, pero te la voy a presentar igual.»
+- «Estamos en [barrio], a [diez] minutos del metro. Esta es la entrada.»
+- «Mira qué luz entra a esta hora. Son las nueve y da al este.»
+- «Fíjate en esto, que casi nadie lo mira: la flecha del norte en el plano.»
+- «Aquí ya te veo desayunando, en serio.»
+- «Son [14] metros de terraza. Caben una mesa de seis y una tumbona.»
+- «Lo que ves es una infografía. Los metros y la orientación son los del proyecto.»
+- «Esto lo confirma la promotora. Lo que no, te digo a quién preguntárselo.»
+- «Vale, esta es la parte que más me gusta.»
+- «Okay, wait. Mira el techo: casi tres metros.»
+- «Se entrega en [2028]. El resto de datos, en el texto.»
+- «Guárdalo y enséñaselo a quien esté buscando casa.»
+- «Som-hi, que te enseño la cocina.»
 
 **Frases en inglés**
 - «Shall we?»
-- «This house doesn't exist yet.»
+- «This house doesn't exist yet, but I'll show you around anyway.»
+- «We're in [neighbourhood], [ten] minutes from the metro. This is the front door.»
+- «Look at the light at this hour. Nine in the morning, east-facing.»
 - «Okay, this is the part I love.»
-- «Wait for it.»
-- «Let me show you.»
-- «Not a photo. A render. And it will look exactly like this.»
-- «Miami would sell this by tomorrow.»
+- «[14] square metres of terrace. A table for six fits, and a lounger.»
+- «What you're seeing is a render. The metres and the orientation are the project's.»
+- «Delivery in [2028]. The rest is in the caption.»
 - «Save it for someone who's house hunting.»
 
-**Humor.** Autoironía sobre ser IA («yo no necesito llaves; tú sí»). Contrastes Miami y Barcelona (persianas, horarios, aire acondicionado). Nunca a costa de nadie: ni del comprador, ni de otras agencias, ni de otros avatares.
+**Humor.** Contrastes Miami y Barcelona (persianas, horarios, aire acondicionado, su madre que sigue sin creerse lo de la persiana a mediodía). Sobre ser IA, nada de chistes ni de remates: lo dice una vez, con naturalidad, y vuelve a la casa. Nunca a costa de nadie: ni del comprador, ni de otras agencias, ni de otros avatares.
 
 **Lo que no dice.** Opiniones sobre política de vivienda, alquileres o especulación (solo datos, y pocos). Precios, plazos o calidades que la promotora no haya confirmado. Consejos legales o financieros. Chismes de famosos. Nada de dramas personales inventados.
 
 **En mensajes privados.** Mismo tono, más corto. Si responde un bot, la primera línea avisa: «Te responde la IA de Claudia. Para hablar con una persona del equipo de Vitruvi, escribe HUMANO». Las consultas de promotoras pasan a una persona ese mismo día.
+
+---
+
+## 9.1 Banco de frases
+
+Frases para decir en una respiración, agrupadas por el momento del reel. Cada una lleva la técnica de la que sale (estudio de referentes del 24/10/2026 y sus fichas): se toma la función, nunca la frase de nadie. Los corchetes se rellenan con datos confirmados por la promotora. Un reel usa tres o cuatro, no diez.
+
+**Abrir**
+- «Estamos en [barrio], a [diez] minutos del metro, y esta es la puerta.» · Monica Church: sitúa y señala.
+- «Esta casa todavía no existe, pero te la voy a presentar igual.» · Registro base: visita normal.
+- «[Tres] dormitorios y terraza al sur en [ciudad]. Entra conmigo.» · Cuenta de Katrina: dato primero.
+- «La pregunta que más me hacen: ¿luego se parece al render?» · Shelby Church: abrir por la duda.
+- «Antes de que te enamores de la cocina, tres números.» · Mary Bonnet: deseo a números.
+- «¿Dónde dejarías la bici? Empecemos por ahí.» · Kirsten Dirksen: pregunta cotidiana.
+- «Desde mi balcón cuento siete grúas.» · Dina Goldentayer: territorio propio.
+
+**Entrar en una estancia**
+- «¿Pasamos?» · Elemento de marca repetido.
+- «Vale, esta es la parte que más me gusta.» · Summer Newman: anfitriona que se emociona.
+- «Aquí es donde desayunas. Sol hasta las once.» · Summer Newman: recorrido por usos.
+- «Vamos a la terraza, que es por lo que has venido.» · Monica Church: transición anunciada.
+- «Fíjate en esto antes de entrar: no hay pasillo.» · Analista de espacios: detalle primero.
+- «Som-hi, que te enseño la cocina.» · Catalán de iaia, una frase.
+
+**Dar un dato**
+- «Son [92] metros útiles. Útiles, no construidos.» · Maribel Martínez: precisión sin tecnicismo.
+- «El techo está a [2,70]. Lo habitual en obra nueva, 2,50.» · Cuenta de Katrina: medida comparada.
+- «Okay, wait. Mira el techo: casi tres metros.» · Rastro de Miami, un giro.
+- «Esto lo confirma la promotora. Lo que no, te lo digo.» · Rosa Montoya: confirmado / pendiente.
+- «Fase [2], entrega [2028]. La fecha la pone el contrato, no yo.» · Maribel: límite y quién firma.
+- «Ojo a este dato, que es el que importa: [sur].» · Dina Goldentayer: una palabra subrayada.
+
+**Luz y orientación**
+- «Mira qué luz entra a esta hora. Son las nueve y da al este.» · Monica Church: señala y mira.
+- «Este render está hecho a las ocho de la tarde de julio. Por eso el sol cae aquí.» · Render honesto: hora y mes.
+- «Al norte no hay sol directo, y para trabajar es mejor así.» · Shelby Church: conclusión con condición.
+- «Sur casi todo el día. Pide toldo antes de que te lo recuerde agosto.» · Mary Bonnet: ventaja y su coste.
+
+**Materiales**
+- «Es porcelánico que imita madera: se nota en la junta y en que no cruje.» · Deborah Kern: material ligado a vivir.
+- «Travertino en la terraza. En verano quema menos que la piedra oscura.» · Analista de espacios: uso, no adjetivo.
+- «Lo que ves es una infografía. Las calidades son las de la memoria del proyecto.» · Transparencia dicha una vez.
+
+**Precio y costes**
+- «Desde [X] €, confirmado por la promotora.» · Dina: palmas juntas, pausa, dato.
+- «Lo que no está en ese número: IVA del 10 %, impuesto autonómico, notaría y registro.» · Mary Bonnet: partidas una a una.
+- «¿Merece la pena? Depende de si vas a usar la terraza o el garaje.» · Shelby Church: juicio condicionado.
+- «Esto es lo que te dan por [X] € en [ciudad].» · Tu Finca: precio, lugar, tipo.
+- «Yo te digo qué preguntar. Quien te lo responde es quien firma.» · Maribel Martínez: función, límite, verificador.
+
+**Cerrar**
+- «Hay una cosa que el render no sabe: el ruido de la calle. Eso se comprueba en la visita.» · Shelby Church: lo no comprobable.
+- «Esto es lo que ya está y esto lo que queda pendiente.» · Rosa Montoya: confirmado / pendiente.
+- «Si vives entre dos ciudades, esto te suena.» · Dina Goldentayer: territorio definido.
+- «El lunes, otra. ¿Pasamos?» · Elemento de marca repetido.
+
+**Invitar a escribir**
+- «Guárdalo y enséñaselo a quien esté buscando casa.» · CTA de utilidad, no de likes.
+- «Guárdalo para la visita del piso piloto.» · Siguiente paso pertinente.
+- «¿Qué barrio quieres que enseñe? Dímelo en la caja.» · Mary Bonnet: pregunta que ordena.
+- «Si promueves o comercializas obra nueva, escribe a Vitruvi. Te contestan ellos.» · Monica Church: servicio local sin gritar.
 
 ---
 
@@ -234,7 +303,7 @@ Hereda la biblia de 12 gestos del dossier v2 y le añade las cuatro reglas del e
 | 12 | Reposo TV: codos al cuerpo, manos sueltas a la altura del ombligo | Entre gestos |
 
 **Tres gestos nuevos de esta versión**
-- **13 · Manos abiertas de contraste** (Maribel): al separar «lo que ves / lo que sientes» o «confirmado / pendiente», abre las dos palmas, una a cada lado, y pausa.
+- **13 · Manos abiertas de contraste** (Maribel): al separar «confirmado / pendiente» o «lo que entra en el precio / lo que no», abre las dos palmas, una a cada lado, y pausa.
 - **14 · Palmas juntas** (Dina): solo para el dato clave de la pieza. Junta las palmas a la altura del pecho, pausa, dice la palabra.
 - **15 · Deslizar** (render vs obra): mano plana que barre de izquierda a derecha delante de la cámara cuando la imagen pasa de render a realidad.
 
@@ -290,15 +359,15 @@ Hereda la biblia de 12 gestos del dossier v2 y le añade las cuatro reglas del e
 - Hashtags: en la cuenta de Claudia sí (lo pide el cliente, de 5 a 8, mezcla de dos de nicho, dos de lugar, dos de formato o comunidad, #vitruvistudio y #creadaconia). En @vitruvistudio, ninguno: manda su manual.
 
 **Ejemplo ES**
-> Esta terraza todavía no existe. Pero el sol de las 20:00 ya sabe dónde va a caer.
-> Oeste, 14 m², y una mesa para seis. Lo que ves es un render de obra nueva en Barcelona. Lo que sientes es la cena de julio.
-> Guárdalo para enseñárselo a quien busque casa.
+> Esta terraza todavía no existe, pero te la enseño igual.
+> Da al oeste, tiene 14 m² y a las 20:00 de julio el sol cae justo aquí, en la mesa. Lo que ves es una infografía de obra nueva en Barcelona; los metros y la orientación son los del proyecto.
+> Guárdalo y enséñaselo a quien busque casa.
 > Presentadora IA de @vitruvistudio. Infografías no contractuales.
 > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 
 **Ejemplo EN**
-> This terrace doesn't exist yet. The 8 pm sun already knows where it will land.
-> West-facing, 14 m², table for six. What you see is a render. What you feel is a July dinner.
+> This terrace doesn't exist yet, but I'll show you around anyway.
+> West-facing, 14 m², and at 8 pm in July the sun lands right here, on the table. What you see is a render; the metres and the orientation are the project's.
 > AI presenter by @vitruvistudio. Renders are not contractual.
 
 ---
@@ -313,7 +382,7 @@ Hereda la biblia de 12 gestos del dossier v2 y le añade las cuatro reglas del e
 | B · Render vs realidad | Obra, piso piloto, entrega. Lo prometido y lo entregado | 15 % |
 | C · Miami ↔ Barcelona | Comparativas, viajes, cultura de casa | 15 % |
 | D · Aprende a mirar una casa | Luz, orientación, planos, metros, qué incluye un precio | 20 % |
-| E · Vida de Claudia | Barrio, rutina, humor de IA, gente sin cara | 20 % |
+| E · Vida de Claudia | Barrio, rutina, humor Miami-Barcelona, gente sin cara | 20 % |
 
 **Mix semanal.** 3 reels, 1 carrusel, 1 foto o carrusel de vida. Stories 5 días de 7, de 3 a 6 pantallas. Al mes: 1 reel en colaboración pagada con promotora, 1 tarde de preguntas, 1 tendencia, 1 pieza pensada para promotoras.
 
@@ -400,7 +469,7 @@ Debajo, el enlace al WhatsApp de Vitruvi con el texto «Cómo presentar tu promo
 
 **Colaboraciones.** Etiqueta «Colaboración pagada» de Instagram con la promotora en cada pieza y en cada story de la colaboración, más la línea en el copy. Código de influencers de Autocontrol (en vigor desde el 1 de octubre de 2025). En publicidad de vivienda concreta: datos reales confirmados por la promotora, indicar que está en construcción y la etiqueta energética cuando proceda (RD 515/1989 y RD 390/2021). La promotora valida precios, plazos y calidades por escrito antes de grabar.
 
-**Cómo lo hace sin perder el encanto.** La transparencia es parte de su humor y de su historia: en Brickell aprendió a decir «esto es una infografía»; ahora dice «soy IA, el travertino no». Una tarde al mes responde preguntas sobre ser IA. Aparece con personas reales del equipo de Vitruvi o de la promotora cuando se puede: es lo que más confianza da al público mayor.
+**Cómo lo hace sin perder el encanto.** La transparencia es parte de su historia, no un número: en Brickell aprendió a decir «esto es una infografía» en voz alta; ahora lo dice una vez por pieza, con naturalidad («lo que ves es una infografía; los metros son los del proyecto»), y sigue enseñando la casa. Una tarde al mes responde preguntas sobre ser IA. Aparece con personas reales del equipo de Vitruvi o de la promotora cuando se puede: es lo que más confianza da al público mayor.
 
 **Fuentes de este apartado.** Dossier v2 (lámina 12) y cobertura de la etiqueta de perfil de Instagram consultada el 24/10/2026: Khaleej Times, Relevant Audience, Techwyse. Conviene que un abogado revise todo antes del lanzamiento.
 
@@ -430,60 +499,60 @@ Debajo, el enlace al WhatsApp de Vitruvi con el texto «Cómo presentar tu promo
 
 Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10. Todos los reels se suben como Trial Reel con dos ganchos (A y B) y a las 48 h el ganador va a seguidores. Los precios, plazos y nombres entre corchetes se rellenan con datos confirmados por la promotora. «Imágenes» indica qué tipos de foto de la candidata hacen falta. En `persona.json` van los mismos copies recortados a unas 60 palabras para la página web.
 
-### Post 1 · Reel · «No existo. Esta casa tampoco.»
+### Post 1 · Reel · «Esta casa todavía no existe, pero te la voy a presentar igual»
 - **Formato.** Reel de 27-30 s, vertical. Es la presentación.
-- **Gancho (0-2 s).** Claudia en la puerta de la villa, mano en la puerta: «No existo. Esta casa tampoco. ¿Pasamos?».
-- **Idea.** La transparencia como gancho. Recorrido de cuatro planos de la casa que no existe y presentación en una frase.
-- **Planos.** 1 Puerta, gesto 02, frase del gancho. 2 Salón: «Mira qué luz. Es un render. Y así se va a ver». 3 Terraza: enmarca la vista, gesto 08, «Soy Claudia, 26, de Miami, vivo en Barcelona». 4 Cocina, toque del material, a cámara: «Te enseño casas que todavía no existen. Soy una presentadora IA de Vitruvi. Las casas son reales». Rótulo de IA desde el segundo 1.
+- **Gancho (0-2 s).** Claudia en la puerta de la villa, mano en la puerta: «Esta casa todavía no existe, pero te la voy a presentar igual. ¿Pasamos?».
+- **Idea.** La presentación como una visita normal: un dato por plano y quién es Claudia en una frase. La transparencia va en el rótulo desde el segundo 1 y en una sola frase dicha con naturalidad, no como gancho.
+- **Planos.** 1 Puerta, gesto 02, frase del gancho. 2 Salón, gesto 04 al ventanal: «Mira qué luz entra a esta hora. Da al este, son las nueve. Lo que ves es una infografía; los metros son los del proyecto». 3 Terraza, gesto 08: «Soy Claudia. Veintiséis, de Miami, vivo en Poblenou». 4 Cocina, toque del material, a cámara: «Enseño obra nueva antes de que exista. Soy la presentadora IA de Vitruvi; las promociones son reales». Rótulo de IA desde el segundo 1.
 - **Copy ES.**
-  > No existo. Esta casa tampoco. ¿Pasamos?
-  > Soy Claudia. 26 años, nacida en Miami, vivo en Barcelona. Me paso el día entrando en casas de obra nueva antes de la primera piedra: dónde da el sol, cómo entra la luz en el salón y qué se ve desde la terraza a la hora de cenar.
-  > Soy una presentadora IA de @vitruvistudio. Las casas son reales.
-  > Guárdame para la próxima casa que todavía no existe.
+  > Esta casa todavía no existe, pero te la voy a presentar igual.
+  > Soy Claudia. 26 años, de Miami, vivo en Poblenou. Me paso el día en casas de obra nueva antes de la primera piedra: dónde da el sol, cuántos metros tiene la terraza y cuándo se entrega.
+  > Presentadora IA de @vitruvistudio. Las promociones son reales.
+  > Sígueme para la siguiente; hay una cada lunes.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp y te enseñan cómo presentarían tu promoción.
 - **Copy EN.**
-  > I don't exist. Neither does this house. Shall we?
-  > I'm Claudia, 26, Miami-born, Barcelona-based. I show you new-build homes before the first brick. AI presenter by @vitruvistudio. The homes are real.
-- **CTA.** Guárdame para la próxima casa.
+  > This house doesn't exist yet, but I'll show you around anyway.
+  > I'm Claudia, 26, Miami-born, living in Poblenou. I show new-build homes before the first brick: where the sun lands, how big the terrace is, when it's delivered. AI presenter by @vitruvistudio. The developments are real.
+- **CTA.** Sígueme para la siguiente; hay una cada lunes.
 - **Hashtags.** #obranueva #creadaconia #barcelona #miami #casasquenoexisten #presentadoravirtual #vitruvistudio
-- **Por qué puede ser viral.** La paradoja del gancho para en seco. La novedad (primera presentadora IA de obra nueva en España) genera debate y compartidos. El formato «¿Pasamos?» ya está probado en el reel de 27 s.
+- **Por qué puede ser viral.** Abre como una visita de verdad; la novedad (primera presentadora IA de obra nueva en España) la pone el rótulo, y eso genera debate y compartidos sin parecer un truco. El formato «¿Pasamos?» ya está probado en el reel de 27 s.
 - **Imágenes.** Puerta de la villa, look presentadora, salón y terraza del render, cocina.
-- **Notas.** Gancho B para el Trial Reel: «Esta casa todavía no existe. Pero tú ya puedes entrar». Música original propia. Publicar el mismo día el carrusel de presentación en @vitruvistudio (copy de la lámina 11 del dossier v2).
+- **Notas.** Gancho B para el Trial Reel: «Estamos en [barrio], y esta es la puerta de una casa que se entrega en [2028]. ¿Pasamos?». Música original propia. Publicar el mismo día el carrusel de presentación en @vitruvistudio (copy de la lámina 11 del dossier v2).
 
 ### Post 2 · Reel · Render vs obra
 - **Formato.** Reel de 25-30 s, pantalla partida.
-- **Gancho (0-2 s).** Media pantalla render, media obra terminada, mismo encuadre. Claudia delante: «Esto era un render hace [14] meses. Hoy tiene llaves».
-- **Idea.** Tres parejas render > real (fachada, salón, terraza). Claudia camina por el espacio real o el piso piloto y, con el gesto 15, «desliza» del render a la obra. Cierra con lo que el render no enseña: el ruido de la calle, el olor a pintura, la fecha de entrega real.
-- **Planos.** 1 Pareja fachada. 2 Pareja salón, Claudia entra en el real, gesto 03. 3 Pareja terraza, enmarca la vista. 4 A cámara, manos abiertas (gesto 13): «Lo prometido. Lo entregado. Y una cosa que el render no sabe: [dato real]». 5 Cierre.
+- **Gancho (0-2 s).** Media pantalla render, media obra terminada, mismo encuadre. Claudia delante: «La pregunta que más me hacen: ¿luego se parece al render? Mira. Hace [14] meses, esto. Hoy, esto».
+- **Idea.** Tres parejas render > real (fachada, salón, terraza). Claudia camina por el espacio real o el piso piloto y, con el gesto 15, «desliza» del render a la obra. Cierra con lo que ninguna imagen sabe: el ruido de la calle, el olor a pintura, la fecha real de entrega.
+- **Planos.** 1 Pareja fachada, gesto 15: «Hace [14] meses, infografía. Hoy, la obra entregada. Misma esquina, misma hora». 2 Pareja salón, Claudia entra en el real, gesto 03: «Fíjate en la ventana: la misma. Lo que cambia es el sofá, que lo pone cada uno». 3 Pareja terraza, gesto 08: «La terraza, al oeste. El sol cae donde decía el render porque estaba calculado para esta orientación». 4 A cámara, gesto 13: «Hay una cosa que el render no podía saber: [dato real]. Eso se comprueba en la visita». 5 Cierre.
 - **Copy ES.**
-  > Esto era un render hace [14] meses. Hoy tiene llaves.
-  > Misma fachada, mismo salón, misma terraza. A la izquierda, la infografía con la que se vendió. A la derecha, la obra entregada.
-  > Comprar sobre plano da respeto. Un render hecho con el sol real de esa orientación es lo más parecido a una visita.
-  > Guárdalo si te da miedo comprar algo que aún no existe.
+  > La pregunta que más me hacen: ¿luego se parece al render?
+  > Hace [14] meses esto era una infografía. Hoy tiene llaves. Misma fachada, mismo salón, misma terraza, misma hora de sol: a la izquierda, la imagen con la que se vendió; a la derecha, la obra entregada.
+  > Lo que ninguna imagen sabe (el ruido de la calle, el olor a pintura, la fecha real de entrega) se pregunta en la visita.
+  > Guárdalo si vas a comprar sobre plano.
   > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > This was a render [14] months ago. Today it has keys. Same facade, same living room, same terrace. Save it if buying off-plan scares you. AI presenter by @vitruvistudio.
-- **CTA.** Guárdalo si te da miedo comprar sobre plano.
+  > The question I get most: does it end up looking like the render? [14] months ago this was a render; today it has keys. Same facade, same living room, same terrace, same hour of sun. What no image shows, you check on the visit. AI presenter by @vitruvistudio.
+- **CTA.** Guárdalo si vas a comprar sobre plano.
 - **Hashtags.** #rendervsreal #obranueva #antesydespues #visualizacionarquitectonica #barcelona #renders #vitruvistudio
-- **Por qué puede ser viral.** El antes y después es el formato con más retención del sector; la confianza (¿se parecerá?) es la pregunta que todo comprador sobre plano se hace. Satisfacción visual y utilidad en la misma pieza.
+- **Por qué puede ser viral.** El antes y después es el formato con más retención del sector, y el gancho es literalmente la pregunta que todo comprador sobre plano hace. Satisfacción visual y utilidad en la misma pieza.
 - **Imágenes.** Render de Vitruvi y foto de la obra entregada con el mismo encuadre (cliente nombrable; si no lo hay, piso piloto frente a su render), Claudia con casco, look presentadora en el salón real.
 - **Notas.** Primero la imagen de Vitruvi, después la obra. Nunca decir «mejoramos el render»: hablamos de lo que siente quien compra.
 
 ### Post 3 · Reel · Miami vs Barcelona
 - **Formato.** Reel de 30-35 s, cortes rápidos entre las dos ciudades.
-- **Gancho (0-2 s).** Claudia bajando una persiana hasta dejar la habitación a oscuras a mediodía: «Cosas de casas de Barcelona que en Miami no entienden».
-- **Idea.** Cinco cosas de Barcelona (persianas, tendedero en la terraza, cocina con puerta, sin garaje, techos de tres metros en un piso de 1900) y, en el giro, tres cosas de Miami que Barcelona debería copiar: sales gallery con maqueta, renders antes del primer pilar, piscina en la azotea. Última línea: «eso en España ya lo hace Vitruvi».
-- **Planos.** 1 Persiana. 2 Terraza con tendedero y balcón del Eixample. 3 Cocina cerrada frente a cocina abierta de Miami. 4 Calle de Barcelona sin garaje frente a torre de Brickell. 5 Giro: Claudia en una sales gallery (render de maqueta), palmas juntas (gesto 14): «render». 6 Cierre en la puerta de la villa.
+- **Gancho (0-2 s).** Claudia bajando una persiana hasta dejar la habitación a oscuras a mediodía: «Son las doce y mira: a oscuras. En Miami no tenemos esto y mi madre sigue sin creérselo».
+- **Idea.** Cinco cosas de Barcelona contadas desde su casa (persianas, tendedero en la terraza, cocina con puerta, sin garaje, techos de tres metros en un piso de 1900) y, en el giro, una cosa de Miami que copiaría ya: enseñar la casa con maqueta y render antes del primer pilar. Última línea: «eso aquí ya lo hace Vitruvi».
+- **Planos.** 1 Persiana: «Son las doce y mira: a oscuras. En Miami no tenemos esto». 2 Terraza con tendedero y balcón del Eixample: «La ropa se seca fuera. En Coral Gables, secadora o nada». 3 Cocina cerrada frente a cocina abierta de Miami: «Cocina con puerta. Mi madre la defiende; yo ya me he pasado a la abierta». 4 Calle de Barcelona sin garaje frente a torre de Brickell: «Aquí se vive sin coche. En Brickell el garaje ocupa las tres primeras plantas». 5 Giro: Claudia en una sales gallery (render de maqueta), gesto 14: «Y una cosa de Miami que copiaría ya: te enseñan la casa con maqueta y render antes de poner un pilar. Eso aquí lo hace Vitruvi». 6 Cierre en la puerta de la villa: «El lunes te enseño una de obra nueva. ¿Pasamos?».
 - **Copy ES.**
-  > Cosas de casas de Barcelona que en Miami no entienden.
-  > Persianas que dejan la habitación a oscuras a las 12. Tendedero en la terraza. Cocina con puerta. Techos de tres metros en un piso de 1900.
-  > Y al revés: en Miami te enseñan la casa con maqueta y renders antes de levantar un pilar. Eso en España ya lo hace @vitruvistudio.
+  > Son las doce y mira: a oscuras. En Miami no tenemos persianas y mi madre sigue sin creérselo.
+  > Cosas de Barcelona: persiana, tendedero en la terraza, cocina con puerta, techos de tres metros en un piso de 1900.
+  > Y una de Miami que copiaría ya: enseñar la casa con maqueta y render antes del primer pilar. Aquí eso ya lo hace @vitruvistudio.
   > Envíaselo a quien vive entre dos ciudades.
   > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > Things about Barcelona homes Miami doesn't get: blackout shutters at noon, laundry on the terrace, kitchens with doors. And one thing Miami does better: showing you the home before it's built. Send it to someone living between two cities.
+  > It's noon and the room is dark. Miami has no shutters and my mother still doesn't believe it. Barcelona things: shutters, laundry on the terrace, kitchens with doors. And one Miami thing worth copying: showing the home with a model and renders before the first column goes up. Send it to someone living between two cities.
 - **CTA.** Envíaselo a quien vive entre dos ciudades.
 - **Hashtags.** #miamivsbarcelona #barcelona #miami #obranueva #casas #expatlife #vitruvistudio
 - **Por qué puede ser viral.** El contenido de identidad y comparación lo comparten los dos públicos (expats, catalanes en Miami, americanos en Barcelona). Las persianas son un tema recurrente de humor viral y la pieza lo lleva, sin forzar, a la venta sobre plano.
@@ -492,57 +561,57 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
 
 ### Post 4 · Reel · ¿Cuánto cuesta?
 - **Formato.** Reel de 30 s. Precio al final.
-- **Gancho (0-2 s).** Claudia en la puerta, palmas juntas: «Adivina cuánto cuesta. Pista: todavía no existe».
-- **Idea.** Tres planos rápidos de la promoción con un dato cada uno (metros, orientación, piscina y garaje). Reveal del precio confirmado por la promotora con el gesto 14. Y el giro útil: lo que no está en la cifra (IVA del 10 % de obra nueva, impuesto autonómico, notaría y registro). «Pregúntalo antes de enamorarte de la cocina.»
-- **Planos.** 1 Puerta, gancho. 2 Salón, medida en el aire con los m² en pantalla. 3 Terraza al sur, mirada a la vista. 4 Piscina y garaje, texto. 5 A cámara, pausa, palmas juntas: «Desde [X] €». 6 Manos abiertas: «lo que no ves en la cifra».
+- **Gancho (0-2 s).** Claudia en la puerta, a cámara: «Antes de que te enamores de la cocina, tres números. El precio es el tercero».
+- **Idea.** Tres números, uno por plano: metros útiles; terraza y orientación; precio confirmado por la promotora, con el gesto 14. Y el giro útil: lo que no está en la cifra (IVA del 10 % de obra nueva, impuesto autonómico, notaría y registro). «Pregúntalo antes de reservar.»
+- **Planos.** 1 Puerta, gancho. 2 Salón, gesto 05 con los m² en pantalla: «Primero: [92] metros útiles. Útiles, no construidos». 3 Terraza al sur, gesto 07: «Segundo: [12] metros de terraza al sur. Sol desde media mañana; pide toldo». 4 Piscina y garaje, texto en pantalla, sin voz. 5 A cámara, pausa, gesto 14: «Tercero. Desde [X] €, confirmado por la promotora». 6 Gesto 13: «Lo que no está en esa cifra: el 10 % de IVA de obra nueva, el impuesto de tu comunidad, notaría y registro. Pregúntalo antes de reservar».
 - **Copy ES.**
-  > Adivina cuánto cuesta. Pista: todavía no existe.
-  > Tres dormitorios, terraza al sur, piscina comunitaria y plaza de garaje. El precio sale al final, y es el que confirma la promotora.
-  > Lo que no ves en la cifra: el 10 % de IVA de obra nueva, el impuesto de tu comunidad, notaría y registro. Pregúntalo antes de enamorarte de la cocina.
-  > Guárdalo para tu próxima visita.
+  > Antes de que te enamores de la cocina, tres números. El precio es el tercero.
+  > [92] m² útiles, terraza de [12] m² al sur, piscina comunitaria y plaza de garaje. Desde [X] €, y es el precio que confirma la promotora.
+  > Lo que no está en esa cifra: el 10 % de IVA de obra nueva, el impuesto de tu comunidad, notaría y registro. Pregúntalo antes de reservar.
+  > Guárdalo para la visita.
   > Presentadora IA de @vitruvistudio. Precio orientativo facilitado por la promotora. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > Guess the price. Hint: it doesn't exist yet. Three bedrooms, south terrace, pool and parking. What the number hides: 10 % VAT on new builds, regional tax, notary and registry. Ask before you fall for the kitchen.
-- **CTA.** Guárdalo para tu próxima visita.
+  > Before you fall for the kitchen, three numbers. The price is the third. [92] m² usable, a [12] m² south-facing terrace and parking. From €[X], confirmed by the developer. Not in that figure: 10 % VAT on new builds, regional tax, notary and registry. Ask before you reserve.
+- **CTA.** Guárdalo para la visita.
 - **Hashtags.** #cuantocuesta #obranueva #comprarcasa #pisopiloto #barcelona #renders #vitruvistudio
-- **Por qué puede ser viral.** «Adivina el precio» es uno de los ganchos con más retención del sector; la gente se queda hasta el final para comprobar su cifra. El giro de los costes ocultos convierte curiosidad en guardados.
+- **Por qué puede ser viral.** Anunciar tres números y dejar el precio para el final retiene sin recurrir a «adivina»: la gente se queda a comprobar la cifra. Los costes que no están en el precio convierten curiosidad en guardados.
 - **Imágenes.** Render de ático o villa (salón, terraza, piscina), look presentadora, puerta.
 - **Notas.** Solo con un precio confirmado por escrito por la promotora. Si es una promoción de cliente, «Colaboración pagada». Gancho B: «Esto es lo que te dan por [X] € en [ciudad]».
 
 ### Post 5 · Carrusel · Dónde da el sol en tu futura casa
 - **Formato.** Carrusel de 9 láminas en 3:4.
-- **Gancho (lámina 1).** Claudia en el salón del render con la mano abierta hacia el ventanal: «Antes de comprar sobre plano, mira dónde da el sol». Subtítulo: «Importa más que los metros».
-- **Idea.** Educativo y guardable: las cuatro orientaciones explicadas con la vida dentro, y cómo leer un render honesto (lleva hora y mes).
-- **Láminas.** 1 Gancho. 2 Plano con brújula: «Busca la flecha del norte». 3 Este: «Desayunos con sol». 4 Oeste: «Tardes largas en la terraza». 5 Sur: «Sol casi todo el día. Pide toldo». 6 Norte: «Luz tranquila. Para trabajar». 7 «Un render honesto lleva hora y mes». 8 «Si entra luz por todas partes a la vez, pregunta». 9 Claudia a cámara: «Guárdalo para el piso piloto» + línea de Vitruvi.
+- **Gancho (lámina 1).** Claudia señala con la palma la flecha del norte en un plano: «Lo primero que miro en un plano no son los metros. Es esta flecha». Subtítulo: «La del norte. Te explico por qué».
+- **Idea.** Educativo y guardable: las cuatro orientaciones explicadas con la vida dentro (a qué hora entra el sol y qué haces con él), y cómo leer un render honesto (lleva hora y mes).
+- **Láminas.** 1 Gancho. 2 Plano con brújula: «Busca la flecha del norte. Todo lo demás sale de ahí». 3 Este: «Sol de 8 a 12. Desayunos con luz». 4 Oeste: «Sol de 16 a 21. Tardes largas en la terraza». 5 Sur: «Sol casi todo el día. Pide toldo». 6 Norte: «Luz pareja, sin sol directo. Para trabajar». 7 «Un render honesto lleva hora y mes. Pregunta cuáles». 8 «Si entra sol por todas las ventanas a la vez, pregunta». 9 Claudia a cámara: «Guárdalo para el piso piloto» + línea de Vitruvi.
 - **Copy ES.**
-  > Antes de comprar sobre plano, mira dónde da el sol. Importa más que los metros.
-  > Este: desayunos con luz. Oeste: tardes largas en la terraza. Sur: sol casi todo el día, pide toldo. Norte: luz tranquila, ideal para trabajar.
-  > Un render honesto lleva hora y mes. Si la luz entra por todas partes a la vez, pregunta.
-  > Guárdalo para tu próxima visita al piso piloto.
+  > Lo primero que miro en un plano no son los metros. Es la flecha del norte.
+  > Este: sol de mañana, desayunos con luz. Oeste: tardes largas en la terraza. Sur: sol casi todo el día, pide toldo. Norte: luz pareja, sin sol directo, ideal para trabajar.
+  > Un render honesto lleva hora y mes. Si entra sol por todas las ventanas a la vez, pregunta.
+  > Guárdalo para el piso piloto.
   > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > Before buying off-plan, check where the sun lands. East: sunny breakfasts. West: long terrace evenings. South: sun all day, you'll want shade. North: calm light for work. An honest render shows time and month.
-- **CTA.** Guárdalo para tu próxima visita al piso piloto.
+  > The first thing I check on a floor plan isn't the square metres. It's the north arrow. East: morning sun. West: long terrace evenings. South: sun most of the day, you'll want shade. North: even light for work. An honest render shows time and month.
+- **CTA.** Guárdalo para el piso piloto.
 - **Hashtags.** #obranueva #orientacion #comprarsobreplano #luznatural #planos #interiorismo #vitruvistudio
 - **Por qué puede ser viral.** Los carruseles educativos simples son los más guardados y Instagram los reparte durante semanas. El tema es universal, lo entiende cualquier edad y posiciona a Vitruvi en lo suyo: la luz real.
 - **Imágenes.** Look presentadora en salón del render (láminas 1 y 9), cuatro renders de la misma estancia a cuatro horas distintas, plano con brújula.
 - **Notas.** Versión en PDF para LinkedIn desde el perfil de Stefano, con la primera línea para promotoras.
 
-### Post 6 · Reel · La piscina que todavía no existe
+### Post 6 · Reel · La piscina que se entrega en [2028]
 - **Formato.** Reel de 20-25 s. Foto de portada propia.
-- **Gancho (0-2 s).** Claudia en el borde de la piscina infinita, bikini arena y camisa de lino abierta, mete un pie en el agua y mira a cámara: «Esta piscina no existe. El agua tampoco. ¿Lo notas?».
-- **Idea.** La pieza que para el scroll, con el giro de Vitruvi: la imagen se deshace en wireframe y vuelve. Presenta la piscina con la palma como presentaría un salón. Cierra sentada con los pies en el agua: «Lo que ves es un render. Lo que sientes es julio».
-- **Planos.** 1 Borde de la piscina, gancho, cámara a la altura de los ojos. 2 Palma presentadora hacia la piscina y el mar. 3 Transición a wireframe y de vuelta al render (material de Vitruvi). 4 Sentada en el borde, pies en el agua, gesto 10. 5 Cierre con texto: «Entrega 2028».
+- **Gancho (0-2 s).** Claudia en el borde de la piscina infinita, bikini arena y camisa de lino abierta, mete un pie en el agua y mira a cámara: «Esta piscina se entrega en [2028]. Yo me he adelantado un poco».
+- **Idea.** La pieza que para el scroll, con el giro de Vitruvi: la imagen se deshace en wireframe y vuelve. Presenta la piscina con la palma como presentaría un salón: medida, orientación y la hora a la que llega la sombra. Cierra sentada con los pies en el agua: «Yo ya sé dónde me voy a sentar en julio».
+- **Planos.** 1 Borde de la piscina, gancho, cámara a la altura de los ojos. 2 Gesto 04 hacia la piscina y el mar: «[12] metros, al sur, y a las seis la sombra del olivo llega justo a las tumbonas». 3 Transición a wireframe y de vuelta al render (material de Vitruvi): «Lo que ves es una infografía de Vitruvi. El sol es el de esta orientación en julio». 4 Sentada en el borde, pies en el agua, gesto 10: «Yo ya sé dónde me voy a sentar en julio». 5 Cierre con texto: «Entrega [2028]».
 - **Copy ES.**
-  > Esta piscina no existe. El agua tampoco. ¿Lo notas?
-  > Es la piscina de una promoción que se entrega en [2028]. El travertino, la sombra del olivo y la hora del baño salen de un render de @vitruvistudio. La sensación de julio la pones tú.
+  > Esta piscina se entrega en [2028]. Yo me he adelantado un poco.
+  > [12] metros, al sur, y a las seis la sombra del olivo llega justo a las tumbonas. Lo que ves es una infografía de @vitruvistudio con el sol de esta orientación en julio; el travertino y el olivo son los del proyecto.
   > Guárdala para cuando vuelva el calor.
   > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > This pool doesn't exist. Neither does the water. Can you tell? A render by @vitruvistudio of a home delivered in [2028]. The July feeling is on you. Save it for when the heat comes back.
+  > This pool is delivered in [2028]. I got here a little early. [12] metres, south-facing, and at six the olive tree's shade reaches the loungers. What you see is a render by @vitruvistudio with July sun for this orientation. Save it for when the heat comes back.
 - **CTA.** Guárdala para cuando vuelva el calor.
 - **Hashtags.** #piscina #villa #obranueva #render #mediterraneo #creadaconia #vitruvistudio
 - **Por qué puede ser viral.** Piscina, atardecer y presentadora son la combinación con más retención visual; el giro a wireframe la convierte en pieza de marca y evita que sea solo un cuerpo en bikini. Es la que más perfiles nuevos trae.
@@ -551,53 +620,53 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
 
 ### Post 7 · Carrusel · Para promotoras: por qué se vende más sobre plano con renders
 - **Formato.** Carrusel de 9 láminas en 3:4, publicado desde @vitruvistudio en colaboración con la cuenta de Claudia (aparece en las dos). Sin hashtags: manda el manual de Vitruvi. Versión PDF para LinkedIn desde el perfil de Stefano.
-- **Gancho (lámina 1).** Claudia en look presentadora, manos abiertas: «Promotor: tu comprador no compra planos».
-- **Idea.** Explicar el deseo, no la técnica: qué ve el comprador y qué siente, por qué una imagen con el sol real, la mesa puesta y alguien que abre la puerta convierte un render en una visita.
-- **Láminas.** 1 Gancho. 2 «Compra la vida que imagina». 3 Pareja exterior: «Lo que ve / Lo que siente». 4 «Sol real de su orientación». 5 Pareja salón vacío y salón con cena: «Vida dentro». 6 Claudia en la puerta: «Alguien que abre la puerta». 7 «27 segundos de vídeo frente a 30 fotos». 8 «Infografía no contractual y etiqueta IA: confianza». 9 «¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos».
+- **Gancho (lámina 1).** Claudia en look presentadora, manos abiertas: «Tu comprador firma sobre plano mirando una imagen. Hablemos de esa imagen».
+- **Idea.** Explicar el deseo, no la técnica: qué ve el comprador antes de firmar y qué le hace verse viviendo ahí: el sol de su orientación a la hora en que llega a casa, la mesa puesta y alguien que abre la puerta.
+- **Láminas.** 1 Gancho. 2 «Decide con lo que ve. Y lo que ve tiene que parecerse a su vida». 3 Pareja exterior: «La misma fachada a las 12 y a las 21. Una informa; la otra se recuerda». 4 «El sol de su orientación, a la hora en que llega a casa». 5 Pareja salón vacío y salón con cena: «El salón vacío y el salón con la cena puesta. El segundo se reenvía». 6 Claudia en la puerta: «Alguien que abre la puerta y lo acompaña». 7 «27 segundos de vídeo frente a 30 fotos». 8 «Infografía no contractual y etiqueta de IA a la vista. Lo que se dice claro, se cree». 9 «¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos».
 - **Copy ES.**
-  > Promotor: tu comprador no compra planos. Compra la vida que imagina.
-  > Sobre plano todo depende de lo que ve antes de firmar. Una imagen con el sol real de su orientación, una mesa puesta y alguien que abre la puerta convierten un render en una visita.
-  > En este carrusel, lo que ve y lo que siente, lámina a lámina.
+  > Tu comprador firma sobre plano mirando una imagen. Hablemos de esa imagen.
+  > Sobre plano todo depende de lo que ve antes de firmar. El sol de su orientación a la hora en que llega a casa, la mesa puesta y alguien que abre la puerta: así una infografía empieza a parecerse a una visita.
+  > En este carrusel, lámina a lámina, qué ve y qué le hace quedarse.
   > ¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos por mensaje o al WhatsApp y te enseñamos cómo lo presentaríamos.
   > Claudia es una presentadora IA de Vitruvi Studio.
 - **Copy EN.**
-  > Developer: your buyer doesn't buy floor plans. They buy the life they imagine. Real sun, a set table and someone opening the door turn a render into a visit. Message us and we'll show you how we'd present your project.
+  > Your buyer signs off-plan looking at an image. Let's talk about that image. The sun of their orientation at the hour they get home, a set table and someone opening the door: that's how a render starts to feel like a visit. Message us and we'll show you how we'd present your project.
 - **CTA.** Escríbenos por mensaje o al WhatsApp.
 - **Hashtags.** Ninguno (cuenta de Vitruvi).
 - **Por qué puede ser viral.** En su nicho: los comercializadores se lo reenvían entre ellos, y el LinkedIn de Stefano lo multiplica. Es la pieza que convierte los seguidores de Claudia en mensajes para Vitruvi.
 - **Imágenes.** Look presentadora, puerta, parejas de renders de Vitruvi (exterior día y noche, salón vacío y con cena).
 - **Notas.** Primero la imagen de Vitruvi, después «cómo se suele presentar». Nunca «mejorar renders». Revisado con el manual: embudo ✓ · primera línea a quien vende ✓ · sin hashtags ✓ · sin pedir comentarios ✓.
 
-### Post 8 · Reel · Tendencia: «Cosas de esta casa que simplemente tienen sentido»
+### Post 8 · Reel · Tendencia: «Cosas de esta casa que tienen sentido»
 - **Formato.** Reel de 20-25 s sobre un formato de tendencia (las cosas de mi casa que tienen sentido), con audio de tendencia si es orgánico o con audio propio al mismo ritmo.
-- **Gancho (0-1 s).** Claudia señala con la palma un enchufe en la isla de la cocina mientras aparece el texto «Cosas de esta casa que simplemente tienen sentido».
-- **Idea.** Seis detalles de obra nueva bien pensada, uno por corte, con el gesto 04. Nada de esto sale en el precio por metro y todo se nota el primer mes.
-- **Planos.** 1 Enchufe en la isla. 2 Lavadero con ventana. 3 Armario en la entrada. 4 Grifo en la terraza. 5 Banco en la ducha. 6 Persiana que baja sola a las 15:00. 7 Claudia a cámara, gesto 10: «Pídeselo a tu arquitecto».
+- **Gancho (0-1 s).** Claudia señala con la palma un enchufe en la isla de la cocina: «Un enchufe en la isla. Parece poca cosa hasta que te falta». En pantalla, el texto de la tendencia: «Cosas de esta casa que tienen sentido».
+- **Idea.** Seis detalles de obra nueva bien pensada, uno por corte, con el gesto 04 y una frase de uso por detalle. Nada de esto sale en el precio por metro y todo se nota el primer mes.
+- **Planos.** 1 Enchufe en la isla: «Parece poca cosa hasta que te falta». 2 Lavadero con ventana: «La ropa se seca y no huele a cerrado». 3 Armario en la entrada: «Para que el abrigo no viva en la silla». 4 Grifo en la terraza: «Plantas y pies de playa». 5 Banco en la ducha: «Se agradece a los 30 y a los 80». 6 Persiana que baja sola a las 15:00: «Cuando el sol da de lleno». 7 Claudia a cámara, gesto 10: «Nada de esto sale en el precio por metro. Pídeselo a tu arquitecto».
 - **Copy ES.**
-  > Cosas de esta casa que simplemente tienen sentido.
-  > Enchufe en la isla. Lavadero con ventana. Armario en la entrada. Grifo en la terraza. Banco en la ducha. Persiana que baja sola a las 15:00.
-  > Nada de esto sale en el precio por metro. Todo esto se nota el primer mes.
+  > Un enchufe en la isla. Parece poca cosa hasta que te falta.
+  > Lavadero con ventana. Armario en la entrada. Grifo en la terraza. Banco en la ducha. Persiana que baja sola a las tres, cuando el sol da de lleno.
+  > Nada de esto sale en el precio por metro. Todo se nota el primer mes.
   > Guárdalo para enseñárselo a tu arquitecto.
   > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > Things in this home that just make sense: a socket on the island, a laundry room with a window, a bench in the shower, shutters that close by themselves at 3 pm. None of it shows in the price per square metre. All of it shows in month one.
+  > A socket on the island. Seems like nothing until you don't have one. A laundry room with a window, a closet by the door, a tap on the terrace, a bench in the shower, shutters that close by themselves at 3 pm. None of it shows in the price per square metre; all of it shows in month one.
 - **CTA.** Guárdalo para enseñárselo a tu arquitecto.
 - **Hashtags.** #cosasquetienensentido #obranueva #interiorismo #detalles #casa #renders #vitruvistudio
 - **Por qué puede ser viral.** Es un formato que la gente ya reconoce y consume en bucle; los detalles satisfactorios generan guardados y «yo quiero esto». Copiamos el formato, no el vídeo.
 - **Imágenes.** Seis detalles de interior en renders de Vitruvi (cocina, lavadero, entrada, terraza, baño), mano y palma de Claudia, plano medio final.
-- **Notas.** Con audio de tendencia la pieza no se puede promocionar: si funciona, se rehace con audio propio antes de invertir. Gancho B: «Detalles de obra nueva que nadie te enseña en el piso piloto».
+- **Notas.** Con audio de tendencia la pieza no se puede promocionar: si funciona, se rehace con audio propio antes de invertir. Gancho B: «Seis cosas que pediría en cualquier obra nueva».
 
-### Post 9 · Serie de stories · «Soy IA. Pregúntame lo que quieras.»
+### Post 9 · Serie de stories · «Esta tarde, sin casas. Me preguntas tú a mí»
 - **Formato.** 8-10 stories en una tarde (18:00-20:00), caja de preguntas y respuestas en vídeo desde el sofá (gesto 09).
-- **Gancho (story 1).** Claudia a cámara: «Sí, soy IA. Hoy respondo todo. Pregunta». Sticker de preguntas.
-- **Idea.** La transparencia como contenido. Responde las preguntas que todo el mundo se hace y aprovecha para contar su historia y su trabajo.
-- **Pantallas.** 1 Gancho con caja de preguntas. 2 «¿Quién te creó?»: «Vitruvi Studio, en Barcelona. Hacen renders y visitas virtuales de obra nueva». 3 «¿Hay una persona detrás?»: «Un equipo. Mi historia la escribieron ellos; mi trabajo es real». 4 «¿Por qué Barcelona?»: «Mi padre es de aquí. Vine por un máster y me quedé». 5 «¿Las casas son reales?»: «Las promociones sí. Lo que ves son infografías no contractuales». 6 «¿Por qué lo dices tanto?»: «Porque lo aprendí en Miami: se dice en voz alta». 7 «¿Puedo contratarte?»: «Si promueves o comercializas obra nueva, escribe a @vitruvistudio». 8 «¿Qué no haces?»: «No doy precios sin confirmar, no asesoro, no finjo ser real». 9 Encuesta: «¿Qué barrio quieres que enseñe?». 10 Cierre: «Mañana, una casa que todavía no existe».
+- **Gancho (story 1).** Claudia en el sofá, a cámara: «Esta tarde, sin casas. Me preguntas tú a mí, lo de ser IA incluido». Sticker de preguntas.
+- **Idea.** La transparencia como contenido, sin hacer de ello un número. Responde las preguntas que todo el mundo se hace y aprovecha para contar su historia y su trabajo.
+- **Pantallas.** 1 Gancho con caja de preguntas. 2 «¿Quién te creó?»: «Vitruvi Studio, un estudio de Barcelona que hace infografías y visitas virtuales de obra nueva». 3 «¿Hay una persona detrás?»: «Un equipo. Mi historia la escribieron ellos; las casas que enseño, no». 4 «¿Por qué Barcelona?»: «Mi padre es de aquí. Vine por un máster de visualización y me quedé por el barrio». 5 «¿Las casas son reales?»: «Las promociones sí. Lo que ves son infografías no contractuales, y lo digo siempre». 6 «¿Por qué lo dices tanto?»: «Porque lo aprendí en Brickell: se dice en voz alta y luego se enseña la casa». 7 «¿Puedo contratarte?»: «Si promueves o comercializas obra nueva, escribe a @vitruvistudio. Te contestan ellos, no yo». 8 «¿Qué no haces?»: «Dar precios que no me hayan confirmado, asesorar de hipotecas y hacerme pasar por humana». 9 Encuesta: «¿Qué barrio quieres que enseñe?». 10 Cierre: «El lunes, una de obra nueva. Con metros y orientación, como siempre».
 - **Copy ES (texto fijo en pantalla).**
-  > Soy IA. Pregúntame lo que quieras.
-  > Respondo esta tarde. Presentadora IA de @vitruvistudio.
+  > Esta tarde, sin casas. Me preguntas tú a mí, lo de ser IA incluido.
+  > Respondo desde el sofá. Presentadora IA de @vitruvistudio.
 - **Copy EN.**
-  > I'm AI. Ask me anything. Answering tonight. AI presenter by @vitruvistudio.
+  > No houses this afternoon. You ask me, the AI part included. Answering from the sofa. AI presenter by @vitruvistudio.
 - **CTA.** Pregunta en la caja; si vendes obra nueva, escribe a Vitruvi.
 - **Hashtags (sticker pequeño, opcional).** #creadaconia #ia #obranueva #barcelona #vitruvistudio
 - **Por qué puede ser viral.** Las respuestas se recortan en reels la semana siguiente. La honestidad desarma a los críticos y da a la prensa un titular limpio. Cumple el artículo 50 de forma visible.
@@ -606,23 +675,23 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
 
 ### Post 10 · Reel · Un día en Poblenou
 - **Formato.** Reel de 35-40 s, día en mi vida con cortes al ritmo de la música.
-- **Gancho (0-2 s).** Claudia en el balcón, con una grúa detrás: «Vivo en el barrio con más grúas de Barcelona. Y me encanta».
-- **Idea.** La vida completa en un día: la luz de las 7:30, la carrera por el Bogatell, el flat white, una obra con casco, la pantalla con el render de esa misma obra terminada, el vermut. Cierra: «Mi barrio es un render en construcción».
-- **Planos.** 1 Balcón, gancho. 2 Ventana con luz, texto «7:30, este». 3 Carrera por el paseo marítimo. 4 Café en la Rambla del Poblenou. 5 Obra con casco, palma hacia el forjado. 6 Pantalla: render de la misma obra. 7 Vermut. 8 A cámara en la puerta: «Mañana, ¿pasamos?».
+- **Gancho (0-2 s).** Claudia en el balcón, con una grúa detrás: «Desde mi balcón cuento siete grúas. Te enseño qué están construyendo».
+- **Idea.** La vida completa en un día: la luz de las 7:30, la carrera por el Bogatell, el flat white, una obra con casco, la pantalla con la infografía de esa misma obra terminada, el vermut. Cierra: «Un barrio a medio hacer, a ocho minutos de la playa. Me va bien».
+- **Planos.** 1 Balcón, gancho: «Ven, que te enseño el barrio». 2 Ventana con luz, texto «7:30, este»: «Las siete y media. Ventana al este; por eso me levanto sin alarma». 3 Carrera por el paseo marítimo, sin voz. 4 Café en la Rambla del Poblenou: «Flat white. Costumbre de Miami que no pienso dejar». 5 Obra con casco, palma hacia el forjado: «Esto será un salón. Da al mar y el forjado de arriba ya está». 6 Pantalla con la infografía de la misma obra: «Y así se va a ver cuando terminen. Es una infografía; el sol es el de aquí». 7 Vermut: «Vermut en Marià Aguiló. Fin de la jornada». 8 A cámara en la puerta: «El lunes, otra casa. ¿Pasamos?».
 - **Copy ES.**
-  > Vivo en el barrio con más grúas de Barcelona. Y me encanta.
-  > Poblenou: luz de las 7:30 en mi ventana, carrera hasta el Bogatell, flat white en la Rambla, una obra con casco a mediodía y un render que la enseña terminada por la tarde. Vermut al cerrar.
-  > Mi barrio es un render en construcción.
-  > Sígueme y te enseño la próxima casa que todavía no existe.
+  > Desde mi balcón cuento siete grúas. Te enseño qué están construyendo.
+  > Poblenou: luz a las 7:30 por la ventana del este, carrera hasta el Bogatell, flat white en la Rambla, una obra con casco a mediodía y, por la tarde, la infografía de esa misma obra terminada. Vermut al cerrar.
+  > Un barrio a medio hacer, a ocho minutos de la playa. Me va bien.
+  > Sígueme para la siguiente casa; hay una cada lunes.
   > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > I live in the Barcelona neighbourhood with the most cranes. And I love it. Morning light, a run to Bogatell, a flat white, a building site at noon and the render of it finished by evening. My neighbourhood is a render under construction.
-- **CTA.** Sígueme para la próxima casa que todavía no existe.
+  > From my balcony I count seven cranes. Let me show you what they're building. Poblenou: 7:30 light through the east window, a run to Bogatell, a flat white, a building site at noon and, by evening, the render of that same site finished. Vermouth to close.
+- **CTA.** Sígueme para la siguiente casa; hay una cada lunes.
 - **Hashtags.** #poblenou #barcelona #diaenmivida #obranueva #22arroba #creadaconia #vitruvistudio
-- **Por qué puede ser viral.** El «día en mi vida» es el formato que convierte visitas en seguidores; el barrio lo comparte su propia comunidad y la frase final es memorable. Enseña que Claudia tiene vida, no solo casas.
+- **Por qué puede ser viral.** El «día en mi vida» es el formato que convierte visitas en seguidores; el barrio lo comparte su propia comunidad y el gancho con un número concreto (siete grúas) abre curiosidad sin truco. Enseña que Claudia tiene vida, no solo casas.
 - **Imágenes.** Piso de Poblenou (ventana, balcón con grúa), calle Barcelona en look calle, playa del Bogatell, obra con casco, pantalla con render, vermut (manos y mesa).
-- **Notas.** Caras de personas reales fuera de plano. Música propia. Gancho B: «Mi barrio es un render en construcción».
+- **Notas.** Caras de personas reales fuera de plano. Música propia. Gancho B: «Vivo entre una obra y la playa. Te enseño las dos».
 
 **Línea de control de los diez.** Revisado con el manual, adaptado a la cuenta de Claudia: embudo ✓ · aviso de IA ✓ · sin pedir comentarios ✓ · hashtags solo en la cuenta de Claudia, ninguno en @vitruvistudio ✓.
 
