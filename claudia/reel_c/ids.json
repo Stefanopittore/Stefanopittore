@@ -1,0 +1,51 @@
+{
+ "_nota": "Reel Villa Olivera, animatic solo con imágenes. Claudia nº 12 (personaje claudia_final_26, id 2424029). Nano Banana 2.1, 2k, 9:16. Villa inventada. Música y efectos de reel_b/audio más los cascos.",
+ "imagenes": {
+  "s01_caballo": "ksYIBwD16B",
+  "s02_paseo": "SyeufinUb8",
+  "s05_piscina": "aF90YktfSh",
+  "s06_cocina": "rgcm8ydxtc",
+  "s07_bano": "4RmkbYP9Aa",
+  "s08_dormitorio": "dtgR6uyXSL",
+  "s09_terraza": "gOpEa3qSXO",
+  "s11_dron_noche": "9Zh150WNYZ",
+  "v00_villa": "O68bQEgynm",
+  "s03_travertino": "jUTvtmPLD0",
+  "s04_roble": "SyeufC5Ub8",
+  "s10_giro": "8a7GZArIrU",
+  "s12_cierre": "0e1PJy4TfW",
+  "hooves": "ksYIBIr16B"
+ },
+ "voces": {
+  "isabel": {
+   "modelo": "ElevenLabs v4",
+   "voiceId": 550,
+   "creacion": "mEyYAAlhJQ"
+  },
+  "ximena": {
+   "modelo": "ElevenLabs v4",
+   "voiceId": 1181,
+   "creacion": "lJDChhhgv9"
+  },
+  "elena": {
+   "modelo": "ElevenLabs v4",
+   "voiceId": 555,
+   "creacion": "XmSZ66eBfo"
+  },
+  "kore": {
+   "modelo": "Gemini 2.5 Pro TTS",
+   "voiceId": 709,
+   "creacion": "gOpEvhRSXO"
+  },
+  "gacrux": {
+   "modelo": "Gemini 2.5 Pro TTS",
+   "voiceId": 707,
+   "creacion": "9Zh1bqHNYZ"
+  },
+  "sulafat": {
+   "modelo": "Gemini 2.5 Pro TTS",
+   "voiceId": 719,
+   "creacion": "eIl394edqL"
+  }
+ }
+}

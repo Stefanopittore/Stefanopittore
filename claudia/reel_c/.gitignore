@@ -1,0 +1,4 @@
+raw/
+*.wav
+video.mp4
+__pycache__/

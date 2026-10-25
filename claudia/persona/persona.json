@@ -118,13 +118,9 @@
       "Publicar de noche o programar y anunciar sin el OK de Stefano."
     ],
     "elegida": {
-      "nombre": "Amparo",
-      "magnific_voice_id": 901,
-      "modelo": "eleven_v4",
-      "muestras": [
-        "voz/5_amparo_es.mp3",
-        "voz/5_amparo_en.mp3"
-      ]
+      "estado": "en casting",
+      "descartada": "Amparo (ElevenLabs v4, id 901): sonaba infantil",
+      "candidatas": "media/reel_c/voces/"
     }
   },
   "copies": {
