@@ -27,7 +27,8 @@ body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;l
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 body.lock{overflow:hidden}
 [hidden]{display:none!important}
-.z-img,.v-img,.v-bg,.slide img{pointer-events:none;-webkit-user-drag:none;user-select:none}
+.v-img,.v-bg,.slide img,.tile img,.cmp img{-webkit-user-drag:none;user-select:none}
+.v-img,.v-bg,.slide img{pointer-events:none}
 h1,h2,h3,p{margin:0}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -182,21 +183,9 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .v-foot button[aria-pressed="true"] svg.star{fill:var(--accent);stroke:var(--accent)}
 .v-paused .v-cap::after{content:" · pausa"}
 
-/* Zoom viewer */
-.zoom{position:fixed;inset:0;z-index:70;background:var(--v-bg);color:var(--v-fg);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden}
-.z-stage{position:absolute;inset:0;overflow:hidden;cursor:zoom-in}
-.z-stage.zoomed{cursor:grab}
-.z-img{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:contain;transform-origin:0 0;will-change:transform}
-.z-top{position:absolute;left:0;right:0;top:0;z-index:2;display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 22px max(12px,env(safe-area-inset-left,0px));background:linear-gradient(rgba(0,0,0,.55),transparent)}
-.z-top b{flex:1;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.z-top button,.z-foot button{width:44px;height:44px;display:grid;place-items:center;color:var(--v-fg);font-size:24px;font-weight:700}
-.z-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:6px;padding:14px max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(0,0,0,.6))}
-.z-foot .z-pct{min-width:52px;text-align:center;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
-.z-foot button[aria-pressed="true"] svg.star{fill:var(--accent);stroke:var(--accent)}
-.z-hint{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;background:rgba(0,0,0,.65);padding:9px 15px;border-radius:18px;font-size:13px;font-weight:600;pointer-events:none;opacity:0;transition:opacity .4s;white-space:nowrap}
-.z-hint.on{opacity:1}
-.zoom-btn{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center}
-.zoom-btn svg.i{width:18px;height:18px}
+/* Pinch in place: the photo grows over the page and springs back */
+.pz-shade{position:fixed;inset:0;z-index:89;background:var(--v-bg);opacity:0;pointer-events:none}
+.car,.tile,.cmp figure button{touch-action:pan-x pan-y}
 .v-hold .v-top,.v-hold .v-foot,.v-hold .v-cap{opacity:0;transition:opacity .15s}
 .v-foot #v-send{width:auto;padding:0 6px;font-weight:700;font-size:15px}
 .v-burst{z-index:4}
@@ -223,7 +212,7 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 @media print{
   @page{size:A4 landscape;margin:9mm}
   body{padding:0;background:#fff;color:#121A1B}
-  body::before,.app,.tabs,.viewer,.sheet,.toast,.zoom{display:none!important}
+  body::before,.app,.tabs,.viewer,.sheet,.toast{display:none!important}
   .print-only{display:block;font-family:var(--ui)}
   .pp{break-inside:avoid;margin-bottom:6mm}
   .pp h2{font-family:var(--display);font-size:16px;margin:0 0 2mm}
@@ -301,7 +290,6 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
       <div class="v-head">
         <img id="v-av" alt="">
         <div><b id="v-name"></b><span id="v-sub"></span></div>
-        <button type="button" id="v-zoom" aria-label="Ampliar foto"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20M10.5 7.5v6M7.5 10.5h6"/></svg></button>
         <button type="button" id="v-profile" aria-label="Ver perfil"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></svg></button>
         <button type="button" id="v-close" aria-label="Cerrar historias"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
@@ -314,23 +302,6 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
       <button type="button" id="v-send" hidden>Enviar</button>
       <button type="button" id="v-star" aria-pressed="false" aria-label="Marcar como finalista"><svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></button>
     </div>
-  </div>
-</div>
-
-<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
-  <div class="z-stage" id="z-stage"><img class="z-img" id="z-img" alt="" draggable="false"></div>
-  <div class="z-top">
-    <b id="z-title"></b>
-    <button type="button" id="z-close" aria-label="Cerrar zoom"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  </div>
-  <div class="z-hint" id="z-hint">Pellizca o doble toque para acercar</div>
-  <div class="z-foot">
-    <button type="button" id="z-prev" aria-label="Foto anterior">‹</button>
-    <button type="button" id="z-out" aria-label="Alejar">−</button>
-    <span class="z-pct" id="z-pct">100%</span>
-    <button type="button" id="z-in" aria-label="Acercar">+</button>
-    <button type="button" id="z-next" aria-label="Foto siguiente">›</button>
-    <button type="button" id="z-star" data-star="" aria-pressed="false" aria-label="Marcar como finalista"><svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></button>
   </div>
 </div>
 
@@ -356,7 +327,6 @@ const SHOTS = [
 ];
 const STAR = '<svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>';
 const BUBBLE = '<svg class="i" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.3 7.6L3.5 20.5l1.4-4.4a8.5 8.5 0 1 1 15.6-4.6z"/></svg>';
-const ZOOMI = '<svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20M10.5 7.5v6M7.5 10.5h6"/></svg>';
 const PLAY = '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg>';
 const pad = n => String(n).padStart(2, "0");
 const cands = JSON.parse(document.getElementById("cast-data").textContent);
@@ -396,13 +366,70 @@ function el(tag, attrs = {}, ...kids) {
   for (const k of kids) if (k) e.append(k);
   return e;
 }
-function zoomBtn(fn) {
-  const b = el("button", { type: "button", class: "zoom-btn", "aria-label": "Ampliar foto", html: ZOOMI });
-  b.addEventListener("click", e => { e.stopPropagation(); fn(); });
-  return b;
-}
 function pop(node) { node.classList.remove("go"); void node.offsetWidth; node.classList.add("go"); }
-const overlaysOpen = () => document.querySelectorAll(".sheet:not([hidden]), .viewer:not([hidden]), .zoom:not([hidden])").length > 0;
+const overlaysOpen = () => document.querySelectorAll(".sheet:not([hidden]), .viewer:not([hidden])").length > 0;
+
+// ---------- Instagram-style pinch: the photo grows in place over the page and springs back on release ----------
+const PZ = { on: false, clone: null, src: null, rect: null, p0x: 0, p0y: 0, d0: 1, s: 1, shade: null, end: null, wheelT: 0 };
+function pzBegin(node, cx, cy, d0, end) {
+  const r = node.getBoundingClientRect();
+  const c = node.cloneNode(true);
+  c.removeAttribute("id");
+  c.querySelectorAll(".tag, .lbl, .star-mark").forEach(n => n.remove());
+  Object.assign(c.style, { position: "fixed", left: r.left + "px", top: r.top + "px", width: r.width + "px", height: r.height + "px", margin: "0",
+    zIndex: 90, transformOrigin: "0 0", pointerEvents: "none", transition: "none", visibility: "visible", borderRadius: getComputedStyle(node).borderRadius, overflow: "hidden" });
+  const cs = getComputedStyle(node);
+  c.style.objectFit = cs.objectFit; c.style.objectPosition = cs.objectPosition;
+  const hd = node.dataset.hd;
+  if (hd) { const fg = c.matches("img") ? c : c.querySelector("img.fg"); if (fg) { const im = new Image(); im.onload = () => { fg.src = hd; }; im.src = hd; } }
+  const shade = el("div", { class: "pz-shade" });
+  document.body.append(shade, c);
+  node.style.visibility = "hidden";
+  Object.assign(PZ, { on: true, clone: c, src: node, rect: r, p0x: cx - r.left, p0y: cy - r.top, d0, s: 1, shade, end });
+}
+function pzMove(cx, cy, s) {
+  PZ.s = Math.min(4, Math.max(1, s));
+  const tx = cx - PZ.rect.left - PZ.p0x * PZ.s, ty = cy - PZ.rect.top - PZ.p0y * PZ.s;
+  PZ.clone.style.transform = `translate(${tx}px, ${ty}px) scale(${PZ.s})`;
+  PZ.shade.style.opacity = String(Math.min(0.75, (PZ.s - 1) * 0.9));
+}
+function pzEnd() {
+  if (!PZ.on) return;
+  PZ.on = false;
+  const { clone, shade, src, end } = PZ;
+  clone.style.transition = "transform .24s cubic-bezier(.2,.8,.2,1)"; clone.style.transform = "translate(0px, 0px) scale(1)";
+  shade.style.transition = "opacity .24s"; shade.style.opacity = "0";
+  setTimeout(() => { clone.remove(); shade.remove(); src.style.visibility = ""; end?.(); }, 250);
+}
+function attachPinch(area, pick, hooks = {}) {
+  const span = (a, b) => Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) || 1;
+  area.addEventListener("touchstart", e => {
+    if (e.touches.length !== 2 || PZ.on) return;
+    const node = pick(e); if (!node) return;
+    e.preventDefault();
+    const [a, b] = e.touches;
+    hooks.start?.();
+    pzBegin(node, (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2, span(a, b), hooks.end);
+  }, { passive: false });
+  area.addEventListener("touchmove", e => {
+    if (!PZ.on || e.touches.length < 2) return;
+    e.preventDefault();
+    const [a, b] = e.touches;
+    pzMove((a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2, span(a, b) / PZ.d0);
+  }, { passive: false });
+  const up = e => { if (PZ.on && e.touches.length < 2) pzEnd(); };
+  area.addEventListener("touchend", up);
+  area.addEventListener("touchcancel", up);
+  // A trackpad pinch on a computer arrives as ctrl + wheel
+  area.addEventListener("wheel", e => {
+    if (!e.ctrlKey) return;
+    const node = PZ.on ? PZ.src : pick(e); if (!node) return;
+    e.preventDefault();
+    if (!PZ.on) { hooks.start?.(); pzBegin(node, e.clientX, e.clientY, 1, hooks.end); }
+    pzMove(e.clientX, e.clientY, PZ.s * Math.exp(-e.deltaY * 0.01));
+    clearTimeout(PZ.wheelT); PZ.wheelT = setTimeout(pzEnd, 200);
+  }, { passive: false });
+}
 const toastEl = document.getElementById("toast");
 let toastT;
 function toast(msg) { toastEl.textContent = msg; toastEl.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove("on"), 1600); }
@@ -432,9 +459,10 @@ function renderFeed() {
   OLD.forEach((o, i) => {
     const t = el("button", { type: "button", class: "tile", "data-tile": o.id, "aria-label": `Ronda anterior ${o.label}` },
       el("img", { src: o.src, alt: "", loading: "lazy" }), el("span", { class: "lbl", text: o.now ? `${o.label} · actual` : o.label }), el("span", { class: "star-mark", text: "★" }));
-    t.addEventListener("click", () => openZoom(SETS.length - 1, i, t));
+    t.addEventListener("click", () => openStory(SETS.length - 1, i, t));
     og.append(t);
   });
+  attachPinch(og, e => e.target.closest?.(".tile")?.querySelector("img"));
 }
 
 function post(s) {
@@ -442,8 +470,8 @@ function post(s) {
   s.frames.forEach((f, i) => car.append(el("div", { class: "slide" },
     el("img", { class: "bg", src: f.src, alt: "", loading: "lazy" }),
     el("img", { class: "fg", src: f.src, alt: `Candidata ${s.n}, ${f.cap.toLowerCase()}`, loading: "lazy" }),
-    el("span", { class: "tag", text: f.cap }),
-    zoomBtn(() => openZoom(SETS.indexOf(s), i)))));
+    el("span", { class: "tag", text: f.cap }))));
+  [...car.children].forEach((sl, i) => sl.dataset.hd = s.frames[i].hd || "");
   const ctr = el("span", { class: "ctr", text: `1/${s.frames.length}` });
   const burst = el("div", { class: "burst", html: STAR });
   const prev = el("button", { type: "button", class: "arrow prev", "aria-label": "Foto anterior", text: "‹" });
@@ -460,28 +488,26 @@ function post(s) {
   }, { passive: true });
   car.addEventListener("keydown", e => { if (e.key === "ArrowRight") go(1); if (e.key === "ArrowLeft") go(-1); });
   // Double tap on the photo = finalist, like a heart on Instagram
-  // Single tap opens the zoom viewer; a pinch opens it too
-  let last = 0, sx = 0, sy = 0, tapT = 0;
+  // Pinch zooms the photo in place; double tap = finalist, like a heart on Instagram
+  let last = 0, sx = 0, sy = 0, pinched = false;
   const touches = new Set();
   const here = () => Math.round(car.scrollLeft / car.clientWidth);
+  attachPinch(car, () => car.children[here()]);
   car.addEventListener("pointerdown", e => {
-    sx = e.clientX; sy = e.clientY; touches.add(e.pointerId);
-    if (touches.size === 2) { clearTimeout(tapT); touches.clear(); openZoom(SETS.indexOf(s), here()); }
+    if (!touches.size) pinched = false;
+    touches.add(e.pointerId); sx = e.clientX; sy = e.clientY;
+    if (touches.size > 1) pinched = true;
   });
   car.addEventListener("pointercancel", e => touches.delete(e.pointerId));
   car.addEventListener("pointerup", e => {
     touches.delete(e.pointerId);
-    if (e.target.closest(".zoom-btn")) return;
-    if (Math.abs(e.clientX - sx) > 10 || Math.abs(e.clientY - sy) > 10) return;
+    if (pinched || Math.abs(e.clientX - sx) > 10 || Math.abs(e.clientY - sy) > 10) return;
     const now = Date.now();
     if (now - last < 320) {
-      last = 0; clearTimeout(tapT);
+      last = 0;
       if (!picks[s.key]?.finalist) toggle(s.key);
       pop(burst);
-    } else {
-      last = now;
-      tapT = setTimeout(() => openZoom(SETS.indexOf(s), here()), 330);
-    }
+    } else last = now;
   });
 
   const noteWrap = noteField(s.key, `Nota sobre la candidata ${s.n}`);
@@ -547,9 +573,11 @@ function openProfile(s, from) {
   s.frames.forEach((f, i) => {
     const t = el("button", { type: "button", class: "tile", "data-tile": s.n ? "" : f.pick, "aria-label": `Ver ${f.cap}` },
       el("img", { src: f.src, alt: "", loading: "lazy" }), el("span", { class: "lbl", text: f.cap }), el("span", { class: "star-mark", text: "★" }));
-    t.addEventListener("click", () => openZoom(SETS.indexOf(s), i, t));
+    t.querySelector("img").dataset.hd = f.hd || "";
+    t.addEventListener("click", () => openStory(SETS.indexOf(s), i, t));
     grid.append(t);
   });
+  attachPinch(grid, e => e.target.closest?.(".tile")?.querySelector("img"));
   body.append(grid);
   openSheet("profile", from);
   refresh();
@@ -580,7 +608,7 @@ function show(si, fi) {
   }
   V.set = si; V.frame = fi; V.spent = 0; V.start = performance.now();
   [...vBars.children].forEach((bar, j) => bar.firstChild.style.width = j < fi ? "100%" : "0%");
-  vImg.src = f.src; vBg.src = f.src; vImg.alt = `${s.title}, ${f.cap}`;
+  vImg.src = f.src; vBg.src = f.src; vImg.alt = `${s.title}, ${f.cap}`; vImg.dataset.hd = f.hd || "";
   document.getElementById("v-av").src = s.avatar;
   document.getElementById("v-name").textContent = s.n ? `${s.n} · ${s.title}` : s.title;
   document.getElementById("v-sub").textContent = s.n ? `${s.age} años · ${s.chips.join(" · ")}` : "Primera ronda · 12 caras";
@@ -625,25 +653,26 @@ function jump(d) {
 const g = { x: 0, y: 0, t: 0, moved: false };
 const stage = document.getElementById("v-stage");
 const vPtrs = new Set();
+attachPinch(stage, () => vImg, { start: () => pause(true), end: () => { if (document.activeElement !== vNote) pause(false); } });
 stage.addEventListener("pointerdown", e => {
   if (e.target.closest(".v-foot, .v-head")) return;
+  if (!vPtrs.size) g.pinch = false;
   vPtrs.add(e.pointerId);
-  if (vPtrs.size === 2) { vPtrs.clear(); g.moved = true; clearTimeout(g.hold); viewer.classList.remove("v-hold"); return openZoom(V.set, V.frame, null, true); }
+  if (vPtrs.size > 1) { g.pinch = true; g.moved = true; clearTimeout(g.hold); viewer.classList.remove("v-hold"); return; }
   g.x = e.clientX; g.y = e.clientY; g.t = Date.now(); g.moved = false; pause(true);
   clearTimeout(g.hold); g.hold = setTimeout(() => viewer.classList.add("v-hold"), 220);
 });
 stage.addEventListener("pointerup", e => {
   vPtrs.delete(e.pointerId); clearTimeout(g.hold); viewer.classList.remove("v-hold");
   if (e.target.closest(".v-foot, .v-head")) return;
-  if (!zoomEl.hidden) return;
+  if (g.pinch || PZ.on) { g.moved = true; return; }
   const dx = e.clientX - g.x, dy = e.clientY - g.y;
   if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { g.moved = true; pause(false); return jump(dx < 0 ? 1 : -1); }
   if (dy > 90) { g.moved = true; pause(false); return closeStory(); }
   if (Date.now() - g.t > 350) g.moved = true;
   if (document.activeElement !== vNote) pause(false);
 });
-stage.addEventListener("pointercancel", e => { vPtrs.delete(e.pointerId); clearTimeout(g.hold); viewer.classList.remove("v-hold"); if (zoomEl.hidden) pause(false); });
-document.getElementById("v-zoom").addEventListener("click", () => openZoom(V.set, V.frame, null, true));
+stage.addEventListener("pointercancel", e => { vPtrs.delete(e.pointerId); clearTimeout(g.hold); viewer.classList.remove("v-hold"); if (!PZ.on) pause(false); });
 document.getElementById("v-prev").addEventListener("click", e => { if (g.moved) { g.moved = false; return; } step(-1); });
 document.getElementById("v-next").addEventListener("click", e => { if (g.moved) { g.moved = false; return; } step(1); });
 document.getElementById("v-close").addEventListener("click", closeStory);
@@ -652,16 +681,11 @@ vStar.addEventListener("click", () => { const on = !picks[vStar.dataset.star]?.f
 const vSend = document.getElementById("v-send");
 vSend.addEventListener("click", () => { clearTimeout(vt); save(vNote.dataset.note, { note: vNote.value.trim() }); vNote.blur(); vSend.hidden = true; toast("Nota guardada"); });
 vNote.addEventListener("focus", () => pause(true));
-vNote.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== vNote && zoomEl.hidden) pause(false); }, 0));
+vNote.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== vNote && !PZ.on) pause(false); }, 0));
 let vt;
 vNote.addEventListener("input", () => { vSend.hidden = !vNote.value.trim(); clearTimeout(vt); vt = setTimeout(() => save(vNote.dataset.note, { note: vNote.value.trim() }), 900); });
 vNote.addEventListener("keydown", e => { if (e.key === "Enter") { clearTimeout(vt); save(vNote.dataset.note, { note: vNote.value.trim() }); vNote.blur(); toast("Nota guardada"); } e.stopPropagation(); });
 document.addEventListener("keydown", e => {
-  if (!zoomEl.hidden) {
-    if (e.key === "Escape") closeZoom(); else if (e.key === "ArrowRight") zStep(1); else if (e.key === "ArrowLeft") zStep(-1);
-    else if (e.key === "+" || e.key === "=") zBy(1.5); else if (e.key === "-") zBy(1 / 1.5);
-    return;
-  }
   if (!viewer.hidden) {
     if (e.key === "ArrowRight") step(1); else if (e.key === "ArrowLeft") step(-1);
     else if (e.key === "Escape") closeStory(); else if (e.key === " ") { e.preventDefault(); pause(!V.paused); }
@@ -669,110 +693,6 @@ document.addEventListener("keydown", e => {
     if (!document.getElementById("detail").hidden) closeSheet("detail"); else if (!document.getElementById("compare").hidden) closeSheet("compare"); else if (!document.getElementById("profile").hidden) closeSheet("profile");
   }
 });
-
-// ---------- Zoom viewer: pinch, double tap, drag, wheel ----------
-const zoomEl = document.getElementById("zoom"), zStage = document.getElementById("z-stage"), zImg = document.getElementById("z-img");
-const Z = { set: 0, frame: 0, s: 1, x: 0, y: 0, ptrs: new Map(), g: null, lastTap: 0, from: null, resume: false };
-let hintT;
-function openZoom(si, fi, from, resume = false) {
-  Z.from = from || document.activeElement; Z.resume = resume;
-  if (resume) pause(true);
-  zoomEl.hidden = false; document.body.classList.add("lock");
-  zShow(si, fi);
-  const h = document.getElementById("z-hint"); h.classList.add("on"); clearTimeout(hintT); hintT = setTimeout(() => h.classList.remove("on"), 1800);
-  document.getElementById("z-close").focus();
-}
-function closeZoom() {
-  zoomEl.hidden = true;
-  if (Z.resume && !viewer.hidden) { pause(false); document.getElementById("v-close").focus(); }
-  else { if (!overlaysOpen()) document.body.classList.remove("lock"); Z.from?.focus?.(); }
-}
-function zShow(si, fi) {
-  const s = SETS[si], f = s.frames[fi];
-  Z.set = si; Z.frame = fi; Z.s = 1; Z.x = 0; Z.y = 0; zApply();
-  zImg.src = f.src; zImg.alt = `${s.title}, ${f.cap}`;
-  if (f.hd) { const im = new Image(); im.onload = () => { if (Z.set === si && Z.frame === fi) zImg.src = f.hd; }; im.src = f.hd; }
-  document.getElementById("z-title").textContent = `${s.n ? s.n + " · " : ""}${s.title} · ${f.cap} · ${fi + 1}/${s.frames.length}`;
-  document.getElementById("z-star").dataset.star = f.pick;
-  document.getElementById("z-prev").disabled = fi === 0;
-  document.getElementById("z-next").disabled = fi === s.frames.length - 1;
-  refresh();
-}
-function zStep(d) { const n = Z.frame + d, s = SETS[Z.set]; if (n >= 0 && n < s.frames.length) zShow(Z.set, n); }
-function zApply() {
-  const w = zStage.clientWidth, h = zStage.clientHeight;
-  Z.s = Math.min(6, Math.max(1, Z.s));
-  Z.x = Math.min(0, Math.max(w * (1 - Z.s), Z.x));
-  Z.y = Math.min(0, Math.max(h * (1 - Z.s), Z.y));
-  zImg.style.transform = `translate(${Z.x}px, ${Z.y}px) scale(${Z.s})`;
-  document.getElementById("z-pct").textContent = Math.round(Z.s * 100) + "%";
-  zStage.classList.toggle("zoomed", Z.s > 1.01);
-}
-function zAt(cx, cy, ns) {
-  const r = zStage.getBoundingClientRect(), px = cx - r.left, py = cy - r.top;
-  ns = Math.min(6, Math.max(1, ns));
-  const k = ns / Z.s; Z.x = px - (px - Z.x) * k; Z.y = py - (py - Z.y) * k; Z.s = ns; zApply();
-}
-function zBy(f) { const r = zStage.getBoundingClientRect(); zAt(r.left + r.width / 2, r.top + r.height / 2, Z.s * f); }
-const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
-zStage.addEventListener("pointerdown", e => {
-  zStage.setPointerCapture?.(e.pointerId);
-  Z.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
-  if (Z.ptrs.size === 2) {
-    const [a, b] = [...Z.ptrs.values()];
-    Z.g = { type: "pinch", d: dist(a, b) || 1, s: Z.s, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, x: Z.x, y: Z.y };
-  } else if (Z.ptrs.size === 1) {
-    Z.g = { type: "pan", sx: e.clientX, sy: e.clientY, x: Z.x, y: Z.y, moved: false };
-  }
-});
-zStage.addEventListener("pointermove", e => {
-  if (!Z.ptrs.has(e.pointerId)) return;
-  Z.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
-  const g = Z.g; if (!g) return;
-  if (g.type === "pinch" && Z.ptrs.size === 2) {
-    const [a, b] = [...Z.ptrs.values()], r = zStage.getBoundingClientRect();
-    const ns = Math.min(6, Math.max(1, g.s * dist(a, b) / g.d));
-    const px = (g.mx - r.left - g.x) / g.s, py = (g.my - r.top - g.y) / g.s;
-    const mx = (a.x + b.x) / 2 - r.left, my = (a.y + b.y) / 2 - r.top;
-    Z.s = ns; Z.x = mx - px * ns; Z.y = my - py * ns; zApply();
-  } else if (g.type === "pan") {
-    const dx = e.clientX - g.sx, dy = e.clientY - g.sy;
-    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) g.moved = true;
-    if (Z.s > 1.01) { Z.x = g.x + dx; Z.y = g.y + dy; zApply(); }
-  }
-});
-function zEnd(e) {
-  const g = Z.g;
-  Z.ptrs.delete(e.pointerId);
-  if (g?.type === "pinch") {
-    // Leaving one finger down keeps panning from where the pinch ended
-    if (Z.ptrs.size === 1) { const [p] = [...Z.ptrs.values()]; Z.g = { type: "pan", sx: p.x, sy: p.y, x: Z.x, y: Z.y, moved: true }; }
-    else Z.g = null;
-    return;
-  }
-  if (!g || Z.ptrs.size) return;
-  Z.g = null;
-  if (e.type === "pointercancel") return;
-  const dx = e.clientX - g.sx, dy = e.clientY - g.sy;
-  if (!g.moved) {
-    const now = Date.now();
-    if (now - Z.lastTap < 300) { Z.lastTap = 0; Z.s > 1.05 ? (Z.s = 1, Z.x = 0, Z.y = 0, zApply()) : zAt(e.clientX, e.clientY, 2.5); }
-    else Z.lastTap = now;
-  } else if (Z.s <= 1.01) {
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) zStep(dx < 0 ? 1 : -1);
-    else if (dy > 90) closeZoom();
-  }
-}
-zStage.addEventListener("pointerup", zEnd);
-zStage.addEventListener("pointercancel", zEnd);
-zStage.addEventListener("wheel", e => { e.preventDefault(); zAt(e.clientX, e.clientY, Z.s * Math.exp(-e.deltaY * 0.0025)); }, { passive: false });
-window.addEventListener("resize", () => { if (!zoomEl.hidden) zApply(); });
-document.getElementById("z-close").addEventListener("click", closeZoom);
-document.getElementById("z-in").addEventListener("click", () => zBy(1.5));
-document.getElementById("z-out").addEventListener("click", () => zBy(1 / 1.5));
-document.getElementById("z-prev").addEventListener("click", () => zStep(-1));
-document.getElementById("z-next").addEventListener("click", () => zStep(1));
-document.getElementById("z-star").addEventListener("click", e => toggle(e.currentTarget.dataset.star));
 
 // ---------- Compare finalists shot by shot ----------
 let cmpShot = 1;
@@ -796,8 +716,9 @@ function renderCompare() {
     const si = old ? SETS.length - 1 : SETS.findIndex(s => s.key === k);
     const fi = old ? OLD.indexOf(old) : cmpShot;
     const f = SETS[si].frames[fi];
-    const btn = el("button", { type: "button", "aria-label": `Ampliar ${labelFor(k)}` }, el("img", { src: f.src, alt: "" }));
-    btn.addEventListener("click", () => openZoom(si, fi, btn));
+    const img = el("img", { src: f.src, alt: "" }); img.dataset.hd = f.hd || "";
+    const btn = el("button", { type: "button", "aria-label": `Ver ${labelFor(k)} en historia` }, img);
+    btn.addEventListener("click", () => openStory(si, fi, btn));
     grid.append(el("figure", {}, btn, el("figcaption", { text: old ? `${old.label} · ronda anterior` : `${labelFor(k)} · ${SETS[si].title}` }),
       picks[k]?.note ? el("span", { class: "muted", text: picks[k].note }) : null));
   }
@@ -805,7 +726,8 @@ function renderCompare() {
   prev.disabled = cmpShot === 0; next.disabled = cmpShot === SHOTS.length - 1;
   prev.addEventListener("click", () => { cmpShot--; renderCompare(); });
   next.addEventListener("click", () => { cmpShot++; renderCompare(); });
-  body.append(seg, grid, el("div", { class: "cmp-nav" }, prev, el("b", { text: SHOTS[cmpShot][1] }), next));
+  attachPinch(grid, e => e.target.closest?.("figure")?.querySelector("img"));
+  body.append(seg, grid, el("div", { class: "cmp-nav" }, prev, el("b", { text: SHOTS[cmpShot][1] }), next), el("p", { class: "muted", style: "padding-top:10px", text: "Pellizca una foto para acercarla. Al soltar vuelve a su sitio." }));
 }
 
 // ---------- Picks ----------
