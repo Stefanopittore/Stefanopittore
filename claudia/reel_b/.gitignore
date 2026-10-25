@@ -3,3 +3,4 @@ raw/
 video.mp4
 ids1.txt
 ids2.txt
+__pycache__/
