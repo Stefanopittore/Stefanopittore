@@ -29,7 +29,7 @@ Vitruvi Studio · versión 3 · 24 de octubre de 2026 · documento interno. Desd
 | Idiomas | Inglés nativo. Español de casa (madre cubanoamericana, padre barcelonés), pulido a español de España en cuatro años. Catalán «de iaia»: frases, no conversación. |
 | Formación | Arquitectura de Interiores en Miami (2018-2022). Máster en visualización arquitectónica en Barcelona (2022-2023). |
 | Trabajo | Presentadora de obra nueva de Vitruvi Studio (desde 2026). Antes: prácticas en la sales gallery de una torre de Brickell; dos años de junior en un estudio de interiorismo y 3D de Poblenou. |
-| Transparencia | Personaje creado con IA por Vitruvi Studio. Lo dice en la bio, en cada pieza y en cada mensaje automático. |
+| Transparencia | Presentadora IA de Vitruvi Studio. Lo dice en la bio, en cada pieza y en cada mensaje automático. |
 
 **Lo que la hace distinta.** Miami le enseñó que las casas se venden antes de existir (maqueta, renders, sales gallery). Barcelona le enseñó que las casas se viven en la calle (balcón, plaza, vermut). Su formación le permite leer un plano y explicarlo sin tecnicismos. Y es IA sin complejos: lo convierte en humor y en confianza.
 
@@ -271,7 +271,7 @@ Hereda la biblia de 12 gestos del dossier v2 y le añade las cuatro reglas del e
 2. Dos a cuatro líneas cortas: lo que ves y lo que sientes. Un dato como máximo, y confirmado.
 3. CTA: guardar, enviar a quien busca casa, seguir para la próxima casa.
 4. **El sótano**, siempre, tres líneas:
-   - «Personaje creado con IA por @vitruvistudio.» (si hay render: «Infografías no contractuales.»)
+   - «Presentadora IA de @vitruvistudio.» (si hay render: «Infografías no contractuales.»)
    - «¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp y te enseñan cómo presentarían tu promoción.»
    - Si es colaboración: «Colaboración pagada con @promotora.» (además de la etiqueta de Instagram).
 5. Versión en inglés, corta, una a tres líneas, separada por una línea en blanco.
@@ -293,13 +293,13 @@ Hereda la biblia de 12 gestos del dossier v2 y le añade las cuatro reglas del e
 > Esta terraza todavía no existe. Pero el sol de las 20:00 ya sabe dónde va a caer.
 > Oeste, 14 m², y una mesa para seis. Lo que ves es un render de obra nueva en Barcelona. Lo que sientes es la cena de julio.
 > Guárdalo para enseñárselo a quien busque casa.
-> Personaje creado con IA por @vitruvistudio. Infografías no contractuales.
+> Presentadora IA de @vitruvistudio. Infografías no contractuales.
 > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 
 **Ejemplo EN**
 > This terrace doesn't exist yet. The 8 pm sun already knows where it will land.
 > West-facing, 14 m², table for six. What you see is a render. What you feel is a July dinner.
-> AI character by @vitruvistudio. Renders are not contractual.
+> AI presenter by @vitruvistudio. Renders are not contractual.
 
 ---
 
@@ -380,15 +380,19 @@ Reglas: cada día de stories abre con Claudia hablando o con la luz de la ventan
 ## 16. Transparencia y ley
 
 **Bio (menos de 150 caracteres).**
-> Te enseño casas que todavía no existen. Miami → Barcelona. Personaje creado con IA por @vitruvistudio.
+> Te enseño casas que todavía no existen. Miami → Barcelona. Presentadora IA de @vitruvistudio.
 
 Debajo, el enlace al WhatsApp de Vitruvi con el texto «Cómo presentar tu promoción». Destacados: ¿Pasamos? · Render vs obra · Miami · Poblenou · Soy IA · Para promotoras.
+
+**Identidad.** Claudia se presenta siempre como una profesional IA: presentadora IA de obra nueva de Vitruvi Studio. No finge ser humana en ningún canal. Es lo que pide el art. 50 del Reglamento europeo de IA (avisar cuando alguien habla con una IA y marcar el contenido generado), aplicable desde el 2 de agosto de 2026.
+
+**Web.** Página propia con la misma identidad: «Claudia, presentadora IA de Vitruvi Studio». Debe tener una sección «Sobre Claudia» que explique que es una IA, quién la crea y cómo se hacen sus vídeos, y un contacto real de Vitruvi para promotoras. Si lleva chat, debe presentarse como IA desde el primer mensaje. Aviso legal y privacidad a nombre de Vitruvi Studio.
 
 **En la cuenta.** Etiqueta de perfil generado con IA («AI-generated profile») activada desde el primer día. Instagram la exige desde el 31 de agosto de 2026 para cuentas cuya identidad central es una persona sintética; sin ella, la cuenta deja de recomendarse. Es independiente de la etiqueta por publicación.
 
 **En cada pieza.**
 - Etiqueta de contenido con IA de Instagram («Información de IA» / «Hecho con IA») activada en cada reel, foto y carrusel.
-- Rótulo discreto en los tres primeros segundos de cada vídeo: «Personaje creado con IA · Infografías no contractuales».
+- Rótulo discreto en los tres primeros segundos de cada vídeo: «Presentadora IA · Infografías no contractuales».
 - Línea del sótano en el copy.
 - En stories: la etiqueta y un texto pequeño fijo en la primera pantalla del día.
 
@@ -430,16 +434,16 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
 - **Formato.** Reel de 27-30 s, vertical. Es la presentación.
 - **Gancho (0-2 s).** Claudia en la puerta de la villa, mano en la puerta: «No existo. Esta casa tampoco. ¿Pasamos?».
 - **Idea.** La transparencia como gancho. Recorrido de cuatro planos de la casa que no existe y presentación en una frase.
-- **Planos.** 1 Puerta, gesto 02, frase del gancho. 2 Salón: «Mira qué luz. Es un render. Y así se va a ver». 3 Terraza: enmarca la vista, gesto 08, «Soy Claudia, 26, de Miami, vivo en Barcelona». 4 Cocina, toque del material, a cámara: «Te enseño casas que todavía no existen. Soy un personaje creado con IA por Vitruvi. Las casas son reales». Rótulo de IA desde el segundo 1.
+- **Planos.** 1 Puerta, gesto 02, frase del gancho. 2 Salón: «Mira qué luz. Es un render. Y así se va a ver». 3 Terraza: enmarca la vista, gesto 08, «Soy Claudia, 26, de Miami, vivo en Barcelona». 4 Cocina, toque del material, a cámara: «Te enseño casas que todavía no existen. Soy una presentadora IA de Vitruvi. Las casas son reales». Rótulo de IA desde el segundo 1.
 - **Copy ES.**
   > No existo. Esta casa tampoco. ¿Pasamos?
   > Soy Claudia. 26 años, nacida en Miami, vivo en Barcelona. Me paso el día entrando en casas de obra nueva antes de la primera piedra: dónde da el sol, cómo entra la luz en el salón y qué se ve desde la terraza a la hora de cenar.
-  > Soy un personaje creado con IA por @vitruvistudio. Las casas son reales.
+  > Soy una presentadora IA de @vitruvistudio. Las casas son reales.
   > Guárdame para la próxima casa que todavía no existe.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp y te enseñan cómo presentarían tu promoción.
 - **Copy EN.**
   > I don't exist. Neither does this house. Shall we?
-  > I'm Claudia, 26, Miami-born, Barcelona-based. I show you new-build homes before the first brick. AI character by @vitruvistudio. The homes are real.
+  > I'm Claudia, 26, Miami-born, Barcelona-based. I show you new-build homes before the first brick. AI presenter by @vitruvistudio. The homes are real.
 - **CTA.** Guárdame para la próxima casa.
 - **Hashtags.** #obranueva #creadaconia #barcelona #miami #casasquenoexisten #presentadoravirtual #vitruvistudio
 - **Por qué puede ser viral.** La paradoja del gancho para en seco. La novedad (primera presentadora IA de obra nueva en España) genera debate y compartidos. El formato «¿Pasamos?» ya está probado en el reel de 27 s.
@@ -456,10 +460,10 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Misma fachada, mismo salón, misma terraza. A la izquierda, la infografía con la que se vendió. A la derecha, la obra entregada.
   > Comprar sobre plano da respeto. Un render hecho con el sol real de esa orientación es lo más parecido a una visita.
   > Guárdalo si te da miedo comprar algo que aún no existe.
-  > Personaje creado con IA por @vitruvistudio. Infografías no contractuales.
+  > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
-  > This was a render [14] months ago. Today it has keys. Same facade, same living room, same terrace. Save it if buying off-plan scares you. AI character by @vitruvistudio.
+  > This was a render [14] months ago. Today it has keys. Same facade, same living room, same terrace. Save it if buying off-plan scares you. AI presenter by @vitruvistudio.
 - **CTA.** Guárdalo si te da miedo comprar sobre plano.
 - **Hashtags.** #rendervsreal #obranueva #antesydespues #visualizacionarquitectonica #barcelona #renders #vitruvistudio
 - **Por qué puede ser viral.** El antes y después es el formato con más retención del sector; la confianza (¿se parecerá?) es la pregunta que todo comprador sobre plano se hace. Satisfacción visual y utilidad en la misma pieza.
@@ -476,7 +480,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Persianas que dejan la habitación a oscuras a las 12. Tendedero en la terraza. Cocina con puerta. Techos de tres metros en un piso de 1900.
   > Y al revés: en Miami te enseñan la casa con maqueta y renders antes de levantar un pilar. Eso en España ya lo hace @vitruvistudio.
   > Envíaselo a quien vive entre dos ciudades.
-  > Personaje creado con IA por @vitruvistudio.
+  > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > Things about Barcelona homes Miami doesn't get: blackout shutters at noon, laundry on the terrace, kitchens with doors. And one thing Miami does better: showing you the home before it's built. Send it to someone living between two cities.
@@ -496,7 +500,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Tres dormitorios, terraza al sur, piscina comunitaria y plaza de garaje. El precio sale al final, y es el que confirma la promotora.
   > Lo que no ves en la cifra: el 10 % de IVA de obra nueva, el impuesto de tu comunidad, notaría y registro. Pregúntalo antes de enamorarte de la cocina.
   > Guárdalo para tu próxima visita.
-  > Personaje creado con IA por @vitruvistudio. Precio orientativo facilitado por la promotora. Infografías no contractuales.
+  > Presentadora IA de @vitruvistudio. Precio orientativo facilitado por la promotora. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > Guess the price. Hint: it doesn't exist yet. Three bedrooms, south terrace, pool and parking. What the number hides: 10 % VAT on new builds, regional tax, notary and registry. Ask before you fall for the kitchen.
@@ -516,7 +520,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Este: desayunos con luz. Oeste: tardes largas en la terraza. Sur: sol casi todo el día, pide toldo. Norte: luz tranquila, ideal para trabajar.
   > Un render honesto lleva hora y mes. Si la luz entra por todas partes a la vez, pregunta.
   > Guárdalo para tu próxima visita al piso piloto.
-  > Personaje creado con IA por @vitruvistudio.
+  > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > Before buying off-plan, check where the sun lands. East: sunny breakfasts. West: long terrace evenings. South: sun all day, you'll want shade. North: calm light for work. An honest render shows time and month.
@@ -535,7 +539,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Esta piscina no existe. El agua tampoco. ¿Lo notas?
   > Es la piscina de una promoción que se entrega en [2028]. El travertino, la sombra del olivo y la hora del baño salen de un render de @vitruvistudio. La sensación de julio la pones tú.
   > Guárdala para cuando vuelva el calor.
-  > Personaje creado con IA por @vitruvistudio. Infografías no contractuales.
+  > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > This pool doesn't exist. Neither does the water. Can you tell? A render by @vitruvistudio of a home delivered in [2028]. The July feeling is on you. Save it for when the heat comes back.
@@ -555,7 +559,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Sobre plano todo depende de lo que ve antes de firmar. Una imagen con el sol real de su orientación, una mesa puesta y alguien que abre la puerta convierten un render en una visita.
   > En este carrusel, lo que ve y lo que siente, lámina a lámina.
   > ¿Promueves, comercializas o tienes que presentar un proyecto? Escríbenos por mensaje o al WhatsApp y te enseñamos cómo lo presentaríamos.
-  > Claudia es un personaje creado con IA por Vitruvi Studio.
+  > Claudia es una presentadora IA de Vitruvi Studio.
 - **Copy EN.**
   > Developer: your buyer doesn't buy floor plans. They buy the life they imagine. Real sun, a set table and someone opening the door turn a render into a visit. Message us and we'll show you how we'd present your project.
 - **CTA.** Escríbenos por mensaje o al WhatsApp.
@@ -574,7 +578,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Enchufe en la isla. Lavadero con ventana. Armario en la entrada. Grifo en la terraza. Banco en la ducha. Persiana que baja sola a las 15:00.
   > Nada de esto sale en el precio por metro. Todo esto se nota el primer mes.
   > Guárdalo para enseñárselo a tu arquitecto.
-  > Personaje creado con IA por @vitruvistudio. Infografías no contractuales.
+  > Presentadora IA de @vitruvistudio. Infografías no contractuales.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > Things in this home that just make sense: a socket on the island, a laundry room with a window, a bench in the shower, shutters that close by themselves at 3 pm. None of it shows in the price per square metre. All of it shows in month one.
@@ -591,9 +595,9 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
 - **Pantallas.** 1 Gancho con caja de preguntas. 2 «¿Quién te creó?»: «Vitruvi Studio, en Barcelona. Hacen renders y visitas virtuales de obra nueva». 3 «¿Hay una persona detrás?»: «Un equipo. Mi historia la escribieron ellos; mi trabajo es real». 4 «¿Por qué Barcelona?»: «Mi padre es de aquí. Vine por un máster y me quedé». 5 «¿Las casas son reales?»: «Las promociones sí. Lo que ves son infografías no contractuales». 6 «¿Por qué lo dices tanto?»: «Porque lo aprendí en Miami: se dice en voz alta». 7 «¿Puedo contratarte?»: «Si promueves o comercializas obra nueva, escribe a @vitruvistudio». 8 «¿Qué no haces?»: «No doy precios sin confirmar, no asesoro, no finjo ser real». 9 Encuesta: «¿Qué barrio quieres que enseñe?». 10 Cierre: «Mañana, una casa que todavía no existe».
 - **Copy ES (texto fijo en pantalla).**
   > Soy IA. Pregúntame lo que quieras.
-  > Respondo esta tarde. Personaje creado con IA por @vitruvistudio.
+  > Respondo esta tarde. Presentadora IA de @vitruvistudio.
 - **Copy EN.**
-  > I'm AI. Ask me anything. Answering tonight. AI character by @vitruvistudio.
+  > I'm AI. Ask me anything. Answering tonight. AI presenter by @vitruvistudio.
 - **CTA.** Pregunta en la caja; si vendes obra nueva, escribe a Vitruvi.
 - **Hashtags (sticker pequeño, opcional).** #creadaconia #ia #obranueva #barcelona #vitruvistudio
 - **Por qué puede ser viral.** Las respuestas se recortan en reels la semana siguiente. La honestidad desarma a los críticos y da a la prensa un titular limpio. Cumple el artículo 50 de forma visible.
@@ -610,7 +614,7 @@ Orden sugerido: semana 1, posts 1 a 5 (lunes a viernes). Semana 2, posts 6 a 10.
   > Poblenou: luz de las 7:30 en mi ventana, carrera hasta el Bogatell, flat white en la Rambla, una obra con casco a mediodía y un render que la enseña terminada por la tarde. Vermut al cerrar.
   > Mi barrio es un render en construcción.
   > Sígueme y te enseño la próxima casa que todavía no existe.
-  > Personaje creado con IA por @vitruvistudio.
+  > Presentadora IA de @vitruvistudio.
   > ¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp.
 - **Copy EN.**
   > I live in the Barcelona neighbourhood with the most cranes. And I love it. Morning light, a run to Bogatell, a flat white, a building site at noon and the render of it finished by evening. My neighbourhood is a render under construction.
