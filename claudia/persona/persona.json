@@ -116,7 +116,16 @@
       "Hashtags en @vitruvistudio, imágenes gratis, Vitruvi Lab, showroom, clientes no nombrables.",
       "Copiar un vídeo plano a plano: se copia el formato, nunca la pieza.",
       "Publicar de noche o programar y anunciar sin el OK de Stefano."
-    ]
+    ],
+    "elegida": {
+      "nombre": "Amparo",
+      "magnific_voice_id": 901,
+      "modelo": "eleven_v4",
+      "muestras": [
+        "voz/5_amparo_es.mp3",
+        "voz/5_amparo_en.mp3"
+      ]
+    }
   },
   "copies": {
     "reglas": [
@@ -134,13 +143,34 @@
     "ejemplo_en": "This terrace doesn't exist yet, but I'll show you around anyway.\nWest-facing, 14 m², and at 8 pm in July the sun lands right here, on the table. What you see is a render; the metres and the orientation are the project's.\nAI presenter by @vitruvistudio. Renders are not contractual."
   },
   "calendario": [
-    { "dia": "Lunes", "que": "10:00 Reel «¿Pasamos?»: recorrido por una casa que no existe. Stories: «La luz de hoy» y encuesta esto o esto." },
-    { "dia": "Martes", "que": "10:00 Carrusel «Aprende a mirar»: luz, orientación, planos, qué incluye un precio. Stories: detrás del render, pantalla del equipo." },
-    { "dia": "Miércoles", "que": "10:00 Reel «Render vs obra» o «¿Cuánto cuesta?». Stories: caja de preguntas por la tarde." },
-    { "dia": "Jueves", "que": "10:00 Reel Miami ↔ Barcelona o formato de tendencia. Stories: barrio, grúas, vermut, Bogatell." },
-    { "dia": "Viernes", "que": "Foto o carrusel de vida: villa, piscina, calle. Stories: plan de finde y boceto." },
-    { "dia": "Sábado", "que": "Nada en feed. Stories: mercado, playa, una obra por gusto." },
-    { "dia": "Domingo", "que": "Nada en feed. Stories: boceto del domingo, Sitges con la iaia, «mañana toca». Horas del slot de Metricool; nunca de noche." }
+    {
+      "dia": "Lunes",
+      "que": "10:00 Reel «¿Pasamos?»: recorrido por una casa que no existe. Stories: «La luz de hoy» y encuesta esto o esto."
+    },
+    {
+      "dia": "Martes",
+      "que": "10:00 Carrusel «Aprende a mirar»: luz, orientación, planos, qué incluye un precio. Stories: detrás del render, pantalla del equipo."
+    },
+    {
+      "dia": "Miércoles",
+      "que": "10:00 Reel «Render vs obra» o «¿Cuánto cuesta?». Stories: caja de preguntas por la tarde."
+    },
+    {
+      "dia": "Jueves",
+      "que": "10:00 Reel Miami ↔ Barcelona o formato de tendencia. Stories: barrio, grúas, vermut, Bogatell."
+    },
+    {
+      "dia": "Viernes",
+      "que": "Foto o carrusel de vida: villa, piscina, calle. Stories: plan de finde y boceto."
+    },
+    {
+      "dia": "Sábado",
+      "que": "Nada en feed. Stories: mercado, playa, una obra por gusto."
+    },
+    {
+      "dia": "Domingo",
+      "que": "Nada en feed. Stories: boceto del domingo, Sitges con la iaia, «mañana toca». Horas del slot de Metricool; nunca de noche."
+    }
   ],
   "stories": [
     "La luz de hoy: misma ventana a las 7:30, texto con hora y orientación. Diario.",
@@ -196,9 +226,23 @@
       "copy_es": "Esta casa todavía no existe, pero te la voy a presentar igual.\nSoy Claudia. 26 años, de Miami, vivo en Poblenou. Enseño obra nueva antes de la primera piedra: dónde da el sol, los metros de la terraza y cuándo se entrega.\nPresentadora IA de @vitruvistudio. Las promociones son reales.\nSígueme para la siguiente; hay una cada lunes.\n¿Vendes obra nueva? Escríbeles.",
       "copy_en": "This house doesn't exist yet, but I'll show you around anyway.\nI'm Claudia, 26, Miami-born, living in Poblenou. I show new-build homes before the first brick: where the sun lands, how big the terrace is, when it's delivered. AI presenter by @vitruvistudio. The developments are real.",
       "cta": "Sígueme para la siguiente; hay una cada lunes.",
-      "hashtags": ["#obranueva", "#creadaconia", "#barcelona", "#miami", "#casasquenoexisten", "#presentadoravirtual", "#vitruvistudio"],
+      "hashtags": [
+        "#obranueva",
+        "#creadaconia",
+        "#barcelona",
+        "#miami",
+        "#casasquenoexisten",
+        "#presentadoravirtual",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "Abre como una visita de verdad y la novedad (primera presentadora IA de obra nueva en España) la aporta el rótulo, no la frase: eso genera debate y compartidos sin parecer un truco. El formato «¿Pasamos?» ya está probado en el reel de 27 s.",
-      "imagenes": ["puerta villa", "look presentadora", "salón render", "terraza render", "cocina render"]
+      "imagenes": [
+        "puerta villa",
+        "look presentadora",
+        "salón render",
+        "terraza render",
+        "cocina render"
+      ]
     },
     {
       "n": 2,
@@ -215,9 +259,22 @@
       "copy_es": "La pregunta que más me hacen: ¿luego se parece al render?\nHace [14] meses era una infografía. Hoy tiene llaves. Misma fachada, mismo salón, misma hora de sol.\nLo que ninguna imagen sabe (el ruido de la calle, la fecha real de entrega) se pregunta en la visita.\nGuárdalo si vas a comprar sobre plano.\nPresentadora IA de @vitruvistudio. Infografías no contractuales.",
       "copy_en": "The question I get most: does it end up looking like the render? [14] months ago this was a render; today it has keys. Same facade, same living room, same terrace, same hour of sun. What no image shows, you check on the visit. AI presenter by @vitruvistudio.",
       "cta": "Guárdalo si vas a comprar sobre plano.",
-      "hashtags": ["#rendervsreal", "#obranueva", "#antesydespues", "#visualizacionarquitectonica", "#barcelona", "#renders", "#vitruvistudio"],
+      "hashtags": [
+        "#rendervsreal",
+        "#obranueva",
+        "#antesydespues",
+        "#visualizacionarquitectonica",
+        "#barcelona",
+        "#renders",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "El antes y después es el formato con más retención del sector y responde a la pregunta de todo comprador sobre plano: ¿se parecerá? Satisfacción visual y utilidad en la misma pieza. Primero la imagen de Vitruvi, después la obra.",
-      "imagenes": ["render Vitruvi y foto de obra entregada, mismo encuadre", "Claudia con casco", "look presentadora en salón real", "piso piloto"]
+      "imagenes": [
+        "render Vitruvi y foto de obra entregada, mismo encuadre",
+        "Claudia con casco",
+        "look presentadora en salón real",
+        "piso piloto"
+      ]
     },
     {
       "n": 3,
@@ -235,9 +292,23 @@
       "copy_es": "Son las doce y mira: a oscuras. En Miami no tenemos persianas y mi madre sigue sin creérselo.\nCosas de Barcelona: persiana, tendedero en la terraza, cocina con puerta. Y una de Miami que copiaría ya: enseñar la casa con maqueta y render antes del primer pilar. Aquí eso ya lo hace @vitruvistudio.\nEnvíaselo a quien vive entre dos ciudades.\nPresentadora IA de @vitruvistudio.",
       "copy_en": "It's noon and the room is dark. Miami has no shutters and my mother still doesn't believe it. Barcelona things: shutters, laundry on the terrace, kitchens with doors. And one Miami thing worth copying: showing the home with a model and renders before the first column goes up. Send it to someone living between two cities.",
       "cta": "Envíaselo a quien vive entre dos ciudades.",
-      "hashtags": ["#miamivsbarcelona", "#barcelona", "#miami", "#obranueva", "#casas", "#expatlife", "#vitruvistudio"],
+      "hashtags": [
+        "#miamivsbarcelona",
+        "#barcelona",
+        "#miami",
+        "#obranueva",
+        "#casas",
+        "#expatlife",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "El contenido de identidad y comparación lo comparten los dos públicos: expats, catalanes en Miami, americanos en Barcelona. Las persianas son humor viral recurrente y la pieza lo lleva sin forzar a la venta sobre plano.",
-      "imagenes": ["look calle en balcón de Barcelona", "calle Eixample", "playa Bogatell", "Miami: Brickell desde el coche, palmeras, fachada blanca", "sales gallery recreada con render"]
+      "imagenes": [
+        "look calle en balcón de Barcelona",
+        "calle Eixample",
+        "playa Bogatell",
+        "Miami: Brickell desde el coche, palmeras, fachada blanca",
+        "sales gallery recreada con render"
+      ]
     },
     {
       "n": 4,
@@ -255,9 +326,21 @@
       "copy_es": "Antes de enamorarte de la cocina, tres números. El precio es el tercero.\n[92] m² útiles, terraza de [12] m² al sur y garaje. Desde [X] €, confirmado por la promotora.\nLo que no entra en esa cifra: 10 % de IVA, impuesto autonómico, notaría y registro. Pregúntalo antes de reservar.\nGuárdalo para la visita.\nPresentadora IA de @vitruvistudio. Precio orientativo. Infografías no contractuales.",
       "copy_en": "Before you fall for the kitchen, three numbers. The price is the third. [92] m² usable, a [12] m² south-facing terrace and parking. From €[X], confirmed by the developer. Not in that figure: 10 % VAT on new builds, regional tax, notary and registry. Ask before you reserve.",
       "cta": "Guárdalo para la visita.",
-      "hashtags": ["#cuantocuesta", "#obranueva", "#comprarcasa", "#pisopiloto", "#barcelona", "#renders", "#vitruvistudio"],
+      "hashtags": [
+        "#cuantocuesta",
+        "#obranueva",
+        "#comprarcasa",
+        "#pisopiloto",
+        "#barcelona",
+        "#renders",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "Anunciar tres números y dejar el precio para el final retiene sin recurrir a «adivina»: la gente se queda a comprobar la cifra. Los costes que no están en el precio convierten curiosidad en guardados. Solo con precio confirmado por escrito.",
-      "imagenes": ["render ático o villa: salón, terraza, piscina", "look presentadora", "puerta villa"]
+      "imagenes": [
+        "render ático o villa: salón, terraza, piscina",
+        "look presentadora",
+        "puerta villa"
+      ]
     },
     {
       "n": 5,
@@ -278,9 +361,21 @@
       "copy_es": "Lo primero que miro en un plano no son los metros. Es la flecha del norte.\nEste: desayunos con luz. Oeste: tardes largas en la terraza. Sur: sol casi todo el día, pide toldo. Norte: luz pareja, para trabajar.\nUn render honesto lleva hora y mes. Si entra sol por todas partes, pregunta.\nGuárdalo para el piso piloto.\nPresentadora IA de @vitruvistudio.",
       "copy_en": "The first thing I check on a floor plan isn't the square metres. It's the north arrow. East: morning sun. West: long terrace evenings. South: sun most of the day, you'll want shade. North: even light for work. An honest render shows time and month.",
       "cta": "Guárdalo para el piso piloto.",
-      "hashtags": ["#obranueva", "#orientacion", "#comprarsobreplano", "#luznatural", "#planos", "#interiorismo", "#vitruvistudio"],
+      "hashtags": [
+        "#obranueva",
+        "#orientacion",
+        "#comprarsobreplano",
+        "#luznatural",
+        "#planos",
+        "#interiorismo",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "Los carruseles educativos simples son los más guardados y Instagram los reparte durante semanas. Lo entiende cualquier edad y posiciona a Vitruvi en lo suyo: la luz real. Versión PDF para el LinkedIn de Stefano.",
-      "imagenes": ["look presentadora en salón render (láminas 1 y 9)", "misma estancia a cuatro horas distintas", "plano con brújula"]
+      "imagenes": [
+        "look presentadora en salón render (láminas 1 y 9)",
+        "misma estancia a cuatro horas distintas",
+        "plano con brújula"
+      ]
     },
     {
       "n": 6,
@@ -297,9 +392,21 @@
       "copy_es": "Esta piscina se entrega en [2028]. Yo me he adelantado un poco.\n[12] metros, al sur, y a las seis la sombra del olivo llega justo a las tumbonas. Lo que ves es una infografía de @vitruvistudio con el sol de esta orientación en julio.\nGuárdala para cuando vuelva el calor.\nPresentadora IA de @vitruvistudio. Infografías no contractuales.\n¿Vendes obra nueva? Escríbeles.",
       "copy_en": "This pool is delivered in [2028]. I got here a little early. [12] metres, south-facing, and at six the olive tree's shade reaches the loungers. What you see is a render by @vitruvistudio with July sun for this orientation. Save it for when the heat comes back.",
       "cta": "Guárdala para cuando vuelva el calor.",
-      "hashtags": ["#piscina", "#villa", "#obranueva", "#render", "#mediterraneo", "#creadaconia", "#vitruvistudio"],
+      "hashtags": [
+        "#piscina",
+        "#villa",
+        "#obranueva",
+        "#render",
+        "#mediterraneo",
+        "#creadaconia",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "Piscina, atardecer y presentadora son la combinación con más retención visual; el giro a wireframe la convierte en pieza de marca y evita que sea solo un cuerpo en bikini. Es la que más perfiles nuevos trae. Siempre el look elegante.",
-      "imagenes": ["villa piscina, bikini elegante con camisa de lino", "wireframe del render", "atardecer en la villa"]
+      "imagenes": [
+        "villa piscina, bikini elegante con camisa de lino",
+        "wireframe del render",
+        "atardecer en la villa"
+      ]
     },
     {
       "n": 7,
@@ -322,7 +429,11 @@
       "cta": "Escríbenos por mensaje o al WhatsApp y te enseñamos cómo lo presentaríamos.",
       "hashtags": [],
       "por_que_viral": "Viral en su nicho: los comercializadores se lo reenvían y el LinkedIn de Stefano lo multiplica. Es la pieza que convierte seguidores de Claudia en mensajes para Vitruvi. Sin hashtags porque manda el manual de Vitruvi.",
-      "imagenes": ["look presentadora", "puerta villa", "parejas de renders: exterior día y noche, salón vacío y con cena"]
+      "imagenes": [
+        "look presentadora",
+        "puerta villa",
+        "parejas de renders: exterior día y noche, salón vacío y con cena"
+      ]
     },
     {
       "n": 8,
@@ -341,9 +452,21 @@
       "copy_es": "Un enchufe en la isla. Parece poca cosa hasta que te falta.\nLavadero con ventana. Armario en la entrada. Grifo en la terraza. Banco en la ducha. Persiana que baja sola a las tres.\nNada de esto sale en el precio por metro y todo se nota el primer mes.\nGuárdalo para enseñárselo a tu arquitecto.\nPresentadora IA de @vitruvistudio. Infografías no contractuales.",
       "copy_en": "A socket on the island. Seems like nothing until you don't have one. A laundry room with a window, a closet by the door, a tap on the terrace, a bench in the shower, shutters that close by themselves at 3 pm. None of it shows in the price per square metre; all of it shows in month one.",
       "cta": "Guárdalo para enseñárselo a tu arquitecto.",
-      "hashtags": ["#cosasquetienensentido", "#obranueva", "#interiorismo", "#detalles", "#casa", "#renders", "#vitruvistudio"],
+      "hashtags": [
+        "#cosasquetienensentido",
+        "#obranueva",
+        "#interiorismo",
+        "#detalles",
+        "#casa",
+        "#renders",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "Formato que la gente ya reconoce y consume en bucle; los detalles satisfactorios generan guardados y «yo quiero esto». Gancho B para el Trial Reel: «Seis cosas que pediría en cualquier obra nueva».",
-      "imagenes": ["seis detalles de interior en renders: cocina, lavadero, entrada, terraza, baño", "mano y palma de Claudia", "plano medio final"]
+      "imagenes": [
+        "seis detalles de interior en renders: cocina, lavadero, entrada, terraza, baño",
+        "mano y palma de Claudia",
+        "plano medio final"
+      ]
     },
     {
       "n": 9,
@@ -363,9 +486,19 @@
       "copy_es": "Esta tarde, sin casas. Me preguntas tú a mí, lo de ser IA incluido.\nRespondo desde el sofá. Lo que no hago: precios sin confirmar, asesoría y hacerme pasar por humana.\nPresentadora IA de @vitruvistudio.",
       "copy_en": "No houses this afternoon. You ask me, the AI part included. Answering from the sofa. AI presenter by @vitruvistudio.",
       "cta": "Pregunta en la caja. Si vendes obra nueva, escribe a Vitruvi.",
-      "hashtags": ["#creadaconia", "#ia", "#obranueva", "#barcelona", "#vitruvistudio"],
+      "hashtags": [
+        "#creadaconia",
+        "#ia",
+        "#obranueva",
+        "#barcelona",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "La honestidad desarma a los críticos y da a la prensa un titular limpio. Las respuestas alimentan reels y cumplen de forma visible el artículo 50 del Reglamento de IA.",
-      "imagenes": ["look presentadora o calle, sentada en el sofá", "piso Poblenou con luz de tarde", "la gata en el plano"]
+      "imagenes": [
+        "look presentadora o calle, sentada en el sofá",
+        "piso Poblenou con luz de tarde",
+        "la gata en el plano"
+      ]
     },
     {
       "n": 10,
@@ -385,9 +518,24 @@
       "copy_es": "Desde mi balcón cuento siete grúas. Te enseño qué están construyendo.\nPoblenou: luz a las 7:30 por la ventana del este, carrera hasta el Bogatell, flat white, una obra con casco a mediodía y, por la tarde, la infografía de esa misma obra terminada. Vermut al cerrar.\nSígueme para la siguiente casa; hay una cada lunes.\nPresentadora IA de @vitruvistudio.",
       "copy_en": "From my balcony I count seven cranes. Let me show you what they're building. Poblenou: 7:30 light through the east window, a run to Bogatell, a flat white, a building site at noon and, by evening, the render of that same site finished. Vermouth to close.",
       "cta": "Sígueme para la siguiente casa; hay una cada lunes.",
-      "hashtags": ["#poblenou", "#barcelona", "#diaenmivida", "#obranueva", "#22arroba", "#creadaconia", "#vitruvistudio"],
+      "hashtags": [
+        "#poblenou",
+        "#barcelona",
+        "#diaenmivida",
+        "#obranueva",
+        "#22arroba",
+        "#creadaconia",
+        "#vitruvistudio"
+      ],
       "por_que_viral": "El «día en mi vida» convierte visitas en seguidores; el barrio lo comparte su propia comunidad y el gancho con número concreto (siete grúas) abre curiosidad sin truco. Enseña que Claudia tiene vida, no solo casas. Caras reales fuera de plano.",
-      "imagenes": ["piso Poblenou: ventana y balcón con grúa", "calle Barcelona, look calle", "playa Bogatell", "obra con casco", "pantalla con render", "vermut, manos y mesa"]
+      "imagenes": [
+        "piso Poblenou: ventana y balcón con grúa",
+        "calle Barcelona, look calle",
+        "playa Bogatell",
+        "obra con casco",
+        "pantalla con render",
+        "vermut, manos y mesa"
+      ]
     }
   ]
 }
