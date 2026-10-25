@@ -10,7 +10,7 @@ Archivo gemelo con los mismos datos en formato máquina: `claudia/video/video.js
 
 - **Qué financiar con los 50 €.** El guion **B, el tráiler** («Hola, soy Claudia…»). Es el único de los dos que prueba lo que Stefano quiere probar (si *ella* para el scroll), lleva una llamada a la acción legal y promocionable, y usa audio propio, así que se puede poner dinero detrás sin cambiar la música. El guion A («¿Foto o render?») se publica igual, en orgánico y como Trial Reel: es la pieza de guardados y comentarios, no la de anuncio.
 - **Cómo.** Primero orgánico como Trial Reel con dos primeros planos (noche en la puerta / paseo por la piscina). A las 48-72 h, el ganador se promociona desde la cuenta publicitaria de Vitruvi: 35 € en «reproducciones de vídeo (ThruPlay)» para medir gancho y retención, 15 € en «mensajes» (WhatsApp de Vitruvi) para probar la llamada a la acción. Solo Reels de Instagram y Facebook, Cataluña, 25-55 años.
-- **Qué decide el éxito.** Tasa de gancho (vistas de 3 s / impresiones) ≥ 30 %, ThruPlay ≥ 25 %, tiempo medio de visionado ≥ 9 s de 25, CPM dentro de 5-12 €, y al menos un mensaje de una promotora o comercializadora. Rangos y fuentes en el apartado 4.
+- **Qué decide el éxito.** Tasa de gancho (vistas de 3 s / impresiones) ≥ 30 %, ThruPlay ≥ 25 %, tiempo medio de visionado ≥ 7 s de 15, CPM dentro de 5-12 €, y al menos un mensaje de una promotora o comercializadora. Rangos y fuentes en el apartado 4.
 - **Legal.** La frase «¿Estás en Cataluña y quieres vender tu propiedad? Escríbeme» **no se puede usar** tal cual: es una oferta de mediación inmobiliaria y en Cataluña eso exige inscripción en el Registre d'Agents Immobiliaris (AICAT), establecimiento, capacitación, garantía de 60.000 € y seguro (Llei 18/2007, art. 55; Decret 12/2010). Ejercer sin cumplir los requisitos es infracción grave: 9.001 a 90.000 € (art. 124.2.b y 118.2). Vitruvi no es agencia. Dos salidas limpias: (1) la llamada a promotoras y comercializadoras, «¿Vendes obra nueva en Cataluña? Te la enseño antes de que exista. Escríbeme», que es una oferta de servicios de visualización y comunicación, no de intermediación; (2) si algún día se quiere hablar a propietarios, que el anunciante sea una agencia inscrita con su número AICAT en pantalla y Claudia aparezca como colaboración pagada. El guion B lleva la opción 1.
 - **Dominio.** Recomendados, libres a 25/10/2026: **claudiavitruvi.com** (y .es), **casasquenoexisten.com** (y .es) y **holasoyclaudia.com** (y .es). Ojo: `holaclaudia.com` y `claudiaia.com` se registraron en febrero y marzo de 2026, alguien se está moviendo en nombres «Claudia + IA»; conviene registrar pronto.
 
@@ -63,7 +63,7 @@ No hay un estudio público riguroso de cortes por segundo en Reels; las cifras q
 
 - **Medido por nosotros.** El reel actual de Claudia (`claudia/media/reel.mp4`, 27 s) tiene 4 cortes de escena (detector `scene>0.30` de ffmpeg): **0,15 cortes/s, plano medio de 5,4 s**. Es un ritmo de visita, no de tráiler.
 - **Observado en las referencias de 27-31 s** (Sobha, E&V, Lucas Fox): plano cada 1-2 s en el montaje, con dos o tres planos «largos» de 2-3 s donde hay una persona o una frase.
-- **Prescripción para Claudia.** Tráiler (guion B): 16 planos en 25 s = **0,64 cortes/s de media**; el montaje de casas a 1,2-1,4 cortes/s (planos de 0,7-0,9 s) y los planos en los que habla a 1,5-3 s. Quiz (guion A): 12 planos en 14,5 s ≈ 0,8 cortes/s, con imágenes de 1,2 s y revelados de 0,5 s. Regla de la biblia que se mantiene: el ritmo de habla y el de montaje van por separado; una pausa deja leer el dato. Nunca cámara lenta.
+- **Prescripción para Claudia.** Tráiler (guion B): 16 planos en 25 s = **0,64 cortes/s de media** (versión actual de 15 s: 15 planos, 12 de ellos en 7,4 s, 1,6 cortes/s en el montaje); el montaje de casas a 1,2-1,4 cortes/s (planos de 0,7-0,9 s) y los planos en los que habla a 1,5-3 s. Quiz (guion A): 12 planos en 14,5 s ≈ 0,8 cortes/s, con imágenes de 1,2 s y revelados de 0,5 s. Regla de la biblia que se mantiene: el ritmo de habla y el de montaje van por separado; una pausa deja leer el dato. Nunca cámara lenta.
 
 ### 1.4 Duración
 
@@ -117,7 +117,46 @@ Copy del post (sótano de la biblia incluido): «¿Foto o render? Cuatro casas, 
 
 ---
 
-## 3. Guion B · Tráiler «Hola, soy Claudia» (25 s, 9:16)
+## 3. Guion B · Tráiler «Hola, soy Claudia» (15 s, 9:16) · versión actual
+
+**Cambio pedido por Stefano (25/10/2026).** Más rápido, 15-16 s como máximo: ella se presenta hablando natural los primeros 5-6 s y después cortes muy rápidos, al estilo de las ediciones modernas, en los que va apareciendo entre las casas.
+
+**Estructura.** 0-5,6 s: ella habla en la toma de noche (2 planos con un corte en salto). En «igual» entra la música (128 BPM) y llegan 12 cortes de 0,5-1 s, uno por pulso, mezclando casas y ella. 13-15 s: vuelve a la misma puerta de noche y cierra con «¿Vendes obra nueva? Escríbeme». El último fotograma encaja con el primero para que el reel se repita en bucle. Claudia sale en 8 de los 15 planos.
+
+**Edición.** Corte en salto en la presentación, barrido de cámara hacia el ritmo, destello blanco de 2 fotogramas en la entrada de la música, rampas de velocidad en los drones, corte por coincidencia (puerta de noche → puerta de día), su voz entrando antes de verla en el cierre y un solo tamaño de letra para las palabras en pantalla.
+
+**Voz completa (19 palabras):** «Hola, soy Claudia. Esta casa todavía no existe… pero te la voy a enseñar igual. ¿Vendes obra nueva? Escríbeme.»
+
+**Vestuario.** Un solo look para que la cara y el cuerpo no cambien: vestido largo de lino arena y aros de oro (noche, piscina, ático, masía, puerta de día). En la obra: casco blanco, chaleco, camiseta blanca y vaqueros.
+
+| Seg. | Imagen | Texto en pantalla | Voz | Sonido |
+|---|---|---|---|---|
+| 0,0-3,1 | Noche, hora azul. Villa nueva en las colinas del Empordà, todas las ventanas encendidas y la piscina iluminada en turquesa. Claudia en la puerta pivotante de roble abierta; la luz cálida de dentro le cae en la cara y deja el resto en penumbra. Habla a cámara desde el primer fotograma, relajada, como quien te abre la puerta. Vestido largo de lino arena, aros de oro. iPhone en modo noche: grano visible, balance cálido frente al azul del cielo, halo en las ventanas, mano no del todo quieta. | Rótulo fijo pequeño «Presentadora IA · @vitruvistudio» desde el fotograma 0. Subtítulos palabra a palabra. | «Hola, soy Claudia. Esta casa todavía no existe…» | Grillos y agua de la piscina. Una nota grave de fondo, todavía sin ritmo. |
+| 3,1-5,6 | Corte en salto: el mismo plano, un 15 % más cerca y un pelo más torcido. Sonríe a media frase y en «igual» gira la cabeza hacia dentro; la cámara hace un barrido rápido hacia el salón encendido. | Subtítulos palabra a palabra; «igual» en grande. | «…pero te la voy a enseñar igual.» | Subida de tensión de 1 s; el barrido suena como un golpe de aire. |
+| 5,6-6,1 | ENTRA EL RITMO. Dron en picado rápido (rampa de velocidad) sobre una villa de obra nueva en un acantilado de la Costa Brava a hora dorada, pinos y mar. Destello blanco de 2 fotogramas en el corte. | VILLAS | — | Golpe de entrada de la música propia, 128 BPM: cada corte cae en un pulso (0,47 s). |
+| 6,1-6,6 | Claudia camina por el borde de la piscina infinita con el vestido de lino, a contraluz de atardecer, el pelo se mueve. Cámara en mano a su lado. | — | — | Agua. |
+| 6,6-7,1 | Terraza de un ático en Barcelona al atardecer: la ciudad, el mar y la Sagrada Familia al fondo. Movimiento lateral rápido. | ÁTICOS | — | Música. |
+| 7,1-7,6 | Detalle: su mano recorre la isla de piedra de una cocina nueva, luz rasante. | — | — | Roce de la piedra. |
+| 7,6-8,5 | Claudia en la terraza del ático gira la cabeza a cámara y se ríe. Rampa de velocidad: rápido, lento, rápido. | — | — | Música. |
+| 8,5-9,0 | Dron orbitando una masía rehabilitada en el Empordà a hora dorada, caballos en el cercado. | MASÍAS | — | Música. |
+| 9,0-9,9 | Claudia junto a un caballo castaño en la valla, la mano en su cuello; mira a cámara y sonríe. Luz baja de tarde. | CON CABALLO | — | Resoplido del caballo sobre el pulso. |
+| 9,9-10,4 | Dron que baja en picado sobre una piscina hacia el mar. | — | — | Golpe de aire. |
+| 10,4-10,9 | Salón de doble altura con escalera y luz de tarde; la cámara sube en vertical. | — | — | Música. |
+| 10,9-11,4 | Corte por coincidencia: ella empuja la misma puerta pivotante de roble del plano 1, esta vez de día. | — | — | Golpe seco de la puerta en el pulso. |
+| 11,4-11,9 | Obra real del 22@: grúa, forjado de hormigón, polvo en el aire. Ella, con casco blanco, camiseta blanca y vaqueros, señala dónde irá la cocina. | ANTES DE LA PRIMERA PIEDRA | — | Obra lejana bajo la música. |
+| 11,9-13,0 | Vuelta a la noche: dron que se aleja de la villa encendida del plano 1 (rampa: rápido y luego lento). | ANTES DE LA PRIMERA PIEDRA (sigue) | «¿Vendes obra nueva?» | Su voz entra antes de verla, en 12,4. La música baja. |
+| 13,0-15,0 | Primer plano en la puerta de noche, la luz en la cara. Termina la frase mirando a cámara y sonríe. El último fotograma encaja con el primero para que el reel se repita en bucle. | «¿Vendes obra nueva en Cataluña?» → «Escríbeme» con icono de WhatsApp. Pie fijo: «Presentadora IA de @vitruvistudio · Infografías no contractuales». | «Escríbeme.» | La música corta en seco en «Escríbeme»; quedan los grillos. |
+
+**Producción (cuando se apruebe).** Unos 11 clips. La presentación (planos 1-2) y el cierre (plano 15) salen de una sola toma hablando de unos 8 s en la puerta de noche, con su voz (Amparo) y sincronización de labios; se usa el principio y el final. Los planos sin ella (dron, interiores, terraza) se generan cortos y se recortan a 0,5 s. Grano y temblor de iPhone iguales en todos para que no se note el cambio de plano.
+
+**Variantes para el Trial Reel.** V1: tal cual (presentación en la puerta de noche). V2: la misma presentación, hablando mientras camina por la piscina al atardecer; el resto igual, para comparar solo el arranque.
+
+**Copy del post.** Igual que en la versión de 25 s (abajo).
+
+---
+
+## 3 bis. Versión anterior del guion B (25 s, sustituida)
+
 
 **Por qué este guion.** Es la pieza de presentación y la que se puede pagar: audio propio, Claudia en pantalla desde el primer fotograma, territorio reconocible (Empordà, Costa Brava, 22@) y una llamada a la acción a quien vende obra nueva. Sigue la fórmula del estudio de referentes a velocidad de tráiler: necesidad > demostración > condición > siguiente paso.
 
@@ -178,7 +217,7 @@ Respeta el manual de Vitruvi (solo lo que ya funciona a las 48-72 h, objetivo «
 | Tasa de gancho (hook rate) | Reproducciones de 3 s / impresiones | Media 20-35 %; otra guía: 25-40 % media, 40-55 % fuerte | ≥ 30 % (bien), ≥ 40 % (muy bien), < 20 % cambiar el primer plano | [Cool Nerds](https://coolnerdsmarketing.com/?p=42608), [Nestscale](https://nestscale.com/blog/increase-tiktok-hook-rate.html) |
 | Tasa de abandono (skip rate, orgánico) | Insights de Reels desde ago. 2025 | Sano < 30-40 %; > 50 % el gancho no funciona | < 35 % | [Metricool](https://metricool.com/instagram-reel-analytics/), [Cool Nerds](https://coolnerdsmarketing.com/?p=42608) |
 | ThruPlay | Reproducciones ≥ 15 s (o completas) / impresiones | 15-25 % típico en clips de 16-30 s a público frío; 18-35 % en 6-15 s | ≥ 25 % | [Dynamoi 2026](https://dynamoi.com/learn/instagram-ads/meta-ads-manager-metrics-music-campaigns) |
-| Tiempo medio de visionado | Ads Manager | Sin benchmark oficial; en 25 s, ≥ 35-40 % visto es sano | ≥ 9 s | Criterio propio sobre la lógica de finalización de Instagram |
+| Tiempo medio de visionado | Ads Manager | Sin benchmark oficial; ≥ 35-40 % visto es sano | ≥ 7 s de 15 | Criterio propio sobre la lógica de finalización de Instagram |
 | CPM | Coste / 1.000 impresiones | España, todas las industrias: mediana ≈ 7,6 € entre jul. 2025 y jul. 2026, mínimo 3,6 € (ago. 2025), picos > 10 € en verano 2026. Inmobiliario global: 28,7 $ de media, un 39 % por encima del global | 5-12 € | [Superads España](https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/spain), [Superads inmobiliario](https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/real-estate/spain) |
 | CTR | Clics / impresiones | España, todas: ≈ 1,6 % de media (1,1-2,7 %). Inmobiliario global: ≈ 2,8 % (2,2-4,7 %) | 1-2 % en fase 2 (clic a WhatsApp) | [Superads CTR España](https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate/spain), [Superads CTR inmobiliario](https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate/real-estate/spain) |
 | Coste por conversación / mensaje | Gasto fase 2 / conversaciones iniciadas | No hay benchmark independiente; guías de proveedores: 1,5-8 € según sector, hasta 10 € | ≤ 7,5 € (es decir, ≥ 2 conversaciones con 15 €) y al menos 1 de promotora o comercializadora | [Kanal 2026](https://getkanal.com/blog/click-to-whatsapp-ads-benchmarks-2026.md), [Spur](https://www.spurnow.com/en/blogs/click-to-whatsapp-ads-benchmarks) |
