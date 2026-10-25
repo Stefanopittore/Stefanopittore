@@ -117,7 +117,42 @@ Copy del post (sótano de la biblia incluido): «¿Foto o render? Cuatro casas, 
 
 ---
 
-## 3. Guion B · Tráiler «Hola, soy Claudia» (15 s, 9:16) · versión actual
+## 3. Guion B · Tráiler «Esta casa NO existe» (16 s, 9:16) · versión actual, con animatic
+
+**Animatic:** `claudia/media/reel_b/animatic.mp4` (solo imágenes, con su voz, música y efectos). Montado con `claudia/reel_b/render.py`.
+
+**Embudo.** Pensado como embudo. Atención (0-2,4 s): la imagen más espectacular, la villa encendida de noche, y una frase que choca con lo que ves: «¡Esta casa NO existe!». Retención (2,4-5,6 s): «Todavía… pero te la voy a enseñar IGUAL» abre la curiosidad y promete la respuesta, con un corte en salto en cada frase. Presentación (5,6-8,5 s): «Soy Claudia, ¡y esto es lo que hago!» y, justo en «y», entra el ritmo: la prueba son 12 cortes al golpe de la música (villas, ático, masía, ella a caballo, la obra). Venta (13,1-16 s): vuelve a la puerta y cierra con «¿Vendes obra nueva en Cataluña? Escríbeme». El último fotograma enlaza con el primero para que se repita en bucle.
+
+**Voz completa:** «¡Esta casa NO existe! Todavía… Pero te la voy a enseñar IGUAL. Soy Claudia, ¡y esto es lo que hago! … ¿Vendes obra nueva en Cataluña? Escríbeme.»
+
+Voz de Amparo (ElevenLabs v4) con dirección de presentadora segura y con emoción: tono medio 248 Hz y 10,7 semitonos de rango, frente a 214 Hz y 7,5 de la prueba anterior.
+
+| Seg. | Embudo | Imagen | Voz | Texto en pantalla |
+|---|---|---|---|---|
+| 0,00-2,44 | Atención | Noche: la villa encendida, la piscina delante y ella en la puerta, la luz en la cara | «¡Esta casa NO existe!» | Subtítulos palabra a palabra. Rótulo fijo «Presentadora IA · @vitruvistudio» |
+| 2,44-3,63 | Atención | Corte en salto: mismo plano, muy cerca de su cara | «Todavía…» | Subtítulos palabra a palabra |
+| 3,63-5,61 | Retención | Otro salto: plano medio, ella con seguridad | «Pero te la voy a enseñar IGUAL.» | Subtítulos palabra a palabra |
+| 5,61-6,62 | Presentación | Primer plano en la puerta: se presenta | «Soy Claudia,» | Subtítulos palabra a palabra |
+| 6,62-7,08 | Prueba | Dron en picado sobre la villa del acantilado, Costa Brava | «¡y esto es» | — |
+| 7,08-7,55 | Prueba | Ella camina por el borde de la piscina al atardecer | «¡y esto es» | — |
+| 7,55-8,01 | Prueba | Terraza del ático en Barcelona, la Sagrada Familia al fondo | «¡y esto es lo que hago!» | — |
+| 8,01-8,48 | Prueba | Ella se gira y se ríe en la terraza | «lo que hago!» | — |
+| 8,48-8,94 | Prueba | Su mano sobre la isla de piedra de la cocina | — | — |
+| 8,94-9,41 | Prueba | Dron que cae sobre la piscina hacia el mar | — | VILLAS |
+| 9,41-9,87 | Prueba | Dron sobre la masía del Empordà con caballos | — | MASÍAS |
+| 9,87-10,80 | Prueba | Ella a caballo junto a la masía | — | A CABALLO |
+| 10,80-11,26 | Prueba | Salón de doble altura con la escalera de roble | — | — |
+| 11,26-11,73 | Prueba | Ella abre de día la misma puerta del principio | — | — |
+| 11,73-12,19 | Prueba | Ella en la obra del 22@ con casco | — | ANTES DE LA |
+| 12,19-13,12 | Prueba | Dron que se aleja de la villa encendida de noche | — | PRIMERA PIEDRA |
+| 13,12-16,00 | Venta | Vuelta a la puerta de noche: la llamada a la acción y el pie legal | «¿Vendes obra nueva en Cataluña?» | «¿Vendes obra nueva en Cataluña?» → botón «Escríbeme →». Pie: «Presentadora IA de @vitruvistudio · Infografías no contractuales» |
+
+**Producción.** Animatic hecho solo con imágenes (Nano Banana 2.1, 2k) con la candidata 01: cada plano entra con un zoom y los cortes van con sus frases y con la música. Para el vídeo de verdad se anima cada imagen (unos 11 clips) y la presentación y el cierre se hacen con su voz y labios sincronizados.
+
+---
+
+## 3.1 Versión de 15 s (sustituida por la de 16 s con intro en embudo)
+
 
 **Cambio pedido por Stefano (25/10/2026).** Más rápido, 15-16 s como máximo: ella se presenta hablando natural los primeros 5-6 s y después cortes muy rápidos, al estilo de las ediciones modernas, en los que va apareciendo entre las casas.
 

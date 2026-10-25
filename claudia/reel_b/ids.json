@@ -1,0 +1,31 @@
+{
+ "_nota": "Primer reel, guion B de 16 s, animatic solo con imágenes. Candidata 01 (personaje candidata_01_miel, id 2424055). Nano Banana 2.1, 2k, 9:16. p01_v1 es el plano 1 elegido; p01 y p01_v2 descartados.",
+ "imagenes": {
+  "p01": "WDKOjgwcXe",
+  "p03": "w4XFtfA7EI",
+  "p05": "dtgRJNvXSL",
+  "p08": "BhU2yinoQR",
+  "p06": "KLn8TX6kqp",
+  "p11": "fHNTZWpCDY",
+  "p13": "Tdr4lyvVNR",
+  "p01_v1": "VXx9SXaMMU",
+  "p01_v2": "SyeuIynUb8",
+  "p04": "gOpE8OFSXO",
+  "p10": "bxGB0jN5Y2",
+  "p07": "p8si7I0ehw",
+  "p09": "cpkysdC0eP",
+  "p15": "SyeuIXfUb8",
+  "p12": "N2vrQCQ6D9",
+  "p14": "ksYIMTj16B"
+ },
+ "audio": {
+  "voz_intro_b": "p8si7uBehw",
+  "voz_intro_a": "eIl3JuNdqL",
+  "voz_cierre": "VXx9Sf5MMU",
+  "musica": "XmSZykZBfo",
+  "riser": "KLn8ML8kqp",
+  "golpe": "1lWtplkr4r",
+  "barrido": "cpkylea0eP",
+  "grillos": "xS0hdUcjfW"
+ }
+}
