@@ -107,12 +107,14 @@ def embed(text, script_id, data):
                   lambda m: m.group(1) + blob + m.group(2), text, count=1, flags=re.S)
 
 
-def page(manifest, html, persona=None):
+def page(manifest, html, persona=None, video=None):
     keep = ("n", "group", "groupLine", "label", "age", "chips", "inspired")
     text = open(html, encoding="utf-8").read()
     text = embed(text, "cast-data", [{k: c[k] for k in keep if k in c} for c in load(manifest)])
     if persona:
         text = embed(text, "persona-data", load(persona))
+    if video:
+        text = embed(text, "video-data", load(video))
     with open(html, "w", encoding="utf-8") as f:
         f.write(text)
 

@@ -1,0 +1,540 @@
+{
+  "meta": {
+    "titulo": "Claudia · Primer vídeo",
+    "fecha": "2026-10-25",
+    "estado": "Documento de trabajo. Nada publicado, programado ni comprado. Requiere OK de Stefano.",
+    "documento": "claudia/video/PRIMER_VIDEO.md"
+  },
+  "referencias": [
+    {
+      "titulo": "Mary Bonnet · «The real estate market right now» (lip-sync cómico, 50 s)",
+      "url": "https://www.tiktok.com/@themarybonnet/video/7082802720247270702",
+      "vistas": "11,3 M reproducciones (TikTok, comprobado 25/10/2026)",
+      "aprendizaje": "La pieza más vista del conjunto no enseña ninguna casa: formato de tendencia aplicado al oficio. Con sonido ajeno no se puede promocionar; Claudia copia la estructura con audio propio."
+    },
+    {
+      "titulo": "Summer Newman · casa de 85 M$ en Nueva York (60 s, Empire State of Mind)",
+      "url": "https://www.tiktok.com/@summernewmann/video/7399337613712264481",
+      "vistas": "10,4 M reproducciones · 760 K me gusta · 74 K compartidos (comprobado 25/10/2026)",
+      "aprendizaje": "Audio con identidad de ciudad + precio en el texto + anfitriona que entra y mira atrás. La música de lugar dispara compartidos, pero solo sirve en orgánico."
+    },
+    {
+      "titulo": "Summer Newman · Villa Enso, Marbella",
+      "url": "https://www.tiktok.com/@summernewmann/video/7580054297228889366",
+      "vistas": "5,9 M reproducciones · 519 K me gusta (comprobado 25/10/2026)",
+      "aprendizaje": "El lujo de la costa española tiene público masivo en vertical. Recorrido por usos (desayuno, baño, atardecer), no por estancias."
+    },
+    {
+      "titulo": "Tatiana Londono · «Back in 2021 everyone kept saying…» (14 s)",
+      "url": "https://www.tiktok.com/@tatlondono/video/7625023496636173586",
+      "vistas": "3,0 M reproducciones · 180 K me gusta (04/04/2026; comprobado 25/10/2026)",
+      "aprendizaje": "Catorce segundos, una objeción, una decisión, voz pausada. Una sola idea retiene. El canal vive de picos, no de la media (su pieza del 16/10/2026 lleva 4 K)."
+    },
+    {
+      "titulo": "Eva Tu Finca (Asturias) · tres visitas a casas baratas (81-135 s)",
+      "url": "https://www.tiktok.com/@evatufinca/video/7306151220492700960",
+      "vistas": "2,3 M · 2,7 M · 2,4 M reproducciones (comprobado 25/10/2026)",
+      "aprendizaje": "El viral inmobiliario español habla castellano: precio y lugar en el primer segundo, visita honesta, sonido original. La honestidad retiene más de dos minutos."
+    },
+    {
+      "titulo": "Drumelia · Villa Cullinan, La Zagaleta (visita 24 min y teaser 2:49)",
+      "url": "https://www.youtube.com/watch?v=GLMyQ1tzN4k",
+      "vistas": "3,04 M (visita) y 1,68 M (teaser) en YouTube (comprobado 25/10/2026)",
+      "aprendizaje": "Lujo español en vídeo: dron a hora dorada, presentador que camina, revelado por fases. El teaser corto es un activo propio, no un recorte."
+    },
+    {
+      "titulo": "Enes Yilmazer · «Craziest mansion… underground nightclub» (40 min)",
+      "url": "https://www.youtube.com/watch?v=1lqfF6wOkMc",
+      "vistas": "16,3 M (YouTube, comprobado 25/10/2026)",
+      "aprendizaje": "Estructura de revelado: exterior > entrada > espera > el espacio imposible. Presentador en movimiento hacia cámara. Una sorpresa por pieza."
+    },
+    {
+      "titulo": "Sobha Realty · «The art of the detail» (tráiler de promotora, 0:31)",
+      "url": "https://www.youtube.com/watch?v=RVARlSmLpaI",
+      "vistas": "20,9 M (YouTube, alcance pagado probable; comprobado 25/10/2026)",
+      "aprendizaje": "Define el género del guion B: 31 s, noche, luces encendidas, materiales, sin datos. Es lo que las promotoras esperan ver."
+    },
+    {
+      "titulo": "Engel & Völkers · «A place to call Home» (0:30 y 0:40, octubre 2026)",
+      "url": "https://www.youtube.com/watch?v=alY6Yf4LZOs",
+      "vistas": "360 K y 305 K en 3-4 semanas (YouTube, comprobado 25/10/2026)",
+      "aprendizaje": "El tráiler de lujo de 30 s está vivo este mes: personas, umbral, luz, una frase; plano cada 1-2 s. La versión de 30 s rinde algo más que la de 40."
+    },
+    {
+      "titulo": "Lucas Fox · «International Properties» (0:27)",
+      "url": "https://www.youtube.com/watch?v=90MAYsFKtfk",
+      "vistas": "1,05 M (YouTube, comprobado 25/10/2026)",
+      "aprendizaje": "La agencia de Barcelona con más vídeo: 27 s de dron, piscina y gente viviendo la casa. La vara con la que medir el guion B."
+    },
+    {
+      "titulo": "Architectural Digest · «$100M equestrian estate» y Bespoke RE · «Equestrian facility»",
+      "url": "https://www.youtube.com/watch?v=k2Sft4bwESw",
+      "vistas": "895 K y 708 K (YouTube, comprobado 25/10/2026)",
+      "aprendizaje": "El caballo significa escala y vida, no decoración. Un plano de 1,4 s basta: mano en el cuello, mirada a cámara, amanecer en una masía del Empordà."
+    },
+    {
+      "titulo": "lift on · «Video tours for properties that don't exist yet» (IA, Engel & Völkers, 0:51)",
+      "url": "https://www.youtube.com/watch?v=ieU_G-4AJJ0",
+      "vistas": "953 (YouTube, 3 semanas; comprobado 25/10/2026)",
+      "aprendizaje": "Ya existe quien vende visitas IA de casas que no existen, sin presentadora ni gancho: 953 vistas. La diferencia de Claudia es la anfitriona y la honestidad en pantalla, no la tecnología."
+    }
+  ],
+  "tendencias": {
+    "ganchos": [
+      "número concreto",
+      "bucle abierto (la recompensa se retiene)",
+      "contradicción",
+      "ancla de precio / adivina el precio",
+      "dirección directa a un público («si vendes obra nueva…»)",
+      "no abrir con «Hola, soy…»: la presentación va después del plano espectacular"
+    ],
+    "formatos": [
+      "ancla de precio",
+      "antes y después / render vs obra",
+      "revelado día-noche sin palabras",
+      "busto parlante de objeción (14-30 s)",
+      "visita narrada 15-30 s",
+      "lip-sync sobre sonido de tendencia (solo orgánico)",
+      "tráiler de marca 27-31 s",
+      "un día en mi vida",
+      "quiz ¿real o IA? / ¿foto o render?"
+    ],
+    "ritmo_corte": "Reel actual de Claudia medido: 27 s, 4 cortes (0,15 cortes/s, plano medio 5,4 s). Tráilers de 27-31 s de referencia: plano cada 1-2 s. Prescripción: guion B 16 planos en 25 s (0,64 cortes/s; montaje a 1,2-1,4 cortes/s, planos hablados de 1,5-3 s); guion A 12 planos en 14,5 s. Nunca cámara lenta. No existe estudio público riguroso de cortes por segundo; las cifras de proveedores son heurísticas.",
+    "duracion": "Orgánico 15-30 s (gancho + una idea); anuncio: 6-15 s ThruPlay típico 18-35 %, 16-30 s 15-25 %. B = 25 s, A = 14,5 s.",
+    "texto_en_pantalla": "1-3 palabras a la vez, sans geométrica semibold (Inter/Montserrat), 60 px sobre 1080, blanco con sombra, palabra clave en camel #C8A27A, centrado al 55-60 % de altura (la interfaz de Reels creció a finales de 2025). Rótulo legal «Presentadora IA · Infografías no contractuales» a 34 px arriba izquierda desde el fotograma 1.",
+    "sonidos": "Virales: himnos de ciudad, sonidos originales de tendencia para lip-sync, sonido original con voz. Con música con licencia no se puede promocionar (Instagram obliga a cambiarla por Meta Sound Collection). Guion B: audio original propio a 96 BPM con cortes en el pulso; guion A: pulso propio a 120 BPM con tic de cuenta atrás. Sonidos de tendencia se consultan el día del montaje en TikTok Creative Center (España) y la pestaña de audio de Reels, solo para orgánico."
+  },
+  "guiones": [
+    {
+      "id": "A",
+      "titulo": "¿Foto o render?",
+      "duracion": "14,5 s · 9:16",
+      "por_que": "Versión inmobiliaria del quiz «¿real o IA?», formato de masas en 2025-2026. Cada imagen es un bucle abierto de 1,2 s: quien se queda a comprobar ya ha visto el 80 % del reel. Pieza de guardados y comentarios sin pedirlos, y la única que Vitruvi puede hacer con autoridad. Audio propio. Gancho B para Trial Reel: «Cuatro casas. Dos no existen todavía.» Requiere dos fotos reales con derechos y dos renders de Vitruvi; nunca se hace pasar un render por foto.",
+      "planos": [
+        {
+          "seg": "0,0-1,2",
+          "imagen": "Claudia, look calle, azotea de su fábrica rehabilitada en Poblenou con grúas y una torre del 22@ detrás, luz de las 10:00. iPhone a la altura de los ojos, ligero temblor, encuadre un pelo torcido, cielo sin HDR, pelo con brisa, piel con textura. Abre la palma a la lente con la primera palabra.",
+          "texto": "¿FOTO O RENDER? · rótulo IA arriba izq.",
+          "voz": "¿Foto o render? Som-hi.",
+          "sonido": "Chasquido de dedos; arranca pulso propio a 120 BPM."
+        },
+        {
+          "seg": "1,2-2,4",
+          "imagen": "Imagen 1: foto real de una terraza de obra entregada a las 20:00 con la mesa puesta, pantalla completa con marco fino blanco y anillo de cuenta atrás de 1 s.",
+          "texto": "1",
+          "voz": "",
+          "sonido": "Tic-tac de 1 s."
+        },
+        {
+          "seg": "2,4-2,9",
+          "imagen": "Sello sobre la imagen 1.",
+          "texto": "FOTO (verde oliva)",
+          "voz": "",
+          "sonido": "Ding."
+        },
+        {
+          "seg": "2,9-4,1",
+          "imagen": "Imagen 2: render de Vitruvi, terraza al oeste a las 20:00 de julio, 14 m², mesa para seis; grano añadido para igualar la foto.",
+          "texto": "2",
+          "voz": "",
+          "sonido": "Tic-tac."
+        },
+        {
+          "seg": "4,1-4,6",
+          "imagen": "Sello y parpadeo de 3 fotogramas en wireframe (firma de Vitruvi).",
+          "texto": "RENDER (camel)",
+          "voz": "",
+          "sonido": "Blip corto."
+        },
+        {
+          "seg": "4,6-5,8",
+          "imagen": "Imagen 3: foto real de un salón de piso piloto con luz lateral.",
+          "texto": "3",
+          "voz": "",
+          "sonido": "Tic-tac."
+        },
+        {
+          "seg": "5,8-6,3",
+          "imagen": "Sello.",
+          "texto": "FOTO",
+          "voz": "",
+          "sonido": "Ding."
+        },
+        {
+          "seg": "6,3-7,5",
+          "imagen": "Imagen 4: render de cocina con isla, luz del este a las 9:00.",
+          "texto": "4",
+          "voz": "",
+          "sonido": "Tic-tac."
+        },
+        {
+          "seg": "7,5-8,0",
+          "imagen": "Sello y wireframe.",
+          "texto": "RENDER",
+          "voz": "",
+          "sonido": "Blip."
+        },
+        {
+          "seg": "8,0-11,0",
+          "imagen": "Claudia en la azotea, mismo encuadre un paso más cerca (como si el móvil se hubiera movido). Manos abiertas de contraste y casi un segundo de pausa antes de la segunda frase.",
+          "texto": "así se van a ver",
+          "voz": "Si has fallado alguna, no pasa nada. (pausa) Así se van a ver.",
+          "sonido": "El pulso baja a la mitad; ambiente de calle."
+        },
+        {
+          "seg": "11,0-13,0",
+          "imagen": "Mismo plano, palma del pecho hacia la cámara.",
+          "texto": "la siguiente, el lunes",
+          "voz": "Yo las enseño antes de que existan. Guárdalo para la siguiente.",
+          "sonido": "Última nota de la música."
+        },
+        {
+          "seg": "13,0-14,5",
+          "imagen": "Cartela sobre el render de la terraza oscurecido un 30 %.",
+          "texto": "Claudia · Presentadora IA de Vitruvi Studio · Infografías no contractuales",
+          "voz": "",
+          "sonido": "Ambiente de azotea, sin música."
+        }
+      ],
+      "copy": "¿Foto o render? Cuatro casas, dos no existen todavía.\nLas dos que son render se van a ver así: mismo sol, misma hora, mismos metros.\nGuárdalo para la siguiente, el lunes.\nPresentadora IA de @vitruvistudio. Infografías no contractuales.\n¿Promueves o comercializas obra nueva? Escríbeles por mensaje o WhatsApp."
+    },
+    {
+      "id": "B",
+      "titulo": "Tráiler «Hola, soy Claudia»",
+      "duracion": "25,0 s · 9:16",
+      "por_que": "Pieza de presentación promocionable: audio propio, Claudia en el primer fotograma, territorio reconocible (Empordà, Costa Brava, 22@), transparencia desde el segundo 0 y llamada a la acción legal a quien vende obra nueva. Fórmula del estudio de referentes a velocidad de tráiler: necesidad > demostración > condición > siguiente paso. 57 palabras de voz (≈150 ppm). Variante V2 para Trial Reel: el paseo por la piscina abre y la puerta de noche entra en el segundo 5.",
+      "voz_completa": "Hola, soy Claudia. Esta casa todavía no existe, pero te la voy a enseñar igual. Áticos en Barcelona. Villas en la Costa Brava. Masías con caballo. Todo antes de la primera piedra. Soy la presentadora IA de Vitruvi. Las promociones son reales. ¿Vendes obra nueva en Cataluña? Te la enseño antes de que exista. Escríbeme.",
+      "planos": [
+        {
+          "seg": "0,0-2,0",
+          "imagen": "Noche, hora azul. Masía rehabilitada con piscina infinita en el Empordà, todas las ventanas encendidas, el agua refleja la casa. Claudia en la puerta verde oliva abierta; la luz cálida de dentro le cae encima y deja el resto en penumbra; gira la cabeza a cámara y abre la palma. Vestido largo de lino arena, descalza. iPhone de noche: ISO alto, grano visible, balance cálido frente al cielo azul, halo en las ventanas, mano no del todo quieta, horizonte 1-2° torcido, sin HDR.",
+          "texto": "Rótulo IA pequeño desde 0,0. Sin más texto.",
+          "voz": "",
+          "sonido": "Grillos y agua; la música propia (96 BPM, piano y bajo) entra en el pulso a 1,8 s."
+        },
+        {
+          "seg": "2,0-3,5",
+          "imagen": "Plano medio, cámara en mano retrocediendo mientras ella da dos pasos hacia dentro; salón iluminado detrás. Sonrisa contenida.",
+          "texto": "Hola, soy Claudia (palabra a palabra)",
+          "voz": "Hola, soy Claudia.",
+          "sonido": "Pasos descalzos sobre travertino."
+        },
+        {
+          "seg": "3,5-4,3",
+          "imagen": "Dron, push-in lento a hora dorada sobre una villa de obra nueva en la Costa Brava (Begur), pinos y mar. Velocidad real.",
+          "texto": "todavía no existe",
+          "voz": "Esta casa todavía no existe…",
+          "sonido": "Música."
+        },
+        {
+          "seg": "4,3-5,1",
+          "imagen": "Interior render-como-vídeo: salón con la luz del mar, mesa puesta para seis, cortina que se mueve. Grano y ligera viñeta para igualar con los planos de iPhone.",
+          "texto": "",
+          "voz": "…pero te la voy a enseñar igual.",
+          "sonido": "Música."
+        },
+        {
+          "seg": "5,1-6,2",
+          "imagen": "Piscina. Claudia camina por el borde con el vestido de lino, descalza; la cámara la sigue desde el lado a la altura de los ojos con temblor de mano; mira atrás a cámara. Sin zooms, nunca desde abajo.",
+          "texto": "",
+          "voz": "",
+          "sonido": "Agua, pasos, música."
+        },
+        {
+          "seg": "6,2-7,2",
+          "imagen": "Noche en Barcelona. Terraza de un ático en Diagonal Mar/22@ con la ciudad encendida; apoyada en la barandilla, hombros girados a la vista, calla.",
+          "texto": "Áticos",
+          "voz": "Áticos en Barcelona.",
+          "sonido": "Rumor de ciudad lejano."
+        },
+        {
+          "seg": "7,2-8,1",
+          "imagen": "Detalle: su mano desliza las yemas sobre travertino y sube la mirada. Luz rasante de tarde.",
+          "texto": "",
+          "voz": "",
+          "sonido": "Roce de la piedra."
+        },
+        {
+          "seg": "8,1-9,0",
+          "imagen": "Dron top-down sobre la piscina infinita de la villa de la Costa Brava, ella sentada en el borde con los pies en el agua, pequeña en el encuadre.",
+          "texto": "Villas",
+          "voz": "Villas en la Costa Brava.",
+          "sonido": "Música."
+        },
+        {
+          "seg": "9,0-9,9",
+          "imagen": "Dron al amanecer sobre una masía con paddocks y niebla baja en el Empordà.",
+          "texto": "",
+          "voz": "",
+          "sonido": "Resoplido de caballo."
+        },
+        {
+          "seg": "9,9-11,3",
+          "imagen": "Caballo. Claudia con abrigo camel junto a un caballo castaño en la valla del paddock, mano en el cuello del animal, mirada a cámara. Luz de las 8:00, aliento visible. Un solo plano.",
+          "texto": "Masías",
+          "voz": "Masías con caballo.",
+          "sonido": "Cascos sobre tierra, música."
+        },
+        {
+          "seg": "11,3-13,0",
+          "imagen": "Presentadora: blazer marfil, terraza de la villa al atardecer. Junta las palmas a la altura del pecho, casi un segundo de pausa, y dice la frase.",
+          "texto": "antes de la primera piedra",
+          "voz": "Todo antes de la primera piedra.",
+          "sonido": "La música se abre."
+        },
+        {
+          "seg": "13,0-14,6",
+          "imagen": "Fachada de la villa a hora dorada que parpadea tres fotogramas en wireframe y vuelve (firma de Vitruvi).",
+          "texto": "Presentadora IA · Vitruvi Studio",
+          "voz": "Soy la presentadora IA de Vitruvi.",
+          "sonido": "Blip suave sobre el parpadeo."
+        },
+        {
+          "seg": "14,6-16,4",
+          "imagen": "Obra real. Claudia con casco blanco y chaleco en un forjado del 22@, grúa detrás, palma hacia el forjado y mirada a cámara. Luz dura de mediodía, polvo, encuadre de móvil.",
+          "texto": "reales",
+          "voz": "Las promociones son reales.",
+          "sonido": "Obra: martillo lejano, viento."
+        },
+        {
+          "seg": "16,4-18,6",
+          "imagen": "Vuelta a la noche, mismo encuadre que el plano 1; sujeta la puerta abierta, la luz le da en la cara, mira a cámara.",
+          "texto": "¿Vendes obra nueva?",
+          "voz": "¿Vendes obra nueva en Cataluña?",
+          "sonido": "Grillos; la música se recoge."
+        },
+        {
+          "seg": "18,6-22,0",
+          "imagen": "Plano medio en la misma puerta, palma del pecho hacia la cámara. Pausa antes de «Escríbeme».",
+          "texto": "Te la enseño antes de que exista → Escríbeme + icono WhatsApp",
+          "voz": "Te la enseño antes de que exista. (pausa) Escríbeme.",
+          "sonido": "Última frase musical."
+        },
+        {
+          "seg": "22,0-25,0",
+          "imagen": "Cartela sobre el plano fijo de la casa encendida; ella ya ha entrado.",
+          "texto": "Claudia · Presentadora IA de Vitruvi Studio · Infografías no contractuales · Vitruvi Studio, Barcelona (+ «Publicidad» si es anuncio)",
+          "voz": "",
+          "sonido": "La puerta se cierra con un clic; grillos."
+        }
+      ],
+      "copy": "Esta casa todavía no existe, pero te la voy a enseñar igual.\nSoy Claudia. Enseño obra nueva en Cataluña antes de la primera piedra: áticos, villas, masías. Lo que ves son infografías; las promociones son reales.\nSígueme para la siguiente; hay una cada lunes.\nPresentadora IA de @vitruvistudio. Infografías no contractuales.\n¿Vendes obra nueva? Escríbeles por mensaje o WhatsApp y te enseñan cómo presentarían tu promoción."
+    }
+  ],
+  "recomendacion": {
+    "guion": "B",
+    "por_que": "Prueba lo que Stefano quiere probar (Claudia en el primer fotograma), tiene una llamada a la acción legal y medible (mensajes de promotoras), usa audio original y se puede promocionar sin cambios, y cada euro enseña la marca completa: nombre, territorio, transparencia y a quién sirve. El guion A se publica igual en orgánico como Trial Reel (jueves de tendencia): es la pieza de guardados y comentarios, no la de anuncio.",
+    "anuncio": {
+      "objetivo": "Paso previo: B como Trial Reel con dos primeros planos (V1 puerta de noche, V2 paseo por la piscina); ganador a las 48-72 h. Fase 1 (días 1-4, 35 €): objetivo Reconocimiento, optimización Reproducciones de vídeo (ThruPlay), dos anuncios de 17,50 €. Fase 2 (días 5-7, 15 €): objetivo Interacción, destino Mensajes a WhatsApp de Vitruvi con el ganador; respuesta automática que se presenta como IA y ofrece HUMANO.",
+      "ubicacion": "Instagram Reels y Facebook Reels (ubicaciones manuales, 9:16), desde Ads Manager con la cuenta publicitaria de Vitruvi. TikTok queda para una segunda prueba orgánica con Spark Ads (etiqueta de IA obligatoria en anuncios desde 21/07/2026; Claudia aún no tiene cuenta).",
+      "publico": "Cataluña (Barcelona, Girona, Tarragona, Lleida), 25-55 años, español y catalán; Advantage+ audience con sugerencias de promoción inmobiliaria, arquitectura, interiorismo e inversión inmobiliaria. Sin categoría especial de vivienda: el anuncio no ofrece ninguna vivienda ni servicio de agente.",
+      "duracion": "7 días: 4 de medición de gancho + 3 de llamada a la acción.",
+      "presupuesto": "50 € en total: 35 € ThruPlay (2 × 17,50 €, 4,40 €/día) + 15 € Mensajes (5 €/día). Esperado con CPM de 6-12 €: 4.000-8.000 impresiones, 1.200-2.600 vistas de 3 s, 800-1.800 ThruPlays, 40-150 visitas al perfil, 2-6 conversaciones.",
+      "kpis": [
+        {
+          "kpi": "Tasa de gancho (vistas de 3 s / impresiones)",
+          "rango_referencia": "media 20-35 % (otra guía: 25-40 % media, 40-55 % fuerte)",
+          "objetivo": "≥ 30 % bien, ≥ 40 % muy bien, < 20 % cambiar primer plano",
+          "fuente": "https://coolnerdsmarketing.com/?p=42608 ; https://nestscale.com/blog/increase-tiktok-hook-rate.html"
+        },
+        {
+          "kpi": "Tasa de abandono (skip rate, Insights orgánico)",
+          "rango_referencia": "sano < 30-40 %; > 50 % el gancho no funciona",
+          "objetivo": "< 35 %",
+          "fuente": "https://metricool.com/instagram-reel-analytics/"
+        },
+        {
+          "kpi": "ThruPlay (≥ 15 s o completas / impresiones)",
+          "rango_referencia": "15-25 % típico en clips de 16-30 s a público frío; 18-35 % en 6-15 s",
+          "objetivo": "≥ 25 %",
+          "fuente": "https://dynamoi.com/learn/instagram-ads/meta-ads-manager-metrics-music-campaigns"
+        },
+        {
+          "kpi": "Tiempo medio de visionado",
+          "rango_referencia": "sin benchmark oficial; ≥ 35-40 % del vídeo es sano",
+          "objetivo": "≥ 9 s de 25",
+          "fuente": "criterio propio sobre la lógica de finalización de Instagram"
+        },
+        {
+          "kpi": "CPM",
+          "rango_referencia": "España todas las industrias: mediana ≈ 7,6 € (jul. 2025-jul. 2026), mínimo 3,6 €, picos > 10 €; inmobiliario global 28,7 $ de media (+39 % vs. global)",
+          "objetivo": "5-12 €",
+          "fuente": "https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/spain ; https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/real-estate/spain"
+        },
+        {
+          "kpi": "CTR",
+          "rango_referencia": "España ≈ 1,6 % (1,1-2,7 %); inmobiliario global ≈ 2,8 % (2,2-4,7 %)",
+          "objetivo": "1-2 % en fase 2 (clic a WhatsApp)",
+          "fuente": "https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate/spain ; https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate/real-estate/spain"
+        },
+        {
+          "kpi": "Coste por conversación / mensaje",
+          "rango_referencia": "sin benchmark independiente; proveedores: 1,5-8 € según sector, hasta 10 €",
+          "objetivo": "≤ 7,5 € (≥ 2 conversaciones con 15 €) y al menos 1 de promotora o comercializadora",
+          "fuente": "https://getkanal.com/blog/click-to-whatsapp-ads-benchmarks-2026.md ; https://www.spurnow.com/en/blogs/click-to-whatsapp-ads-benchmarks"
+        },
+        {
+          "kpi": "Señales orgánicas (guardados, compartidos, seguidores / 1.000 impresiones)",
+          "rango_referencia": "sin benchmark del sector; Reels 5,84 % de engagement en cuentas de 2-50 K (Metricool 2025)",
+          "objetivo": "≥ 5 guardados y ≥ 3 compartidos por 1.000",
+          "fuente": "https://metricool.com/instagram-reels-length"
+        },
+        {
+          "kpi": "TikTok CPM (prueba posterior)",
+          "rango_referencia": "global 2025 13,26 $; medianas por sector 3,8-6,3 $; sin dato de España",
+          "objetivo": "referencia, no objetivo",
+          "fuente": "https://influee.co/blog/tiktok-ads-benchmarks"
+        }
+      ],
+      "regla_de_decision": "Gancho ≥ 30 % y ThruPlay ≥ 25 % y ≥ 1 conversación cualificada: repetir con 40 € detrás del siguiente «¿Pasamos?». Gancho 20-30 %: cambiar solo el primer plano y volver a probar. Gancho < 20 %: volver al guion, no al presupuesto."
+    }
+  },
+  "legal": [
+    {
+      "tema": "AICAT: definición y obligación de inscripción",
+      "conclusion": "Es agente inmobiliario quien de forma habitual y retribuida, en Cataluña, presta mediación, asesoramiento y gestión en transacciones inmobiliarias (Llei 18/2007 art. 55.1; Decret 12/2010 art. 2.1). Requisitos: establecimiento o dirección física, capacitación, garantía de 60.000 € por establecimiento (300.000 € si solo online), seguro de RC e inscripción en el registro obligatorio (art. 55.3-55.4 y 56; Decret arts. 3-11). El registro es público y se consulta en el Cercador d'Agents de l'Agència de l'Habitatge.",
+      "fuente": "https://www.boe.es/buscar/act.php?id=BOE-A-2008-3657 ; https://legado.elnotario.es/images/pdf/LAU-N30-14-CAT-Decreto-12-2010.pdf ; https://agenciahabitatge.gencat.cat/ca/temes/registre-dagents-immobiliaris"
+    },
+    {
+      "tema": "Sanciones por ejercer sin cumplir requisitos",
+      "conclusion": "Infracción grave (art. 124.2.b): multa de 9.001 a 90.000 € (art. 118.2). Publicitar viviendas sin nota de encargo también es grave (art. 124.2.f). Publicidad sin los datos obligatorios: leve, 3.000-9.000 € (art. 125.c). Con perjuicio a consumidores > 12.000 €: muy grave, 90.001-900.000 € (art. 123.b). La falta de inscripción no anula los contratos (art. 56.4).",
+      "fuente": "https://www.boe.es/buscar/act.php?id=BOE-A-2008-3657"
+    },
+    {
+      "tema": "La frase «¿Quieres vender tu propiedad? Contáctame» dicha por Claudia",
+      "conclusion": "No usable: es una oferta pública de captar encargos de venta (primera fase de la mediación) por un anunciante no inscrito; riesgo de infracción grave y de publicidad engañosa sobre la naturaleza del servicio (art. 55.5.a: prohibido inducir a error sobre la verdadera naturaleza de la empresa). Pasar los contactos a una agencia a cambio de comisión por lead sigue pareciendo mediación retribuida y habitual: no sin dictamen.",
+      "fuente": "Llei 18/2007 arts. 55.1, 55.5.a, 58.5, 124.2.b"
+    },
+    {
+      "tema": "Ángulo que cumple (usado en el guion B): hablar a quien vende obra nueva",
+      "conclusion": "«¿Vendes obra nueva en Cataluña? Te la enseño antes de que exista. Escríbeme» ofrece servicios de visualización y comunicación a promotoras y comercializadoras; no es mediación por cuenta ajena. Cuando se publicite una vivienda concreta de un cliente, el anuncio de la promotora debe cumplir el art. 58.3 (veracidad) y el art. 59 (estado: terminada, en construcción o proyectada; superficie útil y construida; responsable de la comercialización con dirección y teléfono; licencia; cédula y certificado energético), con datos confirmados por escrito e «infografías no contractuales».",
+      "fuente": "Llei 18/2007 arts. 55.1, 58, 59 (redacción 25/03/2026)"
+    },
+    {
+      "tema": "Ángulo que cumple: colaboración pagada con agencia inscrita",
+      "conclusion": "Si se habla a propietarios, el anunciante es la agencia: su número AICAT y distintivo en pantalla y copy (arts. 57 y 59.e), su contacto como destino, nota de encargo antes de publicitar inmuebles (art. 58.5), etiqueta «Colaboración pagada» con la agencia y «Publicidad» visible desde el primer segundo. Claudia es la presentadora; Vitruvi factura producción, no cobra por operación.",
+      "fuente": "Llei 18/2007 arts. 57, 58.5, 59.e; Código de conducta de influencers de Autocontrol (01/10/2025)"
+    },
+    {
+      "tema": "Publicidad engañosa y competencia desleal",
+      "conclusion": "Ley 34/1988 art. 3.e (publicidad engañosa remite a la LCD). Ley 3/1991: actos de engaño sobre la naturaleza del empresario, sus servicios y cualificaciones (art. 5), omisiones engañosas (art. 7), publicidad encubierta (art. 26). Claudia dice siempre qué es, nunca sugiere una licencia que no tiene, marca las colaboraciones como publicidad y no inventa testimonios.",
+      "fuente": "https://www.boe.es/buscar/act.php?id=BOE-A-1988-26156 ; https://www.boe.es/buscar/act.php?id=BOE-A-1991-628"
+    },
+    {
+      "tema": "Influencers: RD 444/2024 y Autocontrol",
+      "conclusion": "Usuario de especial relevancia = ingresos brutos ≥ 300.000 € del año anterior en plataformas de vídeo (art. 3) y ≥ 1 M de seguidores en un servicio o ≥ 2 M agregados y ≥ 24 vídeos al año (art. 4), de forma simultánea. Claudia no cumple: sin inscripción en el Registro estatal ni obligaciones del art. 94 LGCA. Sí aplican LGP, LCD y, como estándar, el Código de conducta de influencers de Autocontrol (en vigor 01/10/2025; incluye reglas para contenidos con IA).",
+      "fuente": "https://www.boe.es/eli/es/rd/2024/04/30/444/con ; https://www.puromarketing.com/125/216131/entra-vigor-nuevo-codigo-conducta-publicidad-influencers"
+    },
+    {
+      "tema": "Reglamento (UE) 2024/1689, art. 50",
+      "conclusion": "Aplicable desde el 02/08/2026: aviso cuando se interactúa con una IA (50.1, bot de mensajes) y declaración de contenido generado o manipulado para ultrasuplantaciones (50.4), que incluye a una presentadora fotorrealista. El Digital Omnibus aplazó solo el marcado legible por máquina del 50.2 para sistemas anteriores a agosto de 2026 (hasta 02/12/2026) y los plazos de alto riesgo; su estado de publicación es discutido por las fuentes. Multas hasta 15 M€ o 3 %. Claudia cumple con rótulo en los 3 primeros segundos, etiqueta de IA por publicación y de perfil, línea en el copy, aviso en la web y bot que se presenta como IA.",
+      "fuente": "https://www.ictrecht.nl/en/blog/heads-up-ai-act-transparency-obligations-now-in-effect ; https://www.ropesgray.com/en/insights/viewpoints/2026/08/102nfqm/you-talkin-to-me-operationalising-the-eu-ai-acts-transparency-obligations"
+    },
+    {
+      "tema": "Instagram: etiqueta de perfil «AI-generated profile»",
+      "conclusion": "Obligatoria desde el anuncio del 31/08/2026 para perfiles cuya persona presentada es generada con IA; sin ella el perfil puede dejar de ser recomendable. Añadirla no penaliza. Se activa el primer día, además de «Hecho con IA» en cada pieza.",
+      "fuente": "https://creators.instagram.com/blog/ai-generated-profile-label ; https://metricool.com/instagrams-new-ai-label/"
+    },
+    {
+      "tema": "Meta: anuncios con IA y categoría especial Vivienda",
+      "conclusion": "Meta amplió en julio de 2026 las etiquetas «AI info» en anuncios hechos o modificados con IA generativa (detección C2PA); no hay rechazo automático por IA no etiquetada, sí por engaño sobre personas o hechos reales. La categoría especial Vivienda se exige a anunciantes de EE. UU., Canadá y «ciertas partes de Europa» para anuncios que promueven venta/alquiler de viviendas o servicios de agente; al declararla se pierde edad, sexo, código postal, públicos similares e intereses. El guion B no ofrece viviendas ni servicios de agente: no es anuncio de vivienda. NO CONFIRMADO: la lista de países europeos.",
+      "fuente": "https://www.techwyse.com/news/industry-news/google-meta-ai-ad-disclosure-labels ; https://www.jonloomer.com/special-ad-categories-meta-ads/ ; https://ppc.land/special-ad-category/"
+    },
+    {
+      "tema": "TikTok: IA en anuncios y política HEC",
+      "conclusion": "Desde el 21/07/2026 exige etiqueta de IA en anuncios con contenido realista generado con IA (presentadores sintéticos y voces incluidos), con detección C2PA y sanciones escalonadas (fuentes secundarias; la página de políticas se carga por JavaScript y no se pudo leer el texto literal). Las normas de comunidad exigen etiquetar el contenido realista generado con IA. El interruptor de categoría especial de vivienda solo se impone a anunciantes de EE. UU. o que segmenten EE. UU./Canadá.",
+      "fuente": "https://www.stellarsearch.co.uk/insight/tiktoks-ai-ad-disclosure-rules-are-live-what-brands-running-ai-creative-need-to-do-now ; https://ads.tiktok.com/help/article/housing-employment-credit-hec-ad-policy?lang=en ; https://www.tiktok.com/community-guidelines/en/integrity-authenticity"
+    },
+    {
+      "tema": "No confirmado",
+      "conclusion": "1) Lista de países europeos de la categoría especial Vivienda de Meta. 2) Texto literal de la política de IA en anuncios de TikTok. 3) Estado de publicación del Digital Omnibus en el DOUE (no afecta al art. 50.4). 4) Posibles modificaciones posteriores del Decret 12/2010 (se usó el texto original del DOGC; la Llei 18/2007 sí está consolidada a 25/03/2026). 5) Disponibilidad real de los dominios .es (solo DNS). Revisión por abogado antes del lanzamiento.",
+      "fuente": "Este documento, 25/10/2026"
+    }
+  ],
+  "dominios": [
+    {
+      "dominio": "claudiavitruvi.com",
+      "estado": "libre",
+      "como_se_comprobo": "RDAP rdap.org → Verisign, HTTP 404 (no existe), 25/10/2026",
+      "por_que": "Recomendación principal: nombre + casa, 14 letras, sin acentos, dice quién la crea desde la URL. Comprar con el .es."
+    },
+    {
+      "dominio": "claudiavitruvi.es",
+      "estado": "probablemente libre",
+      "como_se_comprobo": ".es sin RDAP (red.es no está en el bootstrap de IANA); dominios.es 403 desde nuestro entorno; DNS vía dns.google = NXDOMAIN (sin delegación). Confirmar en dominios.es.",
+      "por_que": "Redirección al .com; mercado español."
+    },
+    {
+      "dominio": "casasquenoexisten.com",
+      "estado": "libre",
+      "como_se_comprobo": "RDAP Verisign 404, 25/10/2026",
+      "por_que": "Marca-eslogan al estilo stepinsidewithme.com (Dina Goldentayer): su frase y el nombre de la serie. Dominio de campaña."
+    },
+    {
+      "dominio": "casasquenoexisten.es",
+      "estado": "probablemente libre",
+      "como_se_comprobo": "DNS NXDOMAIN (dns.google); sin RDAP para .es",
+      "por_que": "Pareja del .com."
+    },
+    {
+      "dominio": "holasoyclaudia.com",
+      "estado": "libre",
+      "como_se_comprobo": "RDAP Verisign 404, 25/10/2026",
+      "por_que": "El saludo del tráiler, fácil de decir en voz. Ojo: holaclaudia.com lo registró un tercero el 06/02/2026."
+    },
+    {
+      "dominio": "holasoyclaudia.es",
+      "estado": "probablemente libre",
+      "como_se_comprobo": "DNS NXDOMAIN (dns.google); sin RDAP para .es",
+      "por_que": "Pareja del .com."
+    },
+    {
+      "dominio": "claudiapresenta.com / .es",
+      "estado": "libre / probablemente libre",
+      "como_se_comprobo": "RDAP Verisign 404; DNS NXDOMAIN",
+      "por_que": "Describe la función sin palabras reservadas del sector."
+    },
+    {
+      "dominio": "claudiaobranueva.com / .es",
+      "estado": "libre / probablemente libre",
+      "como_se_comprobo": "RDAP Verisign 404; DNS NXDOMAIN",
+      "por_que": "Palabra clave real para buscadores; largo y menos marca."
+    },
+    {
+      "dominio": "soyclaudia.cat",
+      "estado": "libre",
+      "como_se_comprobo": "RDAP rdap.org → nic.cat, 404, 25/10/2026",
+      "por_que": "Guiño catalán para redirigir. soyclaudia.com (2014) y soyclaudia.es (con DNS) están ocupados: no construir la marca sobre «soyclaudia»."
+    },
+    {
+      "dominio": "claudiabcn.com / .es",
+      "estado": "libre / probablemente libre",
+      "como_se_comprobo": "RDAP Verisign 404; DNS NXDOMAIN",
+      "por_que": "Muy local; Vitruvi también trabaja Costa del Sol y Madrid."
+    },
+    {
+      "dominio": "estacasanoexiste.com / .es",
+      "estado": "libre / probablemente libre",
+      "como_se_comprobo": "RDAP Verisign 404; DNS NXDOMAIN",
+      "por_que": "Frase gancho sin el «todavía» que la hace honesta. Reserva defensiva."
+    },
+    {
+      "dominio": "claudia.vitruvi.studio / claudia.vitruvistudio.com",
+      "estado": "subdominio de dominios ya de Vitruvi (vitruvi.studio reg. 2022, vitruvistudio.com reg. 2023)",
+      "como_se_comprobo": "RDAP Identity Digital y Verisign, HTTP 200 con fecha de registro",
+      "por_que": "Coste cero y máxima coherencia legal; como destino final es menos marca, como alias técnico es perfecto."
+    },
+    {
+      "dominio": "Ocupados: claudia.com (1996), claudia.es (con DNS), claudia.cat (2020), claudia.barcelona (2017), soyclaudia.com (2014), pasamos.com (2017), holaclaudia.com (02/2026), claudiaia.com (03/2026)",
+      "estado": "registrados",
+      "como_se_comprobo": "RDAP HTTP 200 con estado y fecha de registro; claudia.es por delegación DNS",
+      "por_que": "Los dos últimos son de 2026: hay movimiento en nombres «Claudia + IA». Registrar los tres recomendados esta semana y pedir búsqueda de marca en OEPM/EUIPO (clases 35 y 42)."
+    }
+  ],
+  "web": {
+    "titular": "Te enseño casas que todavía no existen.",
+    "linea": "Soy Claudia, presentadora IA de Vitruvi Studio. La web está en obras, como casi todo lo que enseño. Si promueves o comercializas obra nueva, escríbeme y te enseñamos cómo presentaríamos tu promoción.",
+    "contacto": "Botón «Escríbeme» al WhatsApp de Vitruvi Studio [número]; Instagram [@cuenta de Claudia]; correo de Vitruvi [correo]. Primera respuesta automática: «Te responde la IA de Claudia. Para hablar con una persona del equipo de Vitruvi, escribe HUMANO».",
+    "aviso_ia": "Claudia es una presentadora creada con inteligencia artificial por Vitruvi Studio (Barcelona). Su historia es un guion; las promociones que enseña y el equipo que te responde son reales. Las imágenes son infografías no contractuales. Vitruvi Studio es un estudio de visualización arquitectónica: no es agencia inmobiliaria y no intermedia en compraventas ni alquileres. Aviso legal y privacidad: Vitruvi Studio."
+  }
+}
