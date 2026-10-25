@@ -14,7 +14,8 @@
   "s04_roble": "SyeufC5Ub8",
   "s10_giro": "8a7GZArIrU",
   "s12_cierre": "0e1PJy4TfW",
-  "hooves": "ksYIBIr16B"
+  "hooves": "ksYIBIr16B",
+  "s13_plano": "BhUnF8yoQR"
  },
  "voces": {
   "isabel": {
@@ -47,5 +48,12 @@
    "voiceId": 719,
    "creacion": "eIl394edqL"
   }
+ },
+ "guion_v2": {
+  "voz": "Elena Navarro (ElevenLabs v4, id 555)",
+  "toma": "9ZhLWzbNYZ (usada)",
+  "toma_alternativa": "iGfgTco3uK",
+  "animatic": "media/reel_d/animatic.mp4",
+  "montaje": "reel_c/render_v2.py"
  }
 }

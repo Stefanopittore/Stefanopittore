@@ -118,9 +118,11 @@
       "Publicar de noche o programar y anunciar sin el OK de Stefano."
     ],
     "elegida": {
-      "estado": "en casting",
-      "descartada": "Amparo (ElevenLabs v4, id 901): sonaba infantil",
-      "candidatas": "media/reel_c/voces/"
+      "nombre": "Elena Navarro",
+      "magnific_voice_id": 555,
+      "modelo": "eleven_v4",
+      "descartada": "Amparo (id 901): sonaba infantil",
+      "muestra": "media/reel_c/voces/elena.mp3"
     }
   },
   "copies": {
