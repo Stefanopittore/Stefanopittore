@@ -27,6 +27,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;l
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 body.lock{overflow:hidden}
 [hidden]{display:none!important}
+.z-img,.v-img,.v-bg,.slide img{pointer-events:none;-webkit-user-drag:none;user-select:none}
 h1,h2,h3,p{margin:0}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -181,6 +182,40 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .v-foot button[aria-pressed="true"] svg.star{fill:var(--accent);stroke:var(--accent)}
 .v-paused .v-cap::after{content:" · pausa"}
 
+/* Zoom viewer */
+.zoom{position:fixed;inset:0;z-index:70;background:var(--v-bg);color:var(--v-fg);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden}
+.z-stage{position:absolute;inset:0;overflow:hidden;cursor:zoom-in}
+.z-stage.zoomed{cursor:grab}
+.z-img{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:contain;transform-origin:0 0;will-change:transform}
+.z-top{position:absolute;left:0;right:0;top:0;z-index:2;display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 22px max(12px,env(safe-area-inset-left,0px));background:linear-gradient(rgba(0,0,0,.55),transparent)}
+.z-top b{flex:1;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.z-top button,.z-foot button{width:44px;height:44px;display:grid;place-items:center;color:var(--v-fg);font-size:24px;font-weight:700}
+.z-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:6px;padding:14px max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(0,0,0,.6))}
+.z-foot .z-pct{min-width:52px;text-align:center;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.z-foot button[aria-pressed="true"] svg.star{fill:var(--accent);stroke:var(--accent)}
+.z-hint{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;background:rgba(0,0,0,.65);padding:9px 15px;border-radius:18px;font-size:13px;font-weight:600;pointer-events:none;opacity:0;transition:opacity .4s;white-space:nowrap}
+.z-hint.on{opacity:1}
+.zoom-btn{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center}
+.zoom-btn svg.i{width:18px;height:18px}
+.v-hold .v-top,.v-hold .v-foot,.v-hold .v-cap{opacity:0;transition:opacity .15s}
+.v-foot #v-send{width:auto;padding:0 6px;font-weight:700;font-size:15px}
+.v-burst{z-index:4}
+
+/* Compare */
+.cmp-open{width:100%;margin-top:12px;padding:10px;border-radius:10px;background:var(--fg);color:var(--bg);font-weight:700}
+.seg{display:flex;gap:6px;overflow-x:auto;padding-block:4px 12px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;padding:7px 12px;border-radius:16px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.cmp{display:grid;grid-auto-flow:column;grid-auto-columns:var(--w,50%);gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.cmp::-webkit-scrollbar{display:none}
+.cmp figure{margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:5px;min-width:0}
+.cmp figure button{display:block;border-radius:8px;overflow:hidden;background:var(--v-bg);aspect-ratio:3/5;width:100%}
+.cmp img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.cmp figcaption{font-size:13px;font-weight:700;line-height:1.2}
+.cmp-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:10px}
+.cmp-nav button{padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-weight:700}
+
 .toast{position:fixed;left:50%;translate:-50% 0;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--fg);color:var(--bg);font-size:13px;font-weight:600;padding:8px 14px;border-radius:18px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100vw - 32px)}
 .toast.on{opacity:1}
 
@@ -188,7 +223,7 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 @media print{
   @page{size:A4 landscape;margin:9mm}
   body{padding:0;background:#fff;color:#121A1B}
-  body::before,.app,.tabs,.viewer,.sheet,.toast{display:none!important}
+  body::before,.app,.tabs,.viewer,.sheet,.toast,.zoom{display:none!important}
   .print-only{display:block;font-family:var(--ui)}
   .pp{break-inside:avoid;margin-bottom:6mm}
   .pp h2{font-family:var(--display);font-size:16px;margin:0 0 2mm}
@@ -266,16 +301,46 @@ svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stro
       <div class="v-head">
         <img id="v-av" alt="">
         <div><b id="v-name"></b><span id="v-sub"></span></div>
+        <button type="button" id="v-zoom" aria-label="Ampliar foto"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20M10.5 7.5v6M7.5 10.5h6"/></svg></button>
         <button type="button" id="v-profile" aria-label="Ver perfil"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></svg></button>
         <button type="button" id="v-close" aria-label="Cerrar historias"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
     <span class="v-cap" id="v-cap"></span>
+    <div class="burst v-burst" id="v-burst"><svg class="i" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></div>
     <div class="v-foot">
       <label class="sr" for="v-note">Nota sobre esta chica</label>
       <input id="v-note" type="text" placeholder="Envía una nota: otro ángulo, mezclar con…" autocomplete="off">
+      <button type="button" id="v-send" hidden>Enviar</button>
       <button type="button" id="v-star" aria-pressed="false" aria-label="Marcar como finalista"><svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></button>
     </div>
+  </div>
+</div>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <div class="z-stage" id="z-stage"><img class="z-img" id="z-img" alt="" draggable="false"></div>
+  <div class="z-top">
+    <b id="z-title"></b>
+    <button type="button" id="z-close" aria-label="Cerrar zoom"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="z-hint" id="z-hint">Pellizca o doble toque para acercar</div>
+  <div class="z-foot">
+    <button type="button" id="z-prev" aria-label="Foto anterior">‹</button>
+    <button type="button" id="z-out" aria-label="Alejar">−</button>
+    <span class="z-pct" id="z-pct">100%</span>
+    <button type="button" id="z-in" aria-label="Acercar">+</button>
+    <button type="button" id="z-next" aria-label="Foto siguiente">›</button>
+    <button type="button" id="z-star" data-star="" aria-pressed="false" aria-label="Marcar como finalista"><svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></button>
+  </div>
+</div>
+
+<div class="sheet" id="compare" role="dialog" aria-modal="true" aria-labelledby="cmp-title" hidden>
+  <div class="s-in">
+    <div class="s-top">
+      <button type="button" id="cmp-back" aria-label="Volver"><svg class="i" viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></button>
+      <b id="cmp-title">Comparar finalistas</b>
+    </div>
+    <div id="cmp-body"></div>
   </div>
 </div>
 
@@ -291,6 +356,7 @@ const SHOTS = [
 ];
 const STAR = '<svg class="i star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>';
 const BUBBLE = '<svg class="i" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.3 7.6L3.5 20.5l1.4-4.4a8.5 8.5 0 1 1 15.6-4.6z"/></svg>';
+const ZOOMI = '<svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20M10.5 7.5v6M7.5 10.5h6"/></svg>';
 const PLAY = '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg>';
 const pad = n => String(n).padStart(2, "0");
 const cands = JSON.parse(document.getElementById("cast-data").textContent);
@@ -305,7 +371,7 @@ const SETS = cands.map(c => {
   return {
     key, n: c.n, handle: `candidata.${pad(c.n)}`, title: c.label, age: c.age, chips: c.chips || [], inspired: c.inspired || "",
     avatar: `media/casting/${pad(c.n)}_sonrisa.jpg`,
-    frames: SHOTS.map(([k, label]) => ({ src: `media/casting/${pad(c.n)}_${k}.jpg`, cap: label, pick: key })),
+    frames: SHOTS.map(([k, label]) => ({ src: `media/casting/${pad(c.n)}_${k}.jpg`, hd: `media/casting/hd/${pad(c.n)}_${k}.jpg`, cap: label, pick: key })),
   };
 });
 SETS.push({
@@ -330,6 +396,13 @@ function el(tag, attrs = {}, ...kids) {
   for (const k of kids) if (k) e.append(k);
   return e;
 }
+function zoomBtn(fn) {
+  const b = el("button", { type: "button", class: "zoom-btn", "aria-label": "Ampliar foto", html: ZOOMI });
+  b.addEventListener("click", e => { e.stopPropagation(); fn(); });
+  return b;
+}
+function pop(node) { node.classList.remove("go"); void node.offsetWidth; node.classList.add("go"); }
+const overlaysOpen = () => document.querySelectorAll(".sheet:not([hidden]), .viewer:not([hidden]), .zoom:not([hidden])").length > 0;
 const toastEl = document.getElementById("toast");
 let toastT;
 function toast(msg) { toastEl.textContent = msg; toastEl.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove("on"), 1600); }
@@ -359,7 +432,7 @@ function renderFeed() {
   OLD.forEach((o, i) => {
     const t = el("button", { type: "button", class: "tile", "data-tile": o.id, "aria-label": `Ronda anterior ${o.label}` },
       el("img", { src: o.src, alt: "", loading: "lazy" }), el("span", { class: "lbl", text: o.now ? `${o.label} · actual` : o.label }), el("span", { class: "star-mark", text: "★" }));
-    t.addEventListener("click", () => openStory(SETS.length - 1, i, t));
+    t.addEventListener("click", () => openZoom(SETS.length - 1, i, t));
     og.append(t);
   });
 }
@@ -369,7 +442,8 @@ function post(s) {
   s.frames.forEach((f, i) => car.append(el("div", { class: "slide" },
     el("img", { class: "bg", src: f.src, alt: "", loading: "lazy" }),
     el("img", { class: "fg", src: f.src, alt: `Candidata ${s.n}, ${f.cap.toLowerCase()}`, loading: "lazy" }),
-    el("span", { class: "tag", text: f.cap }))));
+    el("span", { class: "tag", text: f.cap }),
+    zoomBtn(() => openZoom(SETS.indexOf(s), i)))));
   const ctr = el("span", { class: "ctr", text: `1/${s.frames.length}` });
   const burst = el("div", { class: "burst", html: STAR });
   const prev = el("button", { type: "button", class: "arrow prev", "aria-label": "Foto anterior", text: "‹" });
@@ -386,16 +460,28 @@ function post(s) {
   }, { passive: true });
   car.addEventListener("keydown", e => { if (e.key === "ArrowRight") go(1); if (e.key === "ArrowLeft") go(-1); });
   // Double tap on the photo = finalist, like a heart on Instagram
-  let last = 0, sx = 0, sy = 0;
-  car.addEventListener("pointerdown", e => { sx = e.clientX; sy = e.clientY; });
+  // Single tap opens the zoom viewer; a pinch opens it too
+  let last = 0, sx = 0, sy = 0, tapT = 0;
+  const touches = new Set();
+  const here = () => Math.round(car.scrollLeft / car.clientWidth);
+  car.addEventListener("pointerdown", e => {
+    sx = e.clientX; sy = e.clientY; touches.add(e.pointerId);
+    if (touches.size === 2) { clearTimeout(tapT); touches.clear(); openZoom(SETS.indexOf(s), here()); }
+  });
+  car.addEventListener("pointercancel", e => touches.delete(e.pointerId));
   car.addEventListener("pointerup", e => {
+    touches.delete(e.pointerId);
+    if (e.target.closest(".zoom-btn")) return;
     if (Math.abs(e.clientX - sx) > 10 || Math.abs(e.clientY - sy) > 10) return;
     const now = Date.now();
     if (now - last < 320) {
-      last = 0;
+      last = 0; clearTimeout(tapT);
       if (!picks[s.key]?.finalist) toggle(s.key);
-      burst.classList.remove("go"); void burst.offsetWidth; burst.classList.add("go");
-    } else last = now;
+      pop(burst);
+    } else {
+      last = now;
+      tapT = setTimeout(() => openZoom(SETS.indexOf(s), here()), 330);
+    }
   });
 
   const noteWrap = noteField(s.key, `Nota sobre la candidata ${s.n}`);
@@ -433,7 +519,7 @@ function noteField(id, label) {
 // ---------- Profile ----------
 let opener = null;
 function openSheet(id, from) { opener = from || document.activeElement; const s = document.getElementById(id); s.hidden = false; s.scrollTop = 0; document.body.classList.add("lock"); s.querySelector(".s-top button").focus(); }
-function closeSheet(id) { document.getElementById(id).hidden = true; if (document.querySelectorAll(".sheet:not([hidden])").length === 0 && viewer.hidden) document.body.classList.remove("lock"); opener?.focus?.(); }
+function closeSheet(id) { document.getElementById(id).hidden = true; if (!overlaysOpen()) document.body.classList.remove("lock"); opener?.focus?.(); }
 document.getElementById("pr-back").addEventListener("click", () => closeSheet("profile"));
 document.getElementById("dt-back").addEventListener("click", () => closeSheet("detail"));
 
@@ -461,7 +547,7 @@ function openProfile(s, from) {
   s.frames.forEach((f, i) => {
     const t = el("button", { type: "button", class: "tile", "data-tile": s.n ? "" : f.pick, "aria-label": `Ver ${f.cap}` },
       el("img", { src: f.src, alt: "", loading: "lazy" }), el("span", { class: "lbl", text: f.cap }), el("span", { class: "star-mark", text: "★" }));
-    t.addEventListener("click", () => openStory(SETS.indexOf(s), i, t));
+    t.addEventListener("click", () => openZoom(SETS.indexOf(s), i, t));
     grid.append(t);
   });
   body.append(grid);
@@ -484,7 +570,7 @@ function openStory(si, fi, from) {
 }
 function closeStory() {
   cancelAnimationFrame(V.raf); viewer.hidden = true;
-  if (document.querySelectorAll(".sheet:not([hidden])").length === 0) document.body.classList.remove("lock");
+  if (!overlaysOpen()) document.body.classList.remove("lock");
   V.from?.focus?.();
 }
 function show(si, fi) {
@@ -503,6 +589,7 @@ function show(si, fi) {
   vStar.dataset.star = f.pick;
   vNote.dataset.note = f.pick;
   vNote.value = picks[f.pick]?.note || "";
+  vSend.hidden = true;
   refresh();
   const nx = s.frames[fi + 1] || SETS[si + 1]?.frames[0];
   if (nx) new Image().src = nx.src;
@@ -537,42 +624,195 @@ function jump(d) {
 // Taps: left third back, rest forward. Hold pauses. Swipe sideways changes girl, swipe down closes.
 const g = { x: 0, y: 0, t: 0, moved: false };
 const stage = document.getElementById("v-stage");
+const vPtrs = new Set();
 stage.addEventListener("pointerdown", e => {
   if (e.target.closest(".v-foot, .v-head")) return;
+  vPtrs.add(e.pointerId);
+  if (vPtrs.size === 2) { vPtrs.clear(); g.moved = true; clearTimeout(g.hold); viewer.classList.remove("v-hold"); return openZoom(V.set, V.frame, null, true); }
   g.x = e.clientX; g.y = e.clientY; g.t = Date.now(); g.moved = false; pause(true);
+  clearTimeout(g.hold); g.hold = setTimeout(() => viewer.classList.add("v-hold"), 220);
 });
 stage.addEventListener("pointerup", e => {
+  vPtrs.delete(e.pointerId); clearTimeout(g.hold); viewer.classList.remove("v-hold");
   if (e.target.closest(".v-foot, .v-head")) return;
+  if (!zoomEl.hidden) return;
   const dx = e.clientX - g.x, dy = e.clientY - g.y;
   if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { g.moved = true; pause(false); return jump(dx < 0 ? 1 : -1); }
   if (dy > 90) { g.moved = true; pause(false); return closeStory(); }
   if (Date.now() - g.t > 350) g.moved = true;
   if (document.activeElement !== vNote) pause(false);
 });
-stage.addEventListener("pointercancel", () => pause(false));
+stage.addEventListener("pointercancel", e => { vPtrs.delete(e.pointerId); clearTimeout(g.hold); viewer.classList.remove("v-hold"); if (zoomEl.hidden) pause(false); });
+document.getElementById("v-zoom").addEventListener("click", () => openZoom(V.set, V.frame, null, true));
 document.getElementById("v-prev").addEventListener("click", e => { if (g.moved) { g.moved = false; return; } step(-1); });
 document.getElementById("v-next").addEventListener("click", e => { if (g.moved) { g.moved = false; return; } step(1); });
 document.getElementById("v-close").addEventListener("click", closeStory);
 document.getElementById("v-profile").addEventListener("click", () => { const s = SETS[V.set]; closeStory(); openProfile(s); });
-vStar.addEventListener("click", () => toggle(vStar.dataset.star));
+vStar.addEventListener("click", () => { const on = !picks[vStar.dataset.star]?.finalist; toggle(vStar.dataset.star); if (on) pop(document.getElementById("v-burst")); });
+const vSend = document.getElementById("v-send");
+vSend.addEventListener("click", () => { clearTimeout(vt); save(vNote.dataset.note, { note: vNote.value.trim() }); vNote.blur(); vSend.hidden = true; toast("Nota guardada"); });
 vNote.addEventListener("focus", () => pause(true));
-vNote.addEventListener("blur", () => pause(false));
+vNote.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== vNote && zoomEl.hidden) pause(false); }, 0));
 let vt;
-vNote.addEventListener("input", () => { clearTimeout(vt); vt = setTimeout(() => save(vNote.dataset.note, { note: vNote.value.trim() }), 900); });
+vNote.addEventListener("input", () => { vSend.hidden = !vNote.value.trim(); clearTimeout(vt); vt = setTimeout(() => save(vNote.dataset.note, { note: vNote.value.trim() }), 900); });
 vNote.addEventListener("keydown", e => { if (e.key === "Enter") { clearTimeout(vt); save(vNote.dataset.note, { note: vNote.value.trim() }); vNote.blur(); toast("Nota guardada"); } e.stopPropagation(); });
 document.addEventListener("keydown", e => {
+  if (!zoomEl.hidden) {
+    if (e.key === "Escape") closeZoom(); else if (e.key === "ArrowRight") zStep(1); else if (e.key === "ArrowLeft") zStep(-1);
+    else if (e.key === "+" || e.key === "=") zBy(1.5); else if (e.key === "-") zBy(1 / 1.5);
+    return;
+  }
   if (!viewer.hidden) {
     if (e.key === "ArrowRight") step(1); else if (e.key === "ArrowLeft") step(-1);
     else if (e.key === "Escape") closeStory(); else if (e.key === " ") { e.preventDefault(); pause(!V.paused); }
   } else if (e.key === "Escape") {
-    if (!document.getElementById("detail").hidden) closeSheet("detail"); else if (!document.getElementById("profile").hidden) closeSheet("profile");
+    if (!document.getElementById("detail").hidden) closeSheet("detail"); else if (!document.getElementById("compare").hidden) closeSheet("compare"); else if (!document.getElementById("profile").hidden) closeSheet("profile");
   }
 });
+
+// ---------- Zoom viewer: pinch, double tap, drag, wheel ----------
+const zoomEl = document.getElementById("zoom"), zStage = document.getElementById("z-stage"), zImg = document.getElementById("z-img");
+const Z = { set: 0, frame: 0, s: 1, x: 0, y: 0, ptrs: new Map(), g: null, lastTap: 0, from: null, resume: false };
+let hintT;
+function openZoom(si, fi, from, resume = false) {
+  Z.from = from || document.activeElement; Z.resume = resume;
+  if (resume) pause(true);
+  zoomEl.hidden = false; document.body.classList.add("lock");
+  zShow(si, fi);
+  const h = document.getElementById("z-hint"); h.classList.add("on"); clearTimeout(hintT); hintT = setTimeout(() => h.classList.remove("on"), 1800);
+  document.getElementById("z-close").focus();
+}
+function closeZoom() {
+  zoomEl.hidden = true;
+  if (Z.resume && !viewer.hidden) { pause(false); document.getElementById("v-close").focus(); }
+  else { if (!overlaysOpen()) document.body.classList.remove("lock"); Z.from?.focus?.(); }
+}
+function zShow(si, fi) {
+  const s = SETS[si], f = s.frames[fi];
+  Z.set = si; Z.frame = fi; Z.s = 1; Z.x = 0; Z.y = 0; zApply();
+  zImg.src = f.src; zImg.alt = `${s.title}, ${f.cap}`;
+  if (f.hd) { const im = new Image(); im.onload = () => { if (Z.set === si && Z.frame === fi) zImg.src = f.hd; }; im.src = f.hd; }
+  document.getElementById("z-title").textContent = `${s.n ? s.n + " · " : ""}${s.title} · ${f.cap} · ${fi + 1}/${s.frames.length}`;
+  document.getElementById("z-star").dataset.star = f.pick;
+  document.getElementById("z-prev").disabled = fi === 0;
+  document.getElementById("z-next").disabled = fi === s.frames.length - 1;
+  refresh();
+}
+function zStep(d) { const n = Z.frame + d, s = SETS[Z.set]; if (n >= 0 && n < s.frames.length) zShow(Z.set, n); }
+function zApply() {
+  const w = zStage.clientWidth, h = zStage.clientHeight;
+  Z.s = Math.min(6, Math.max(1, Z.s));
+  Z.x = Math.min(0, Math.max(w * (1 - Z.s), Z.x));
+  Z.y = Math.min(0, Math.max(h * (1 - Z.s), Z.y));
+  zImg.style.transform = `translate(${Z.x}px, ${Z.y}px) scale(${Z.s})`;
+  document.getElementById("z-pct").textContent = Math.round(Z.s * 100) + "%";
+  zStage.classList.toggle("zoomed", Z.s > 1.01);
+}
+function zAt(cx, cy, ns) {
+  const r = zStage.getBoundingClientRect(), px = cx - r.left, py = cy - r.top;
+  ns = Math.min(6, Math.max(1, ns));
+  const k = ns / Z.s; Z.x = px - (px - Z.x) * k; Z.y = py - (py - Z.y) * k; Z.s = ns; zApply();
+}
+function zBy(f) { const r = zStage.getBoundingClientRect(); zAt(r.left + r.width / 2, r.top + r.height / 2, Z.s * f); }
+const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+zStage.addEventListener("pointerdown", e => {
+  zStage.setPointerCapture?.(e.pointerId);
+  Z.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (Z.ptrs.size === 2) {
+    const [a, b] = [...Z.ptrs.values()];
+    Z.g = { type: "pinch", d: dist(a, b) || 1, s: Z.s, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, x: Z.x, y: Z.y };
+  } else if (Z.ptrs.size === 1) {
+    Z.g = { type: "pan", sx: e.clientX, sy: e.clientY, x: Z.x, y: Z.y, moved: false };
+  }
+});
+zStage.addEventListener("pointermove", e => {
+  if (!Z.ptrs.has(e.pointerId)) return;
+  Z.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  const g = Z.g; if (!g) return;
+  if (g.type === "pinch" && Z.ptrs.size === 2) {
+    const [a, b] = [...Z.ptrs.values()], r = zStage.getBoundingClientRect();
+    const ns = Math.min(6, Math.max(1, g.s * dist(a, b) / g.d));
+    const px = (g.mx - r.left - g.x) / g.s, py = (g.my - r.top - g.y) / g.s;
+    const mx = (a.x + b.x) / 2 - r.left, my = (a.y + b.y) / 2 - r.top;
+    Z.s = ns; Z.x = mx - px * ns; Z.y = my - py * ns; zApply();
+  } else if (g.type === "pan") {
+    const dx = e.clientX - g.sx, dy = e.clientY - g.sy;
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) g.moved = true;
+    if (Z.s > 1.01) { Z.x = g.x + dx; Z.y = g.y + dy; zApply(); }
+  }
+});
+function zEnd(e) {
+  const g = Z.g;
+  Z.ptrs.delete(e.pointerId);
+  if (g?.type === "pinch") {
+    // Leaving one finger down keeps panning from where the pinch ended
+    if (Z.ptrs.size === 1) { const [p] = [...Z.ptrs.values()]; Z.g = { type: "pan", sx: p.x, sy: p.y, x: Z.x, y: Z.y, moved: true }; }
+    else Z.g = null;
+    return;
+  }
+  if (!g || Z.ptrs.size) return;
+  Z.g = null;
+  if (e.type === "pointercancel") return;
+  const dx = e.clientX - g.sx, dy = e.clientY - g.sy;
+  if (!g.moved) {
+    const now = Date.now();
+    if (now - Z.lastTap < 300) { Z.lastTap = 0; Z.s > 1.05 ? (Z.s = 1, Z.x = 0, Z.y = 0, zApply()) : zAt(e.clientX, e.clientY, 2.5); }
+    else Z.lastTap = now;
+  } else if (Z.s <= 1.01) {
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) zStep(dx < 0 ? 1 : -1);
+    else if (dy > 90) closeZoom();
+  }
+}
+zStage.addEventListener("pointerup", zEnd);
+zStage.addEventListener("pointercancel", zEnd);
+zStage.addEventListener("wheel", e => { e.preventDefault(); zAt(e.clientX, e.clientY, Z.s * Math.exp(-e.deltaY * 0.0025)); }, { passive: false });
+window.addEventListener("resize", () => { if (!zoomEl.hidden) zApply(); });
+document.getElementById("z-close").addEventListener("click", closeZoom);
+document.getElementById("z-in").addEventListener("click", () => zBy(1.5));
+document.getElementById("z-out").addEventListener("click", () => zBy(1 / 1.5));
+document.getElementById("z-prev").addEventListener("click", () => zStep(-1));
+document.getElementById("z-next").addEventListener("click", () => zStep(1));
+document.getElementById("z-star").addEventListener("click", e => toggle(e.currentTarget.dataset.star));
+
+// ---------- Compare finalists shot by shot ----------
+let cmpShot = 1;
+document.getElementById("cmp-back").addEventListener("click", () => closeSheet("compare"));
+function openCompare(from) { cmpShot = 1; renderCompare(); openSheet("compare", from); }
+function renderCompare() {
+  const ids = Object.keys(picks).filter(k => picks[k]?.finalist).sort();
+  const body = document.getElementById("cmp-body");
+  body.replaceChildren();
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Tipo de foto" });
+  SHOTS.forEach(([, label], i) => {
+    const b = el("button", { type: "button", "aria-pressed": i === cmpShot ? "true" : "false", text: label });
+    b.addEventListener("click", () => { cmpShot = i; renderCompare(); });
+    seg.append(b);
+  });
+  const grid = el("div", { class: "cmp" });
+  const n = ids.length;
+  grid.style.setProperty("--w", n <= 3 ? `calc((100% - ${(n - 1) * 6}px) / ${n})` : "31%");
+  for (const k of ids) {
+    const old = OLD.find(o => o.id === k);
+    const si = old ? SETS.length - 1 : SETS.findIndex(s => s.key === k);
+    const fi = old ? OLD.indexOf(old) : cmpShot;
+    const f = SETS[si].frames[fi];
+    const btn = el("button", { type: "button", "aria-label": `Ampliar ${labelFor(k)}` }, el("img", { src: f.src, alt: "" }));
+    btn.addEventListener("click", () => openZoom(si, fi, btn));
+    grid.append(el("figure", {}, btn, el("figcaption", { text: old ? `${old.label} · ronda anterior` : `${labelFor(k)} · ${SETS[si].title}` }),
+      picks[k]?.note ? el("span", { class: "muted", text: picks[k].note }) : null));
+  }
+  const prev = el("button", { type: "button", text: "‹ Anterior" }), next = el("button", { type: "button", text: "Siguiente ›" });
+  prev.disabled = cmpShot === 0; next.disabled = cmpShot === SHOTS.length - 1;
+  prev.addEventListener("click", () => { cmpShot--; renderCompare(); });
+  next.addEventListener("click", () => { cmpShot++; renderCompare(); });
+  body.append(seg, grid, el("div", { class: "cmp-nav" }, prev, el("b", { text: SHOTS[cmpShot][1] }), next));
+}
 
 // ---------- Picks ----------
 function toggle(id) {
   const on = !picks[id]?.finalist;
   save(id, { finalist: on });
+  try { navigator.vibrate?.(on ? 15 : 8); } catch {}
   toast(on ? `★ ${labelFor(id)} en finalistas` : `${labelFor(id)} fuera de finalistas`);
 }
 function setState(t) { document.getElementById("state").textContent = t; }
@@ -605,6 +845,11 @@ function refresh() {
   const list = document.getElementById("pick-list");
   list.replaceChildren();
   if (!ids.length) list.append(el("p", { class: "empty", text: "Aún no hay finalistas. Toca ★ o haz doble toque en una foto." }));
+  if (ids.length >= 2) {
+    const cb = el("button", { type: "button", class: "cmp-open", text: `Comparar ${ids.length} finalistas foto a foto` });
+    cb.addEventListener("click", () => openCompare(cb));
+    list.append(cb);
+  }
   for (const k of ids) {
     const s = setFor(k), old = OLD.find(o => o.id === k);
     const img = el("img", { src: old ? old.src : s.avatar, alt: "" });

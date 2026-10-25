@@ -82,18 +82,23 @@ def trim_white(im):
 
 
 def media(manifest, dl, out):
-    os.makedirs(out, exist_ok=True)
+    """Small JPEGs for the feed and a high-resolution copy in hd/ for zooming."""
+    hd = os.path.join(out, "hd")
+    os.makedirs(hd, exist_ok=True)
     for c in load(manifest):
         n = f"{c['n']:02d}"
         sheet = os.path.join(dl, f"{n}_sheet.png")
         if os.path.exists(sheet):
             im = Image.open(sheet)
             for (a, b), name in zip(panel_ranges(im), PANELS):
-                save_jpeg(trim_white(im.crop((a, 0, b, im.height))), os.path.join(out, f"{n}_{name}.jpg"), 480)
+                panel = trim_white(im.crop((a, 0, b, im.height)))
+                save_jpeg(panel, os.path.join(out, f"{n}_{name}.jpg"), 480)
+                save_jpeg(panel, os.path.join(hd, f"{n}_{name}.jpg"), 1400)
         for kind in SCENES:
             src = os.path.join(dl, f"{n}_{kind}.png")
             if os.path.exists(src):
                 save_jpeg(Image.open(src), os.path.join(out, f"{n}_{kind}.jpg"), 600)
+                save_jpeg(Image.open(src), os.path.join(hd, f"{n}_{kind}.jpg"), 1400)
 
 
 def embed(text, script_id, data):
